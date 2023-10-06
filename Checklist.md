@@ -1,17 +1,105 @@
-# This is a checklist you should follow when you are creating a new component
+# Component Creation Checklist
 
-- [ ] Update the object in the `src/data/navigation.ts` file with the name of your component and its href [mouse-pointer].
-- [ ] Create a new file in the `src/content` directory with the name of your component and the extension `.tsx` [mouse-pointer.tsx].
-- [ ] Create a new folder in the `src/apps/docs` directory with the name of your component [/docs/mouse-pointer].
-- [ ] Create a new file `.tsx` in the `src/apps/docs/[folder]` folder with the name of your component (demo/basic) [mouse-pointer-demo.tsx].
-- [ ] Create a new file `page.mdx` in the `src/docs` folder you created in the previous step [/docs/mouse-pointer/page.mdx].
-- [ ] Fill in the metadata and all the required docs in the `page.mdx` file, you can create it from the template `src/template/page.mdx`.
-- [ ] Update the `components` array in the `scripts/registery-components.ts` file with the name of your component [mouse-pointer] and all required details.
-- [ ] Update the `examples` object in the `scripts/registery-examples.ts` file with the name of your component and its example components [mouse-pointer] and [mouse-pointer-demo] with all required details.
-- [ ] Create a new file in the `public/c` directory with [name].json use this command `pnpm register --name=mouse-pointer --author=["Your Name"]` [mouse-pointer.json] (author is optional).
-- [ ] you can cross check the json file in the `public/c` directory with its other counterparts.
-- [ ] Create another `json` file in the `public/e` directory for the examples [example-name.json] use this command `pnpm register:v0 --name=mouse-pointer` [mouse-pointer-demo.json] (all the examples will be generated for the `mouse-pointer` component).
+Follow these steps to add a new component to the project. Each step includes details and file paths to avoid confusion.
 
-## Once you are done with the above steps, check again if all things are in order.
+---
 
-### Now you can uncheck the checklist and commit your changes.
+## 1. Navigation Update
+
+- [ ] **Add your component to navigation:**  
+       Edit `src/data/navigation.ts`.  
+       Add an entry for your component with its name and href.  
+       _Example:_
+  ```ts
+  { name: "Mouse Pointer", href: "/docs/mouse-pointer" }
+  ```
+
+## 2. Component Source File
+
+- [ ] **Create the component file:**  
+       In `src/content`, create a new file named `[component-name].tsx`.  
+       _Example:_
+  ```
+  src/content/mouse-pointer.tsx
+  ```
+
+## 3. Documentation Folder
+
+- [ ] **Create docs folder:**  
+       In `src/apps/docs`, create a folder named `[component-name]`.  
+       _Example:_
+  ```
+  src/apps/docs/mouse-pointer/
+  ```
+
+## 4. Demo Example
+
+- [ ] **Add a demo file:**  
+       Inside your docs folder, create `[component-name]-demo.tsx` (or another example file).  
+       _Example:_
+  ```
+  src/apps/docs/mouse-pointer/mouse-pointer-demo.tsx
+  ```
+
+## 5. MDX Documentation Page
+
+- [ ] **Create documentation page:**  
+       In your docs folder, add `page.mdx`.  
+       _Example:_
+  ```
+  src/apps/docs/mouse-pointer/page.mdx
+  ```
+
+## 6. Fill Metadata and Docs
+
+- [ ] **Complete the MDX page:**  
+       Use the template at `src/template/page.mdx` to fill in metadata and documentation for your component.
+
+## 7. Register Component
+
+- [ ] **Update registry:**  
+       Edit `scripts/registery-components.ts`.  
+       Add your component to the `components` array with all required details.
+
+## 8. Register Examples
+
+- [ ] **Update examples registry:**  
+       Edit `scripts/registery-examples.ts`.  
+       Add your component and its example(s) to the `examples` object, following the same format as the other examples.
+
+## 9. Generate Component JSON
+
+- [ ] **Create component JSON:**  
+       Run:
+  ```
+  pnpm register --name=[component-name] --author=["Your Name"]
+  ```
+  This creates `[component-name].json` in `public/c`, author is optional, replace `[component-name]` with your component name.
+
+## 10. Verify JSON
+
+- [ ] **Check your JSON file:**  
+       Compare your new JSON file in `public/c` with others to ensure consistency.
+
+## 11. Generate Example JSON
+
+- [ ] **Create example JSON:**  
+       Run:
+  ```
+  pnpm register:v0 --name=[component-name]
+  ```
+  This creates `[component-name]-demo.json` in `public/e`, replace `[component-name]` with your component name.
+
+---
+
+## Final Steps
+
+- [ ] **Review all changes:**  
+       Double-check each step and file for accuracy.
+- [ ] **Uncheck the checklist and commit:**  
+       Mark completed items, then commit your changes.
+
+---
+
+**Tip:** Replace `[component-name]` with your actual component name (e.g., `mouse-pointer`).  
+If you have questions, ask in the discussions or check existing components for reference.

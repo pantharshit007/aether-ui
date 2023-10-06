@@ -31,6 +31,7 @@ reviews:
         - Check for any breaking changes.
         - Ensure that the code is well-documented.
         - Verify that the changes are consistent with the existing coding style.
+        - cross check CHECKLIST.md for any new component additions.
     - path: "src/app/docs/**/*.mdx"
       instructions: |
         These are documentation changes. Please check for:
