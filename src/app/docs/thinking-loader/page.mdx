@@ -1,0 +1,61 @@
+import ComponentPreview from "@/components/web/component-preview";
+import ThinkingLoaderDemo from "./thinking-loader-demo";
+import PrevNextBtn from "@/components/web/prev-next-btn";
+import { metaConfig } from "@/config/site";
+
+export const metadata = metaConfig({
+  title: "Thinking Loader | Aether UI",
+  description: "A customizable loader component that displays a sequence of phrases.",
+});
+
+# Thinking Loader
+
+A customizable loader component that displays a sequence of phrases with an icon.
+
+## Examples
+
+<ComponentPreview
+  component={<ThinkingLoaderDemo />}
+  filePath="src/app/docs/thinking-loader/thinking-loader-demo.tsx"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <InstallationCli value="thinking-loader" />
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>
+        If you haven't completed the installation refer to guide [here](/docs/installation).
+      </Step>
+      <Step>Copy and paste the following code into your project.</Step>
+      <CodeBlock filePath="src/components/content/thinking-loader.tsx" />
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</Tabs>
+
+## Component Props
+
+You can customize the `ThinkingLoader` by passing the following props:
+
+<Table
+  data={{
+    headers: ["Prop", "Type", "Default", "Description"],
+    rows: [
+      ["children", "ReactNode", "", "Custom icon or element to display. Defaults to a brain icon."],
+      ["className", "string", "", "Additional class names for the root element."],
+      ["textClassName", "string", "", "Additional class names for the text container."],
+      ["phrases", "string[]", "DEFAULT_LOADING_PHRASES", "An array of phrases to cycle through."],
+      ["duration", "number", "2500", "The duration (in ms) each phrase is displayed."],
+    ],
+  }}
+/>
+
+<PrevNextBtn current="thinking-loader" />
