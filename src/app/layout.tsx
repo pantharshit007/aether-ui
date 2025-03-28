@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Ms_Madi, Instrument_Serif } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/web/theme-provide";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,12 +36,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${MsMadi.variable} ${InstrumentSerif.variable} antialiased`}
       >
-        <div className="bg-zinc-950 text-slate-100">{children}</div>
+        <ThemeProvider attribute="class">
+          <div className="bg-zinc-950 text-slate-100">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   );
 }
+
+// TODO: we have to add something related to mdx lee talked about.

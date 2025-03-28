@@ -4,7 +4,7 @@ import Header from "@/components/web/nav/header";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
-import { NavigationItem, NavigationLinks } from "../data/navigation";
+import { NavigationItem, NavigationLinks } from "../../data/navigation";
 import { usePathname } from "next/navigation";
 
 function layout({ children }: { children: React.ReactNode }) {

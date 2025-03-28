@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Header() {
   return (
-    <nav className="bg-zinc-900 text-slate-200 shadow-lg">
+    <nav className="bg-zinc-950/80 text-slate-200 shadow-lg">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-[3.5rem] items-center justify-between">
           {/* Logo */}
