@@ -43,48 +43,20 @@ function NavigationDesktop() {
   return (
     <aside className="sticky top-14 hidden h-[calc(100dvh-(--spacing(16)))] w-[220px] shrink-0 pt-8 md:block lg:pt-12">
       <nav>
-        <ul
-          role="list"
-          className="h-full pb-9 [&>li:not(:first-child)>div]:pt-6"
-        >
+        <ul role="list" className="h-full pb-9 [&>li:not(:first-child)>div]:pt-6">
           {NavigationLinks.map((item, index) => {
             return (
               <li key={`${item.name}-${index}`}>
-                <div className="font-instrument-serif relative z-10 w-11/12 bg-zinc-950 pb-4 text-xl font-[450] tracking-wider">
+                <div className="font-instrument-serif relative z-10 w-11/12 bg-zinc-950 pb-4 text-xl tracking-wider">
                   {item.name}
                 </div>
                 <ul
                   role="list"
                   className="space-y-3.5 border-l border-zinc-200 dark:border-zinc-800"
                 >
-                  {item.children.map((child: NavigationItem) => {
-                    const isActive = pathname === child.href;
-
-                    return (
-                      <li key={child.href} ref={isActive ? activeRef : null}>
-                        <Link
-                          className={cn(
-                            "relative inline-flex items-center pl-4 text-sm font-normal text-zinc-400 hover:text-white",
-                            isActive && "text-zinc-200",
-                          )}
-                          href={child.href}
-                        >
-                          {isActive && <div />}
-                          <span>{child.name}</span>
-                          {child?.isNew && (
-                            <span className="ml-2 rounded-lg bg-emerald-100 px-2 text-[10px] font-semibold whitespace-nowrap text-emerald-800 dark:bg-emerald-950 dark:text-emerald-50">
-                              New
-                            </span>
-                          )}
-                          {child?.isUpdated && (
-                            <span className="ml-2 rounded-lg bg-amber-100 px-2 text-[10px] font-semibold whitespace-nowrap text-amber-800 dark:bg-amber-950 dark:text-amber-50">
-                              Updated
-                            </span>
-                          )}
-                        </Link>
-                      </li>
-                    );
-                  })}
+                  {item.children.map((child: NavigationItem) =>
+                    NavSubItems({ item: child, pathname, activeRef })
+                  )}
                 </ul>
               </li>
             );
@@ -93,4 +65,46 @@ function NavigationDesktop() {
       </nav>
     </aside>
   );
+}
+
+function NavSubItems({
+  item,
+  pathname,
+  activeRef,
+}: {
+  item: NavigationItem;
+  pathname: string;
+  activeRef: React.RefObject<HTMLLIElement | null>;
+}) {
+  {
+    const isActive = pathname === item.href;
+
+    return (
+      <li key={item.href} ref={isActive ? activeRef : null}>
+        <Link
+          className={cn(
+            "relative inline-flex items-center pl-4 text-sm font-normal text-zinc-400 hover:text-white",
+            isActive && "text-zinc-200"
+          )}
+          href={item.href}
+        >
+          {/* {isActive && <div />} */}
+
+          <span>{item.name}</span>
+
+          {item?.isNew && (
+            <span className="ml-2 rounded-lg bg-emerald-100 px-2 text-[10px] font-semibold whitespace-nowrap text-emerald-800 dark:bg-emerald-950 dark:text-emerald-50">
+              New
+            </span>
+          )}
+
+          {item?.isUpdated && (
+            <span className="ml-2 rounded-lg bg-amber-100 px-2 text-[10px] font-semibold whitespace-nowrap text-amber-800 dark:bg-amber-950 dark:text-amber-50">
+              Updated
+            </span>
+          )}
+        </Link>
+      </li>
+    );
+  }
 }
