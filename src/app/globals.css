@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* @plugin 'tw-animate-css'; */
+
+@custom-variant dark (&:is(.dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -25,7 +29,8 @@
   .text-shadow-glow {
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 12px rgba(255, 255, 255, 0.3);
   }
-  .text-gradient{
+
+  .text-gradient {
     background: linear-gradient(to right, #FF6600, #FFB366, #FF8000);
     background-clip: text;
     -webkit-background-clip: text;
@@ -44,4 +49,3 @@ body {
   background-size: cover;
   background-position: center;
 }
-
