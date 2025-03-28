@@ -21,6 +21,18 @@
   }
 }
 
+@layer components {
+  .text-shadow-glow {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 12px rgba(255, 255, 255, 0.3);
+  }
+  .text-gradient{
+    background: linear-gradient(to right, #FF6600, #FFB366, #FF8000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -32,3 +44,4 @@ body {
   background-size: cover;
   background-position: center;
 }
+
