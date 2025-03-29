@@ -49,6 +49,10 @@ const components = {
       </a>
     );
   },
+  Steps: (props: ComponentPropsWithoutRef<"div">) => (
+    <div className="steps mb-12 ml-4 flex flex-col border-l pl-8 [counter-reset:step]" {...props} />
+  ),
+  Step: (props: ComponentPropsWithoutRef<"div">) => <h3 className="" {...props} />,
   code: (props: CodeBlockProps) => <code className="text-sm" {...props} />,
 
   //   code: ({ children, ...props }: ComponentPropsWithoutRef<"code">) => {

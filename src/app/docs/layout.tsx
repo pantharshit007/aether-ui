@@ -1,11 +1,11 @@
 "use client";
 
+import React from "react";
+import { usePathname } from "next/navigation";
 import Header from "@/components/web/nav/header";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
-import { NavigationItem, NavigationLinks } from "../../data/navigation";
-import { usePathname } from "next/navigation";
+import { NavigationItem, NavigationLinks } from "@/data/navigation";
 
 function layout({ children }: { children: React.ReactNode }) {
   return (
@@ -30,16 +30,6 @@ export default layout;
 
 function NavigationDesktop() {
   const pathname = usePathname();
-  const activeRef = useRef<HTMLLIElement | null>(null);
-
-  useEffect(() => {
-    if (activeRef.current) {
-      activeRef.current.scrollIntoView({
-        behavior: "auto",
-        block: "nearest",
-      });
-    }
-  }, [pathname]);
 
   return (
     <aside className="sticky top-14 hidden h-[calc(100dvh-(--spacing(16)))] w-[220px] shrink-0 pt-8 md:block lg:pt-12">
@@ -48,7 +38,7 @@ function NavigationDesktop() {
           {NavigationLinks.map((item, index) => {
             return (
               <li key={`${item.name}-${index}`}>
-                <div className="font-instrument-serif relative z-10 w-11/12 pb-4 text-xl tracking-wider text-zinc-950 dark:bg-zinc-950 dark:text-white">
+                <div className="relative z-10 w-11/12 pb-4 font-sans text-sm tracking-wide text-zinc-950 dark:bg-zinc-950 dark:text-white">
                   {item.name}
                 </div>
                 <ul
@@ -56,7 +46,7 @@ function NavigationDesktop() {
                   className="space-y-3.5 border-l border-zinc-200 dark:border-zinc-800"
                 >
                   {item.children.map((child: NavigationItem) =>
-                    NavSubItems({ item: child, pathname, activeRef })
+                    NavSubItems({ item: child, pathname })
                   )}
                 </ul>
               </li>
@@ -68,20 +58,12 @@ function NavigationDesktop() {
   );
 }
 
-function NavSubItems({
-  item,
-  pathname,
-  activeRef,
-}: {
-  item: NavigationItem;
-  pathname: string;
-  activeRef: React.RefObject<HTMLLIElement | null>;
-}) {
+function NavSubItems({ item, pathname }: { item: NavigationItem; pathname: string }) {
   {
     const isActive = pathname === item.href;
 
     return (
-      <li key={item.href} ref={isActive ? activeRef : null}>
+      <li key={item.href}>
         <Link
           className={cn(
             "relative inline-flex items-center pl-4 text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white",
@@ -89,7 +71,9 @@ function NavSubItems({
           )}
           href={item.href}
         >
-          {/* {isActive && <div />} */}
+          {isActive && (
+            <div className="absolute top-0 -left-[1px] -z-1 h-full w-0.5 rounded-[4px] bg-zinc-950 dark:bg-white" />
+          )}
 
           <span>{item.name}</span>
 

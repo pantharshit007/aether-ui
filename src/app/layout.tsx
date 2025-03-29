@@ -40,8 +40,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${MsMadi.variable} ${InstrumentSerif.variable} antialiased`}
       >
-        <ThemeProvider attribute="class">
-          <div className="bg-zinc-950 text-slate-100">{children}</div>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="">{children}</div>
         </ThemeProvider>
       </body>
     </html>

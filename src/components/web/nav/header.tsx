@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Logo from "../logo";
+import ThemeToggle from "../theme-toggle";
 
 function Header({ landing = false }: { landing?: boolean }) {
   return (
@@ -14,30 +15,34 @@ function Header({ landing = false }: { landing?: boolean }) {
             </Link>
           </div>
 
-          {/* Navigation Links */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-4">
-              <Link
-                href="/docs"
-                className="text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
-              >
-                Components
-              </Link>
+          <span className="flex items-center gap-x-4">
+            {/* Navigation Links */}
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-center space-x-4">
+                <Link
+                  href="/docs"
+                  className="text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
+                >
+                  Components
+                </Link>
 
-              <Link
-                href="/showcase"
-                className="text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
-              >
-                Showcase
-              </Link>
-              <Link
-                href="/community"
-                className="text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
-              >
-                Community
-              </Link>
+                <Link
+                  href="/showcase"
+                  className="text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
+                >
+                  Showcase
+                </Link>
+                <Link
+                  href="/community"
+                  className="text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
+                >
+                  Community
+                </Link>
+              </div>
             </div>
-          </div>
+
+            <ThemeToggle />
+          </span>
         </div>
       </div>
     </nav>

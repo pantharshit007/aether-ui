@@ -49,6 +49,16 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+@utility step {
+  counter-increment: step;
+
+  &:before {
+    @apply absolute inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 bg-white text-center -indent-px font-mono text-base font-medium dark:border-zinc-800 dark:bg-zinc-950;
+    @apply ml-[-50px] mt-[-4px];
+    content: counter(step);
+  }
+}
+
 @layer components {
   .text-shadow-glow {
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 12px rgba(255, 255, 255, 0.3);
