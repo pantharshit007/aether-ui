@@ -8,17 +8,19 @@ const NODE_ENV = process.env.NODE_ENV;
 
 const nextConfig: NextConfig = {
   /* config options here */
-  pageExtensions: ["ts", "tsx", "mdx", "md"],
+  pageExtensions: ["js", "jsx", "ts", "tsx", "mdx", "md"],
   experimental: {
-    mdxRs: env.NODE_ENV === "development" ? true : false,
+    mdxRs: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins:
-      NODE_ENV === "production" ? [remarkGfm, [remarkCodeHike, { theme: "css-variables" }]] : [],
+    // remarkPlugins: NODE_ENV === "development" ? [remarkGfm, remarkCodeHike] : [],
   },
 });
 

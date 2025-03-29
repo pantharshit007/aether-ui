@@ -5,7 +5,7 @@ import ThemeToggle from "../theme-toggle";
 
 function Header({ landing = false }: { landing?: boolean }) {
   return (
-    <nav className="bg-whi sticky top-0 z-10 border-b border-zinc-200 dark:border-white/10 dark:bg-zinc-950">
+    <nav className="sticky top-0 z-10 border-b border-zinc-200 bg-white dark:border-white/10 dark:bg-zinc-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-[3.5rem] items-center justify-between">
           {/* Logo */}

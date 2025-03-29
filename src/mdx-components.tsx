@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithoutRef } from "react";
 import Link from "next/link";
-// import { highlight } from "sugar-high";
+import { highlight } from "sugar-high";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
@@ -53,12 +53,12 @@ const components = {
     <div className="steps mb-12 ml-4 flex flex-col border-l pl-8 [counter-reset:step]" {...props} />
   ),
   Step: (props: ComponentPropsWithoutRef<"div">) => <h3 className="" {...props} />,
-  code: (props: CodeBlockProps) => <code className="text-sm" {...props} />,
+  // code: (props: CodeBlockProps) => <code className="text-sm" {...props} />,
 
-  //   code: ({ children, ...props }: ComponentPropsWithoutRef<"code">) => {
-  //     const codeHTML = highlight(children as string);
-  //     return <code dangerouslySetInnerHTML={{ __html: children }} {...props} />;
-  //   },
+  code: ({ children, ...props }: ComponentPropsWithoutRef<"code">) => {
+    const codeHTML = highlight(children as string);
+    return <code className="not-prose" dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+  },
   Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
     <table>
       <thead>

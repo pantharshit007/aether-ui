@@ -47,5 +47,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-// TODO: we have to add something related to mdx lee talked about.
