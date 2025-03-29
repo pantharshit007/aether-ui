@@ -16,11 +16,12 @@ function layout({ children }: { children: React.ReactNode }) {
           <div className="mx-auto flex w-full flex-col items-start md:flex-row md:space-x-12">
             <NavigationDesktop />
             {/* <NavigationMobile /> */}
-            <main className="">{children}</main>
+            <main className="prose prose-zinc dark:prose-invert prose-h1:scroll-m-20 prose-h1:text-2xl prose-h1:font-semibold prose-h2:mt-12 prose-h2:scroll-m-20 prose-h2:text-xl prose-h2:font-medium prose-h3:scroll-m-20 prose-h3:text-base prose-h3:font-medium prose-h4:scroll-m-20 prose-h5:scroll-m-20 prose-h6:scroll-m-20 prose-strong:font-medium prose-table:block prose-table:overflow-y-auto mr-0 max-w-full min-w-0 flex-1 pt-8 pb-16 lg:pt-12">
+              {children}
+            </main>
           </div>
         </div>
       </div>
-      {children}
     </>
   );
 }
@@ -47,7 +48,7 @@ function NavigationDesktop() {
           {NavigationLinks.map((item, index) => {
             return (
               <li key={`${item.name}-${index}`}>
-                <div className="font-instrument-serif relative z-10 w-11/12 bg-zinc-950 pb-4 text-xl tracking-wider">
+                <div className="font-instrument-serif relative z-10 w-11/12 pb-4 text-xl tracking-wider text-zinc-950 dark:bg-zinc-950 dark:text-white">
                   {item.name}
                 </div>
                 <ul
@@ -83,8 +84,8 @@ function NavSubItems({
       <li key={item.href} ref={isActive ? activeRef : null}>
         <Link
           className={cn(
-            "relative inline-flex items-center pl-4 text-sm font-normal text-zinc-400 hover:text-white",
-            isActive && "text-zinc-200"
+            "relative inline-flex items-center pl-4 text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white",
+            isActive && "text-zinc-950"
           )}
           href={item.href}
         >

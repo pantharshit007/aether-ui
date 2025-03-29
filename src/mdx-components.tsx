@@ -11,17 +11,11 @@ type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 type CodeBlockProps = ComponentPropsWithoutRef<"code">;
 
 const components = {
-  h1: (props: HeadingProps) => <h1 className="mb-0 pt-12 font-medium" {...props} />,
-  h2: (props: HeadingProps) => (
-    <h2 className="mt-8 mb-3 font-medium text-gray-800 dark:text-zinc-200" {...props} />
-  ),
-  h3: (props: HeadingProps) => (
-    <h3 className="mt-8 mb-3 font-medium text-gray-800 dark:text-zinc-200" {...props} />
-  ),
-  h4: (props: HeadingProps) => <h4 className="font-medium" {...props} />,
-  p: (props: ParagraphProps) => (
-    <p className="leading-snug text-gray-800 dark:text-zinc-300" {...props} />
-  ),
+  h1: (props: HeadingProps) => <h1 className="" {...props} />,
+  h2: (props: HeadingProps) => <h2 className="" {...props} />,
+  h3: (props: HeadingProps) => <h3 className="" {...props} />,
+  h4: (props: HeadingProps) => <h4 className="" {...props} />,
+  p: (props: ParagraphProps) => <p className="" {...props} />,
   ol: (props: ListProps) => (
     <ol className="list-decimal space-y-2 pl-5 text-gray-800 dark:text-zinc-300" {...props} />
   ),
@@ -34,8 +28,7 @@ const components = {
     <strong className="font-medium" {...props} />
   ),
   a: ({ href, children, ...props }: AnchorProps) => {
-    const className =
-      "text-blue-500 hover:text-blue-700 dark:text-gray-400 hover:dark:text-gray-300 dark:underline dark:underline-offset-2 dark:decoration-gray-800";
+    const className = "";
     if (href?.startsWith("/")) {
       return (
         <Link href={href} className={className} {...props}>
@@ -82,12 +75,7 @@ const components = {
       </tbody>
     </table>
   ),
-  blockquote: (props: BlockquoteProps) => (
-    <blockquote
-      className="ml-[0.075em] border-l-3 border-gray-300 pl-4 text-gray-700 dark:border-zinc-600 dark:text-zinc-300"
-      {...props}
-    />
-  ),
+  blockquote: (props: BlockquoteProps) => <blockquote className="" {...props} />,
 };
 
 declare global {

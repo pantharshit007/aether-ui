@@ -1,17 +1,17 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import Logo from "@/components/web/logo";
 
 export default function Home() {
   return (
     <div className="bg-img flex h-screen flex-col items-center justify-center gap-y-2">
       <h2 className="font-ms-madi mb-2 text-3xl text-white">say hi! to</h2>
 
-      <h1 className="text-shadow-glow font-instrument-serif text-6xl tracking-wide text-white">
-        Aether <span className="text-gradient">UI</span>
-      </h1>
+      <Logo />
 
       <Link href="/docs">
-        <button className="font-instrument-serif mt-2 cursor-pointer rounded-md bg-gradient-to-r from-orange-400 to-yellow-600 px-5 py-1 text-2xl tracking-wider text-white shadow-md hover:tracking-widest hover:shadow-lg">
-          docs
+        <button className="font-instrument-serif mt-2 cursor-pointer rounded-md bg-gradient-to-r from-orange-400 to-yellow-600 px-4 py-1 text-2xl tracking-wider text-white shadow-md transition-all duration-300 ease-in-out hover:tracking-widest hover:shadow-lg">
+          docs <ArrowRight className="ml-1 inline-block h-4 w-4" />
         </button>
       </Link>
     </div>

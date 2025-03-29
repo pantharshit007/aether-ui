@@ -1,18 +1,16 @@
 import React from "react";
 import Link from "next/link";
+import Logo from "../logo";
 
-function Header() {
+function Header({ landing = false }: { landing?: boolean }) {
   return (
-    <nav className="bg-zinc-950/80 text-slate-200 shadow-lg">
+    <nav className="bg-whi sticky top-0 z-10 border-b border-zinc-200 dark:border-white/10 dark:bg-zinc-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-[3.5rem] items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link
-              href="/"
-              className="font-instrument-serif text-shadow-glow text-2xl font-medium tracking-widest"
-            >
-              Aether <span className="text-gradient">UI</span>
+            <Link href={landing ? "/" : "/docs"}>
+              <Logo className="text-2xl font-medium tracking-widest" />
             </Link>
           </div>
 
@@ -20,14 +18,21 @@ function Header() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
               <Link
+                href="/docs"
+                className="text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
+              >
+                Components
+              </Link>
+
+              <Link
                 href="/showcase"
-                className="rounded-md px-3 py-2 text-gray-300 hover:text-gray-600"
+                className="text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
               >
                 Showcase
               </Link>
               <Link
                 href="/community"
-                className="rounded-md px-3 py-2 text-gray-300 hover:text-gray-600"
+                className="text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
               >
                 Community
               </Link>
