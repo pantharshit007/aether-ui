@@ -21,7 +21,7 @@ export function InstallationCli({ value, className }: InstallationCliProps) {
   const command: Command = {
     label: "shadcn",
     icon: <ShadcnLogo className="size-4" />,
-    code: `npx shadcn@latest add "https://motion-primitives.com/c/${value}.json"`,
+    code: `npx shadcn@latest add "https://ui-aether.vercel.app/c/${value}.json"`,
   };
 
   const [isCopied, setIsCopied] = useState(false);
