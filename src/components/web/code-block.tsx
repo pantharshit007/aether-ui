@@ -1,4 +1,5 @@
 // import { extractCodeFromFilePath } from "@/lib/code";
+import { readCode } from "@/lib/readFile";
 import CodePreview from "./code-preview";
 import CodeRenderer from "./code-renderer";
 import { cn } from "@/lib/utils";
@@ -16,8 +17,7 @@ export default function CodeBlock({
   lang = "tsx",
   className,
 }: CodeBlockProps) {
-  //   const fileContent = filePath ? extractCodeFromFilePath(filePath) : code;
-  const fileContent = code;
+  const fileContent = filePath ? readCode(filePath) : code;
 
   return (
     <div

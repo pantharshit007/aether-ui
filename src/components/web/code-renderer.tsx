@@ -6,7 +6,8 @@ type CodeRenderer = {
 };
 
 export default async function CodeRenderer({ code, lang }: CodeRenderer) {
-  const html = highlight(code);
+  const normalizedCode = code.replace(/\r\n/g, "\n").trim();
+  const html = highlight(normalizedCode);
 
   return (
     <pre className="text-zinc-100">

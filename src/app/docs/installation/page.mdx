@@ -23,17 +23,7 @@ Components are animated using [Motion](https://motion.dev/).
 
 Create a `lib/utils.ts` file to manage Tailwind CSS classes:
 
-<CodeBlock
-code={`import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs))
-}
-`}
-  lang="ts"
-  className="h-fit"
-/>
+<CodeBlock filePath="./src/lib/utils.ts" lang="ts" className="h-fit" />
 
 <Step>Install icons</Step>
 

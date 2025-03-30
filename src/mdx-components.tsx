@@ -1,6 +1,10 @@
 import React, { ComponentPropsWithoutRef } from "react";
 import Link from "next/link";
 import { highlight } from "sugar-high";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { cn } from "./lib/utils";
+import CodeBlock from "./components/web/code-block";
+import { InstallationCli } from "./components/web/installation-cli";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
@@ -80,6 +84,24 @@ const components = {
     </table>
   ),
   blockquote: (props: BlockquoteProps) => <blockquote className="" {...props} />,
+  Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
+    <Tabs className={cn("relative mt-6 w-full", className)} {...props} />
+  ),
+  TabsList: ({ className, ...props }: React.ComponentProps<typeof TabsList>) => (
+    <TabsList className={cn(className)} {...props} />
+  ),
+  TabsTrigger: ({ className, ...props }: React.ComponentProps<typeof TabsTrigger>) => (
+    <TabsTrigger className={cn(className)} {...props} />
+  ),
+  TabsContent: ({ className, ...props }: React.ComponentProps<typeof TabsContent>) => (
+    <TabsContent className={cn(className)} {...props} />
+  ),
+  CodeBlock: ({ className, ...props }: React.ComponentProps<typeof CodeBlock>) => (
+    <CodeBlock className={cn(className)} {...props} />
+  ),
+  InstallationCli: ({ ...props }: React.ComponentProps<typeof InstallationCli>) => (
+    <InstallationCli {...props} />
+  ),
 };
 
 declare global {

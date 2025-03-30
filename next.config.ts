@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx", "md"],
   experimental: {
-    mdxRs: true,
+    mdxRs: true, // avoid in prod
   },
   eslint: {
     ignoreDuringBuilds: true,
