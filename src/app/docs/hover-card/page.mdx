@@ -1,0 +1,60 @@
+export const metadata = {
+  title: "Hover Card | Aether UI",
+  description: "A customizable button component with default | destructive variants.",
+};
+
+import ComponentPreview from "@/components/web/component-preview";
+import HoverCardDemo from "./hover-card-demo";
+import HoverCardDemo2 from "./hover-card-demo-2";
+
+# Hover Card
+
+Esthetic hover card component with a glowing effect on the edges. <br/>
+_NOTE: If you are seeing bad background color try editing the_ `after:bg-background/90` _class in the **HoverCard** component, or try twiking your children's bg color._
+
+## Examples
+
+### Effect on Card
+
+<ComponentPreview
+  component={<HoverCardDemo />}
+  filePath="src/app/docs/hover-card/hover-card-demo.tsx"
+/>
+
+### Effect on custom elements with colours
+
+<ComponentPreview
+  component={<HoverCardDemo2 />}
+  filePath="src/app/docs/hover-card/hover-card-demo-2.tsx"
+/>
+
+## Intallation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+<InstallationCli value="hover-card" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<CodeBlock filePath="src/content/hover-card.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
