@@ -1,0 +1,67 @@
+export const metadata = {
+  title: "Fuzzy Text | Aether UI",
+  description: "Transition from one text to another with a fuzzy effect.",
+};
+
+import ComponentPreview from "@/components/web/component-preview";
+import FuzzyTextDemo from "./fuzzy-text-demo";
+import FuzzyTextDemo2 from "./fuzzy-text-demo-2";
+import FuzzyTextDemo3 from "./fuzzy-text-demo-3";
+
+# Fuzzy Text
+
+Transition from one text to another with a fuzzy effect of alpha numerical characters.
+
+## Examples
+
+### Hover over the text to see the effect
+
+<ComponentPreview
+  component={<FuzzyTextDemo />}
+  filePath="src/app/docs/fuzzy-text/fuzzy-text-demo.tsx"
+/>
+
+### Animate the same text on hover
+
+<ComponentPreview
+  component={<FuzzyTextDemo2 />}
+  filePath="src/app/docs/fuzzy-text/fuzzy-text-demo-2.tsx"
+/>
+
+### Use it on buttons
+
+<ComponentPreview
+  component={<FuzzyTextDemo3 />}
+  filePath="src/app/docs/fuzzy-text/fuzzy-text-demo-3.tsx"
+/>
+
+## Intallation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+<InstallationCli value="fuzzy-text" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<CodeBlock filePath="src/content/fuzzy-text.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>

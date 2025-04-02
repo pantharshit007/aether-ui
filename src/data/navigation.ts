@@ -37,4 +37,13 @@ export const NavigationLinks: NavigationGroup[] = [
       },
     ],
   },
+  {
+    name: "Text",
+    children: [
+      {
+        name: "Fuzzy Text",
+        href: "/docs/fuzzy-text",
+      },
+    ],
+  },
 ];
