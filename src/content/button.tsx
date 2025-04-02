@@ -41,3 +41,4 @@ function Button({
 }
 
 export { Button, type ButtonProps };
+Button.displayName = "Button";

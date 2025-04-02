@@ -105,3 +105,6 @@ function HoverCard({ color = "blue", className, children, ...props }: HoverCardP
 }
 
 export { HoverCard, HoverArea };
+
+HoverCard.displayName = "HoverCard";
+HoverArea.displayName = "HoverArea";

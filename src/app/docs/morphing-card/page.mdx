@@ -1,0 +1,49 @@
+export const metadata = {
+  title: "Morpying Card | Aether UI",
+  description: "A morpying card component with customizable content.",
+};
+
+import ComponentPreview from "@/components/web/component-preview";
+import MorphingCardBasic from "./morphing-card-basic";
+
+# Morphing Card
+
+As you switch between states the card will change its appearance.
+
+## Examples
+
+<ComponentPreview
+  component={<MorphingCardBasic />}
+  filePath="src/app/docs/morphing-card/morphing-card-basic.tsx"
+/>
+
+## Intallation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+<InstallationCli value="morphing-card" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<CodeBlock filePath="src/content/morphing-card.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>

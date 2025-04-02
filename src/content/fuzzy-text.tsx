@@ -9,7 +9,7 @@ type FuzzyTextProps = {
   className?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-function fuzzyText({ text, orignal, children, className, ...props }: FuzzyTextProps) {
+function FuzzyText({ text, orignal, children, className, ...props }: FuzzyTextProps) {
   const element = React.useRef<HTMLSpanElement | null>(null);
   const childrenCopy = text && text?.length !== 0 ? text : orignal;
   const fuzzyText = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -72,4 +72,5 @@ function fuzzyText({ text, orignal, children, className, ...props }: FuzzyTextPr
   );
 }
 
-export default fuzzyText;
+export default FuzzyText;
+FuzzyText.displayName = "FuzzyText";
