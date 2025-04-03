@@ -5,6 +5,7 @@ export const metadata = {
 
 import ComponentPreview from "@/components/web/component-preview";
 import MorphingCardBasic from "./morphing-card-basic";
+import MorphingCardCustom from "./morphing-card-custom";
 
 # Morphing Card
 
@@ -12,9 +13,18 @@ As you switch between states the card will change its appearance.
 
 ## Examples
 
+### Basic Implementation of a delete card
+
 <ComponentPreview
   component={<MorphingCardBasic />}
   filePath="src/app/docs/morphing-card/morphing-card-basic.tsx"
+/>
+
+### Morph Card with custom content
+
+<ComponentPreview
+  component={<MorphingCardCustom />}
+  filePath="src/app/docs/morphing-card/morphing-card-custom.tsx"
 />
 
 ## Intallation
@@ -47,3 +57,17 @@ As you switch between states the card will change its appearance.
 </TabsContent>
 
 </Tabs>
+
+## Usage
+
+You can customize the content of the morphing card by passing the following props to the component.
+
+- `title`: The title of the morphing card.
+- `description`: The description of the morphing card.
+- `cancelButtonText`: The text of the cancel button.
+- `confirmButtonText`: The text of the confirm button.
+- `dialogTitle`: The title of the dialog.
+- `dialogDescription`: The description of the dialog.
+- `dialogCancelText`: The text of the cancel button in the dialog.
+- `dialogConfirmText`: The text of the confirm button in the dialog.
+- `onConfirm`: The callback function to be called when the confirm button is clicked.

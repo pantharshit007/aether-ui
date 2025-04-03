@@ -85,7 +85,7 @@ const components = {
   ),
   blockquote: (props: BlockquoteProps) => <blockquote className="" {...props} />,
   Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
-    <Tabs className={cn("relative mt-6 w-full", className)} {...props} />
+    <Tabs className={cn("z-10 mt-6 w-full", className)} {...props} />
   ),
   TabsList: ({ className, ...props }: React.ComponentProps<typeof TabsList>) => (
     <TabsList className={cn(className)} {...props} />
