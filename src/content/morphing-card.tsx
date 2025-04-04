@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { PencilLine, PlusCircle, Trash } from "lucide-react";
+import { PencilLine } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type MorphingCardProps = {
@@ -19,7 +19,7 @@ type MorphingCardProps = {
   dialogCancelText?: string;
   dialogConfirmText?: string;
   onConfirm?: () => void;
-  variant?: "positive" | "negative" | "neutral";
+  variant?: "positive" | "negative" | "default";
 };
 
 function MorphingCard({
@@ -27,7 +27,7 @@ function MorphingCard({
   children,
   className,
   icon: Icon = PencilLine,
-  iconClassname = "text-blue-500",
+  iconClassname,
   title,
   description,
   cancelButtonText = "Cancel",
@@ -37,7 +37,7 @@ function MorphingCard({
   dialogCancelText = "Cancel",
   dialogConfirmText = "Confirm",
   onConfirm,
-  variant = "neutral",
+  variant = "default",
   ...props
 }: MorphingCardProps) {
   const [open, setOpen] = useState(false);
@@ -59,17 +59,10 @@ function MorphingCard({
     }
   };
 
-  const getIconColor = () => {
-    if (iconClassname) return iconClassname;
-
-    switch (variant) {
-      case "positive":
-        return "text-emerald-500";
-      case "negative":
-        return "text-rose-500";
-      default:
-        return "text-blue-500";
-    }
+  const setIconStyles = {
+    positive: " text-emerald-500",
+    negative: " text-rose-500",
+    default: " text-blue-500",
   };
 
   return (
@@ -79,7 +72,7 @@ function MorphingCard({
           customId={customId}
           setOpen={setOpen}
           Icon={Icon}
-          iconClassname={getIconColor()}
+          iconClassname={iconClassname}
           title={dialogTitle}
           description={dialogDescription}
           cancelText={dialogCancelText}
@@ -95,14 +88,14 @@ function MorphingCard({
         {...props}
       >
         <div className="flex items-center justify-around gap-x-4">
-          {Icon && (
-            <motion.span layoutId={`card-icon-${customId}`} className="shrink-0">
-              <Icon className={`h-6 w-6 ${getIconColor()}`} />
-            </motion.span>
-          )}
+          <motion.span layoutId={`card-icon-${customId}`}>
+            <Icon className={cn("h-6 w-6", setIconStyles[variant], iconClassname)} />
+          </motion.span>
           <motion.div layoutId={`card-content-${customId}`} className={cn("flex-1", className)}>
-            {title && <h3 className="text-lg font-medium">{title}</h3>}
-            {description && <p className="text-muted-foreground mt-1 text-sm">{description}</p>}
+            {title && <h3 className="pl-2 text-lg font-medium">{title}</h3>}
+            {description && (
+              <p className="text-muted-foreground mt-1 pl-2 text-sm">{description}</p>
+            )}
             {children}
           </motion.div>
         </div>
@@ -110,7 +103,7 @@ function MorphingCard({
         <div className="flex w-full justify-end gap-x-3 pt-2">
           <motion.button
             layoutId={`cancel-button-${customId}`}
-            className="rounded-md bg-zinc-200 px-3 py-1.5 text-sm text-zinc-800 hover:bg-zinc-300"
+            className="cursor-pointer rounded-md bg-zinc-200 px-3 py-1.5 text-sm text-zinc-800 hover:bg-zinc-300"
           >
             {cancelButtonText}
           </motion.button>
@@ -139,7 +132,7 @@ type MorphingDialogProps = {
   cancelText?: string;
   confirmText?: string;
   onConfirm?: () => void;
-  variant?: "positive" | "negative" | "neutral";
+  variant: "positive" | "negative" | "default";
 };
 
 function MorphingDialog({
@@ -152,7 +145,7 @@ function MorphingDialog({
   cancelText,
   confirmText,
   onConfirm,
-  variant = "neutral",
+  variant,
 }: MorphingDialogProps) {
   const handleCancel = () => {
     setOpen(false);
@@ -163,8 +156,7 @@ function MorphingDialog({
     setOpen(false);
   };
 
-  // Set colors based on variant
-  const getButtonStyles = () => {
+  const setButtonStyles = (variant: MorphingCardProps["variant"]) => {
     switch (variant) {
       case "positive":
         return "bg-emerald-600 hover:bg-emerald-700 text-white";
@@ -175,16 +167,11 @@ function MorphingDialog({
     }
   };
 
-  const getRingColor = () => {
-    switch (variant) {
-      case "positive":
-        return "ring-emerald-500";
-      case "negative":
-        return "ring-rose-500";
-      default:
-        return "ring-blue-500";
-    }
-  };
+  const setIconStyles = {
+    positive: "ring-1 text-emerald-500",
+    negative: "ring-1 text-rose-500",
+    default: "ring-1 text-blue-500",
+  } as const;
 
   return (
     <>
@@ -204,7 +191,7 @@ function MorphingDialog({
         >
           <motion.span layoutId={`card-icon-${customId}`} className="flex justify-center">
             <Icon
-              className={`h-12 w-12 rounded-full p-2 ${iconClassname} ring-1 ${getRingColor()}`}
+              className={cn("h-12 w-12 rounded-full p-2", setIconStyles[variant], iconClassname)}
             />
           </motion.span>
 
@@ -221,14 +208,17 @@ function MorphingDialog({
           <div className="flex w-full justify-center gap-x-3 pt-2">
             <motion.button
               layoutId={`cancel-button-${customId}`}
-              className="rounded-md bg-zinc-200 px-3 py-1.5 text-sm text-zinc-800 hover:bg-zinc-300"
+              className="cursor-pointer rounded-md bg-zinc-200 px-3 py-1.5 text-sm text-zinc-800 hover:bg-zinc-300"
               onClick={handleCancel}
             >
               {cancelText}
             </motion.button>
             <motion.button
               layoutId={`confirm-button-${customId}`}
-              className={`cursor-pointer rounded-md px-3 py-1.5 text-sm ${getButtonStyles()}`}
+              className={cn(
+                "cursor-pointer rounded-md px-3 py-1.5 text-sm",
+                setButtonStyles(variant)
+              )}
               onClick={handleConfirm}
             >
               {confirmText}
@@ -240,4 +230,6 @@ function MorphingDialog({
   );
 }
 
-export { MorphingCard };
+MorphingCard.displayName = "MorphingCard";
+
+export { MorphingCard, type MorphingCardProps };

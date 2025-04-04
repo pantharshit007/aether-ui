@@ -62,12 +62,18 @@ As you switch between states the card will change its appearance.
 
 You can customize the content of the morphing card by passing the following props to the component.
 
-- `title`: The title of the morphing card.
-- `description`: The description of the morphing card.
-- `cancelButtonText`: The text of the cancel button.
-- `confirmButtonText`: The text of the confirm button.
-- `dialogTitle`: The title of the dialog.
-- `dialogDescription`: The description of the dialog.
-- `dialogCancelText`: The text of the cancel button in the dialog.
-- `dialogConfirmText`: The text of the confirm button in the dialog.
-- `onConfirm`: The callback function to be called when the confirm button is clicked.
+- `customId`: A unique identifier for the morphing card.
+- `children`: Optional content to be displayed inside the morphing card.
+- `className`: Additional class names to be applied to the morphing card.
+- `icon`: Optional icon to be displayed in the morphing card. Default is a pencil icon.
+- `iconClassname`: Additional class names to be applied to the icon.
+- `title`: Optional title to be displayed in the morphing card.
+- `description`: Optional description to be displayed in the morphing card.
+- `cancelButtonText`: Text to be displayed on the cancel button. Default is "Cancel".
+- `confirmButtonText`: Text to be displayed on the confirm button. Default is "Create".
+- `dialogTitle`: Optional title to be displayed in the confirmation dialog.
+- `dialogDescription`: Optional description to be displayed in the confirmation dialog.
+- `dialogCancelText`: Text to be displayed on the cancel button in the confirmation dialog. Default is "Cancel".
+- `dialogConfirmText`: Text to be displayed on the confirm button in the confirmation dialog. Default is "Confirm".
+- `onConfirm`: Optional callback function to be called when the confirm button is clicked.
+- `variant`: Optional variant of the morphing card. Positive | Negative | Default. Default is "Default".

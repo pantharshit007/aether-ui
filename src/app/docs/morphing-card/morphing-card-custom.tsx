@@ -1,21 +1,21 @@
 "use client";
 import { MorphingCard } from "@/content/morphing-card";
-import { MailPlus } from "lucide-react";
+import { Users } from "lucide-react";
 import React from "react";
 
 const MorphingCardCustom = () => {
   return (
     <MorphingCard
-      customId="email-service"
+      customId="create-team"
       variant="positive"
-      icon={MailPlus}
-      iconClassname="text-emerald-500"
-      title="Add Email Service"
-      description="Connect a new email service to your application for sending notifications."
-      confirmButtonText="Add Service"
-      dialogTitle="Add Email Service"
-      dialogDescription="This will guide you through connecting a new email provider. Your current services will remain active."
-      dialogConfirmText="Continue Setup"
+      icon={Users}
+      iconClassname="fill-emerald-500"
+      title="Create New Team"
+      description="Set up a new team in your organization with customizable permissions and roles."
+      confirmButtonText="Create Team"
+      dialogTitle="Create Team"
+      dialogDescription="You're about to create a new team. Team members can be added after creation. Would you like to proceed?"
+      dialogConfirmText="Yes, Create Team"
     />
   );
 };
