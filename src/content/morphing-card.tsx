@@ -83,15 +83,20 @@ function MorphingCard({
       )}
 
       <motion.div
+        layout
         layoutId={`morphing-card-${customId}`}
         className="bg-card text-card-foreground flex h-auto min-h-[150px] w-[300px] flex-col gap-6 rounded-xl border p-6 shadow-sm"
         {...props}
       >
         <div className="flex items-center justify-around gap-x-4">
-          <motion.span layoutId={`card-icon-${customId}`}>
+          <motion.span layout layoutId={`card-icon-${customId}`}>
             <Icon className={cn("h-6 w-6", setIconStyles[variant], iconClassname)} />
           </motion.span>
-          <motion.div layoutId={`card-content-${customId}`} className={cn("flex-1", className)}>
+          <motion.div
+            layout
+            layoutId={`card-content-${customId}`}
+            className={cn("flex-1", className)}
+          >
             {title && <h3 className="pl-2 text-lg font-medium">{title}</h3>}
             {description && (
               <p className="text-muted-foreground mt-1 pl-2 text-sm">{description}</p>
@@ -102,12 +107,14 @@ function MorphingCard({
 
         <div className="flex w-full justify-end gap-x-3 pt-2">
           <motion.button
+            layout
             layoutId={`cancel-button-${customId}`}
             className="cursor-pointer rounded-md bg-zinc-200 px-3 py-1.5 text-sm text-zinc-800 hover:bg-zinc-300"
           >
             {cancelButtonText}
           </motion.button>
           <motion.button
+            layout
             layoutId={`confirm-button-${customId}`}
             className={`cursor-pointer rounded-md px-3 py-1.5 text-sm ${getButtonStyles()}`}
             onClick={() => setOpen(true)}
@@ -233,3 +240,5 @@ function MorphingDialog({
 MorphingCard.displayName = "MorphingCard";
 
 export { MorphingCard, type MorphingCardProps };
+
+// CreatedBy: AetherUI

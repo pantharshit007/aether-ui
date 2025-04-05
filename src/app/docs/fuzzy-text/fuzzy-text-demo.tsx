@@ -1,4 +1,4 @@
-import FuzzyText from "@/content/fuzzy-text";
+import { FuzzyText } from "@/content/fuzzy-text";
 import React from "react";
 
 const FuzzyTextDemo = () => {

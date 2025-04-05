@@ -1,7 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CodePreview from "./code-preview";
 import CodeRenderer from "./code-renderer";
-import ComponentPreview from "./component-preview";
 import { readCode } from "@/lib/readFile";
 import FinalPreview from "./final-preview";
 
@@ -23,9 +22,13 @@ function ComponentCodePreview({
   return (
     <div className="not-prose z-0 flex items-center justify-between pb-4">
       <Tabs defaultValue="preview" className="relative mr-auto w-full">
-        <TabsList className="">
-          <TabsTrigger value="preview">Preview</TabsTrigger>
-          <TabsTrigger value="code">Code</TabsTrigger>
+        <TabsList className="bg-transparent">
+          <TabsTrigger value="preview" className="tracking-wide">
+            Preview
+          </TabsTrigger>
+          <TabsTrigger value="code" className="tracking-wide">
+            Code
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="preview" className="border border-zinc-200 dark:border-zinc-800">
           <FinalPreview component={component} className={classNameComponentContainer} />

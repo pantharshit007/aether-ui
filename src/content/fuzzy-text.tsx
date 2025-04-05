@@ -72,5 +72,7 @@ function FuzzyText({ text, orignal, children, className, ...props }: FuzzyTextPr
   );
 }
 
-export default FuzzyText;
+export { FuzzyText };
 FuzzyText.displayName = "FuzzyText";
+
+// CreatedBy: AetherUI
