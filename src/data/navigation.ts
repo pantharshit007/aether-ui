@@ -35,6 +35,10 @@ export const NavigationLinks: NavigationGroup[] = [
         name: "Hover Card",
         href: "/docs/hover-card",
       },
+      {
+        name: "Morphing Card",
+        href: "/docs/morphing-card",
+      },
     ],
   },
   {
