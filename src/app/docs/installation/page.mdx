@@ -4,6 +4,7 @@ export const metadata = {
 };
 
 import CodeBlock from "@/components/web/code-block";
+import { srcUrl } from "@/lib/data";
 
 # Installation
 
@@ -11,8 +12,8 @@ import CodeBlock from "@/components/web/code-block";
 
 <Step>Install Tailwind CSS</Step>
 
-Components are styled using Tailwind CSS. Follow the [official installation guide](https://tailwindcss.com/docs/installation) to add it to your project. <br/>
-If you are using React with Vite, you can follow this [vite guide](https://ui.shadcn.com/docs/installation/vite) to setup everything.
+Components are styled using Tailwind CSS v4. Follow the [official installation guide](https://tailwindcss.com/docs/installation) to add it to your project. <br/>
+If you are using React with Vite (TS), you can follow this [vite guide](https://ui.shadcn.com/docs/installation/vite) to setup everything.
 
 <Step>Install Motion</Step>
 
@@ -37,11 +38,13 @@ Add [Lucide React](https://lucide.dev/) icons:
 You can now start adding components to your project.
 
 <CodeBlock
-  code={`npx shadcn@latest add "https://ui-aether.vercel.app/c/button.json"`}
+  code={`npx shadcn@latest add "${srcUrl}/c/button.json"`}
   lang="bash"
   className="h-[52px]"
 />
 
 The command above will add the Button component to your project. You can then import it anywhere in your project.
+
+There is also option to add components manually via copying from the [Component Page](/docs/button/#installation).
 
 </Steps>

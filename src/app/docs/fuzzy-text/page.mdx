@@ -54,6 +54,8 @@ Transition from one text to another with a fuzzy effect of alpha numerical chara
 
 <Steps>
 
+<Step> _If you haven't completed the installation refer to guide [here](/docs/installation)._</Step>
+
 <Step>Copy and paste the following code into your project.</Step>
 
 <CodeBlock filePath="src/content/fuzzy-text.tsx" />
@@ -65,3 +67,13 @@ Transition from one text to another with a fuzzy effect of alpha numerical chara
 </TabsContent>
 
 </Tabs>
+
+### Usage
+
+You can use the `FuzzyText` component by passing the following props to it.
+
+- `text`: (Optional) The text to be displayed. If not provided, the `orignal` text will be used.
+- `orignal`: The original text to be displayed.
+- `children`: The text to be displayed.
+- `className`: Additional class names to be applied to the component.
+- `delay`: (Optional) The delay in milliseconds between each character change. Default is 30.

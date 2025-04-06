@@ -7,9 +7,10 @@ type FuzzyTextProps = {
   orignal: string;
   children: React.ReactNode;
   className?: string;
+  delay?: number;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-function FuzzyText({ text, orignal, children, className, ...props }: FuzzyTextProps) {
+function FuzzyText({ text, orignal, children, className, delay = 30, ...props }: FuzzyTextProps) {
   const element = React.useRef<HTMLSpanElement | null>(null);
   const childrenCopy = text && text?.length !== 0 ? text : orignal;
   const fuzzyText = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -45,7 +46,7 @@ function FuzzyText({ text, orignal, children, className, ...props }: FuzzyTextPr
           callback();
         }
       }
-    }, 30);
+    }, delay);
   }
 
   function handleMouseOver(e: React.MouseEvent<HTMLSpanElement>) {
@@ -75,4 +76,4 @@ function FuzzyText({ text, orignal, children, className, ...props }: FuzzyTextPr
 export { FuzzyText };
 FuzzyText.displayName = "FuzzyText";
 
-// CreatedBy: AetherUI
+// DevelopedBy: AetherUI
