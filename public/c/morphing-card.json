@@ -5,7 +5,7 @@
   "title": "Morphing Card",
   "author": "Harshit Pant",
   "description": "A morphing card component with customizable content.",
-  "dependencies": [],
+  "dependencies": ["motion"],
   "devDependencies": [],
   "tailwind": {},
   "cssVars": {

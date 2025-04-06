@@ -5,6 +5,7 @@ import { ShadcnLogo } from "./icon/shadcn-icon";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { CheckIcon, CopyIcon } from "lucide-react";
+import { srcUrl } from "@/lib/data";
 
 type Command = {
   label: string;
@@ -21,7 +22,7 @@ export function InstallationCli({ value, className }: InstallationCliProps) {
   const command: Command = {
     label: "shadcn",
     icon: <ShadcnLogo className="size-4" />,
-    code: `npx shadcn@latest add "https://ui-aether.vercel.app/c/${value}.json"`,
+    code: `npx shadcn@latest add "${srcUrl}/c/${value}.json"`,
   };
 
   const [isCopied, setIsCopied] = useState(false);

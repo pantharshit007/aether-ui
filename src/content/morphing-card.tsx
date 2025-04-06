@@ -241,4 +241,4 @@ MorphingCard.displayName = "MorphingCard";
 
 export { MorphingCard, type MorphingCardProps };
 
-// CreatedBy: AetherUI
+// DevelopedBy: AetherUI

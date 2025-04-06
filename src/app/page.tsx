@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Logo from "@/components/web/logo";
+import { redirect } from "next/navigation";
 
 export default function Home() {
+  // TODO: To be removed later
+  redirect("https://localhostt.vercel.app/");
   return (
     <div className="bg-img flex h-screen flex-col items-center justify-center gap-y-2">
       <h2 className="font-ms-madi text-shadow-glow mb-2 text-3xl text-white">say hi! to</h2>
