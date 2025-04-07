@@ -1,12 +1,13 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-printf "\n\n 🚀 Running prettier on staged changes 🚀 \n\n"
+
+printf "\n 🚀 Running prettier on staged changes 🚀 \n" 
 
 prettier $(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g') --write --ignore-unknown
 git update-index --again
 
-printf "\n\n 🚀 Running build command 🚀 \n\n"
+printf "\n 🚀 Running build command 🚀 \n" 
 
 pnpm run build 
 

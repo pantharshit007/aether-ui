@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+
+# Get the currently checked out branch name
+current_branch=$(git symbolic-ref --short HEAD)
+# protected branch name
+protected_branch="main" 
+
+# Read the remote ref and SHA being pushed to from standard input
+# Format provided by Git: <local ref> <local sha1> <remote ref> <remote sha1>
+while read local_ref local_sha remote_ref remote_sha
+do
+    # Check if the remote ref matches the protected branch pattern
+    # refs/heads/main or refs/heads/master etc.
+    if [[ "$remote_ref" == "refs/heads/$protected_branch" ]]; then
+        echo ""
+        echo "🛑 ERROR: Direct push to the '$protected_branch' branch is forbidden."
+        echo "Please use a feature branch and create a Pull Request instead."
+        echo ""
+        exit 1 # Exit with non-zero status to block the push
+    fi
+done
+
+# If the loop completes without finding a push to the protected branch, allow the push
+exit 0
