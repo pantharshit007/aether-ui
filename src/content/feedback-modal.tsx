@@ -12,7 +12,7 @@ interface ModalContextProps {
   title: string;
   placeholder: string;
   setPlaceholder: React.Dispatch<React.SetStateAction<string>>;
-  callback?: (value: string, ...args: any) => void;
+  callback?: (value: string, ...args: any) => Promise<void>;
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
@@ -32,7 +32,7 @@ type ModalProps = {
   customId: string;
   title?: string;
   className?: string;
-  callback?: (value: string, ...args: any) => void;
+  callback?: (value: string, ...args: any) => Promise<void>;
   children: React.ReactNode;
 };
 
