@@ -1,0 +1,94 @@
+export const metadata = {
+  title: "Feedback Modal | Aether UI",
+  description: "Get user feedback with a simple but eligant modal.",
+};
+
+import ComponentPreview from "@/components/web/component-preview";
+import FeedbackModalDemo from "./feedback-modal-demo";
+import FeedbackModalDemo2 from "./feedback-modal-demo2";
+
+# Feedback Modal
+
+A simple but elegant modal to get user feedback/suggestions.
+
+## Examples
+
+### Implementation of feedback modal
+
+<ComponentPreview
+  component={<FeedbackModalDemo />}
+  filePath="src/app/docs/feedback-modal/feedback-modal-demo.tsx"
+/>
+
+### Implementation of feedback modal with custom styles
+
+You can customize the content of the feedback modal by your own styles.
+
+<ComponentPreview
+  component={<FeedbackModalDemo2 />}
+  filePath="src/app/docs/feedback-modal/feedback-modal-demo2.tsx"
+/>
+
+## Intallation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+<InstallationCli value="feedback-modal" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step> _If you haven't completed the installation refer to guide [here](/docs/installation)._</Step>
+
+<Step>Required dependencies</Step>
+
+<CodeBlock code={`npm install motion`} lang="bash" className="h-[52px]" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<CodeBlock filePath="src/content/feedback-modal.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+You can customize the content of the feedback modal by passing the following props to the component.
+
+### Feedback Modal
+
+- `customId`: A unique identifier for the feedback modal.
+- `title`: Optional title to be displayed in the feedback modal default is "Feedback".
+- `className`: Additional class names to be applied to the feedback modal.
+- `callback`: Optional callback function to be called when the submit button is clicked.
+
+### Feedback Modal Props
+
+- `customId`: A unique identifier for the feedback modal.
+- `title`: Optional title to be displayed in the feedback modal default is "Feedback".
+- `className`: Additional class names to be applied to the feedback modal.
+- `callback`: Optional callback function to be called when the submit button is clicked.
+- `children`: Optional content to be displayed inside the feedback modal.
+- `...props`: Additional props to be passed to the feedback modal.
+
+### Feedback Modal Content Props
+
+- `textClassName`: Additional class names to be applied to the text area.
+- `className`: Additional class names to be applied to the feedback modal content.
+- `children`: Optional content to be displayed inside the feedback modal content.
+- `...props`: Additional props to be passed to the feedback modal content.
