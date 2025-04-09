@@ -39,6 +39,10 @@ export const NavigationLinks: NavigationGroup[] = [
         name: "Morphing Card",
         href: "/docs/morphing-card",
       },
+      {
+        name: "Feedback Modal",
+        href: "/docs/feedback-modal",
+      },
     ],
   },
   {
