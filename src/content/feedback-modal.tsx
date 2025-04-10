@@ -112,7 +112,7 @@ function ModalContent({ className, children, textClassName, ...props }: ModalCon
         ref={ref}
         layoutId={`fb-modal-button-${customId}`}
         className={cn(
-          "absolute top-1/2 left-1/2 h-[200px] w-[364px] -translate-x-1/2 -translate-y-1/2 rounded-lg border border-zinc-950/10 bg-white px-3 text-zinc-950 dark:border-zinc-50/40 dark:bg-zinc-700 dark:text-zinc-50",
+          "absolute top-1/2 left-1/2 h-[193px] w-[314px] -translate-x-1/2 -translate-y-1/2 rounded-lg border border-zinc-950/10 bg-white px-3 text-zinc-950 md:h-[200px] md:w-[364px] dark:border-zinc-50/40 dark:bg-zinc-700 dark:text-zinc-50",
           className
         )}
         onClick={(e) => e.stopPropagation()}
@@ -121,7 +121,7 @@ function ModalContent({ className, children, textClassName, ...props }: ModalCon
         {children ? (
           children
         ) : (
-          <form className="flex h-full flex-col" onSubmit={handleSubmit}>
+          <form className="h-full w-full rounded-lg" onSubmit={handleSubmit}>
             <motion.span
               layoutId={`fb-modal-title-${customId}`}
               aria-hidden="true"
@@ -135,24 +135,32 @@ function ModalContent({ className, children, textClassName, ...props }: ModalCon
 
             <textarea
               className={cn(
-                "h-full w-full resize-none rounded-md bg-transparent px-1 py-3 text-sm text-zinc-700 outline-hidden dark:text-zinc-200",
+                "hidden h-[80%] w-full resize-none rounded-md bg-transparent px-1 py-3 text-sm text-zinc-700 outline-none md:block dark:text-zinc-200",
                 textClassName
               )}
+              required
               autoFocus
               onChange={(e) => setPlaceholder(e.target.value)}
               value={placeholder}
             />
+            <textarea
+              className={cn(
+                "h-[75%] w-full resize-none rounded-md bg-transparent px-1 py-3 text-sm text-zinc-700 outline-none md:hidden dark:text-zinc-200",
+                textClassName
+              )}
+              required
+              onChange={(e) => setPlaceholder(e.target.value)}
+              value={placeholder}
+            />
 
-            <div className="mb-2">
-              <button
-                className="border-primary/10 bg-primary-foreground/80 hover:bg-primary-foreground-800 text-primary ml-auto flex h-7 items-center justify-center rounded-md border px-3 py-4 text-sm font-medium transition-transform duration-200 hover:scale-105 active:scale-95"
-                type="submit"
-                aria-label={`Submit ${title}`}
-                disabled={loading}
-              >
-                {loading ? <LoaderIcon className="mr-1 h-5 w-5 animate-spin" /> : `Submit ${title}`}
-              </button>
-            </div>
+            <button
+              className="border-primary/10 bg-primary-foreground/80 hover:bg-primary-foreground-800 text-primary ml-auto flex h-7 items-center justify-center rounded-md border px-3 py-4 text-sm font-medium transition-transform duration-200 hover:scale-105 active:scale-95"
+              type="submit"
+              aria-label={`Submit ${title}`}
+              disabled={loading}
+            >
+              {loading ? <LoaderIcon className="mr-1 h-5 w-5 animate-spin" /> : `Submit ${title}`}
+            </button>
           </form>
         )}
       </motion.div>
