@@ -43,6 +43,10 @@ export const NavigationLinks: NavigationGroup[] = [
         name: "Feedback Modal",
         href: "/docs/feedback-modal",
       },
+      {
+        name: "Bento Grid",
+        href: "/docs/bento-grid",
+      },
     ],
   },
   {

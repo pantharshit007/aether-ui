@@ -1,0 +1,81 @@
+export const metadata = {
+  title: "Bento Grid | Aether UI",
+  description: "Multi-column grid layout with bento boxes.",
+};
+
+import ComponentPreview from "@/components/web/component-preview";
+import BentoGridDemo from "./bento-grid-demo";
+import BentoGridDemo2 from "./bento-grid-demo2";
+
+# Bento Grid
+
+A multi-column grid layout with bento boxes.
+
+## Examples
+
+### Implementation of bento grid
+
+You can add upto 7 cards in the bento grid and minimum of 3 cards.
+
+<ComponentPreview
+  component={<BentoGridDemo />}
+  filePath="src/app/docs/bento-grid/bento-grid-demo.tsx"
+/>
+
+### Implementation of bento grid with different number of cards and custom click functionality
+
+Hover over the bento grid and click any card.
+
+<ComponentPreview
+  component={<BentoGridDemo2 />}
+  filePath="src/app/docs/bento-grid/bento-grid-demo2.tsx"
+/>
+
+## Intallation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+<InstallationCli value="bento-grid" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step> _If you haven't completed the installation refer to guide [here](/docs/installation)._</Step>
+
+<Step>Required dependencies</Step>
+
+<CodeBlock code={`npm install motion`} lang="bash" className="h-[52px]" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<CodeBlock filePath="src/content/bento-grid.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+You can customize the content of the bento grid by passing the following props to the component.
+
+### Bento Grid Props
+
+- `cards`: An array of cards to be displayed in the bento grid (minimum of 3 cards and maximum of 7 cards).
+- `className`: Additional class names to be applied to the bento grid.
+- `customId`: A unique identifier for the bento grid.
+- `isClickable`: A boolean prop to enable click functionality on the bento grid. Default value is `false`.
+- `...props`: Additional props to be passed to the bento grid.
