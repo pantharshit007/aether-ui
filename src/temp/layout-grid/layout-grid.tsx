@@ -145,9 +145,11 @@ function giveClssaNameToChild(childIndex: number, numberOfChilds: number) {
 
   if (numberOfChilds === 3) {
     if (childIndex === 0) {
-      className = "md:row-span-2";
-    } else if (childIndex === 2) {
+      className = "col-span-3 md:col-span-1 md:row-span-2";
+    } else if (childIndex === 1) {
       className = "col-span-2 md:col-span-1";
+    } else if (childIndex === 2) {
+      className = "col-span-5 md:col-span-1";
     }
   } else if (numberOfChilds === 4) {
     if (childIndex === 0) {
@@ -163,13 +165,11 @@ function giveClssaNameToChild(childIndex: number, numberOfChilds: number) {
     }
   } else if (numberOfChilds === 6) {
     if (childIndex === 0) {
-      className = "md:row-span-2";
+      className = "row-span-2 ";
     } else if (childIndex === 1) {
       className = "md:col-span-2";
-    } else if (childIndex === 2) {
-      className = "col-span-2 md:col-span-1";
     } else if (childIndex === 3) {
-      className = "row-span-2 md:row-span-1";
+      className = "col-span-2 md:col-span-1";
     } else if (childIndex === 4) {
       className = "md:col-span-2";
     }
@@ -196,17 +196,17 @@ function giveClssaNameToChild(childIndex: number, numberOfChilds: number) {
 function giveClssaNameToParent(numberOfChilds: number) {
   let className = "";
   if (numberOfChilds === 3) {
-    className = " grid-cols-2";
+    className = "gap-2 grid-cols-5 md:grid-cols-2";
   } else if (numberOfChilds === 4) {
-    className = " grid-cols-2 grid-rows-3 md:grid-cols-3";
+    className = "gap-2 grid-cols-2 grid-rows-3 md:grid-cols-3";
   } else if (numberOfChilds === 5) {
-    className = " grid-cols-2 grid-rows-3 md:grid-cols-3";
+    className = "gap-2 grid-cols-2 grid-rows-3 md:grid-cols-3";
   } else if (numberOfChilds === 6) {
-    className = " grid-cols-2 grid-rows-4 md:grid-cols-3";
+    className = "gap-2 grid-cols-2 grid-rows-4 md:grid-cols-3";
   } else if (numberOfChilds === 7) {
-    className = " grid-cols-2 grid-rows-5 md:grid-cols-5 md:grid-rows-3 ";
+    className = "gap-2 grid-cols-2 grid-rows-5 md:grid-cols-5 md:grid-rows-3 ";
   }
-  return className + "gap-2";
+  return className;
 }
 
 export default GridLayout;
