@@ -9,12 +9,13 @@ type Card = {
   thumbnail: string;
   heading: string;
   description: string;
-  index: number;
 };
 
 const GridLayout = ({ cards }: { cards: Card[] }) => {
   const [selected, setSelected] = useState<Card | null>(null);
   const [lastSelected, setLastSelected] = useState<Card | null>(null);
+
+  const totalNumbersOfCard = cards.length;
 
   const handleClick = (card: Card) => {
     setLastSelected(selected);
@@ -26,12 +27,19 @@ const GridLayout = ({ cards }: { cards: Card[] }) => {
     setSelected(null);
   };
 
+  const parentGridClassName = giveClssaNameToParent(totalNumbersOfCard);
+
   return (
-    <div className="group relative mx-auto grid aspect-square h-full max-h-[600px] w-full max-w-[800px] grid-cols-1 grid-rows-4 gap-2 p-10 md:grid-cols-5 md:grid-rows-2 md:gap-4 lg:grid-cols-3">
-      {cards.map((card, i) => {
-        const className = giveClssaName(card.index);
+    <div
+      className={cn(
+        "group relative mx-auto grid aspect-square h-full max-h-[600px] w-full max-w-[800px]",
+        parentGridClassName
+      )}
+    >
+      {cards.map((card, index) => {
+        const className = giveClssaNameToChild(index, totalNumbersOfCard);
         return (
-          <div key={i} className={cn(className, "")}>
+          <div key={index} className={cn(className, "")}>
             <motion.div
               onClick={() => handleClick(card)}
               className={cn(
@@ -131,15 +139,74 @@ const SelectedCardContentElement = (data: Card) => {
   );
 };
 
-function giveClssaName(index: number) {
-  let className = "col-span-1  md:col-span-3 lg:col-span-1 lg:row-span-2";
+// this function will return class according to its childIndex
+function giveClssaNameToChild(childIndex: number, numberOfChilds: number) {
+  let className = "";
 
-  if (index === 1 || index === 2) {
-    className = "col-span-1  md:col-span-2 lg:row-span-1 lg:col-span-1";
-  } else if (index === 3) {
-    className = "col-span-1 md:col-span-3 lg:col-span-2";
+  if (numberOfChilds === 3) {
+    if (childIndex === 0) {
+      className = "md:row-span-2";
+    } else if (childIndex === 2) {
+      className = "col-span-2 md:col-span-1";
+    }
+  } else if (numberOfChilds === 4) {
+    if (childIndex === 0) {
+      className = "row-span-2";
+    } else if (childIndex === 3) {
+      className = "col-span-2";
+    }
+  } else if (numberOfChilds === 5) {
+    if (childIndex === 1) {
+      className = "md:row-span-2";
+    } else if (childIndex === 2) {
+      className = "col-span-2 md:col-span-1";
+    }
+  } else if (numberOfChilds === 6) {
+    if (childIndex === 0) {
+      className = "md:row-span-2";
+    } else if (childIndex === 1) {
+      className = "md:col-span-2";
+    } else if (childIndex === 2) {
+      className = "col-span-2 md:col-span-1";
+    } else if (childIndex === 3) {
+      className = "row-span-2 md:row-span-1";
+    } else if (childIndex === 4) {
+      className = "md:col-span-2";
+    }
+  } else if (numberOfChilds === 7) {
+    if (childIndex === 0) {
+      className = "md:row-span-2 md:col-span-2";
+    } else if (childIndex === 1) {
+      className = "row-span-2 md:row-span-1 md:col-span-2";
+    } else if (childIndex === 3) {
+      className = "col-span-2 md:col-span-1";
+    } else if (childIndex === 4) {
+      className = "row-span-2 md:row-span-1 md:col-span-2";
+    } else if (childIndex === 5) {
+      className = "md:col-span-2";
+    } else if (childIndex === 6) {
+      className = "md:col-span-3";
+    }
   }
+
   return className;
+}
+
+// this function will return class (gird-cols-[x]) according to numbers of data provided by the user
+function giveClssaNameToParent(numberOfChilds: number) {
+  let className = "";
+  if (numberOfChilds === 3) {
+    className = " grid-cols-2";
+  } else if (numberOfChilds === 4) {
+    className = " grid-cols-2 grid-rows-3 md:grid-cols-3";
+  } else if (numberOfChilds === 5) {
+    className = " grid-cols-2 grid-rows-3 md:grid-cols-3";
+  } else if (numberOfChilds === 6) {
+    className = " grid-cols-2 grid-rows-4 md:grid-cols-3";
+  } else if (numberOfChilds === 7) {
+    className = " grid-cols-2 grid-rows-5 md:grid-cols-5 md:grid-rows-3 ";
+  }
+  return className + "gap-2";
 }
 
 export default GridLayout;
