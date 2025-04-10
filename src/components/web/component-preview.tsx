@@ -30,7 +30,10 @@ function ComponentCodePreview({
             Code
           </TabsTrigger>
         </TabsList>
-        <TabsContent value="preview" className="border border-zinc-200 dark:border-zinc-800">
+        <TabsContent
+          value="preview"
+          className="rounded-md border border-zinc-200 dark:border-zinc-800"
+        >
           <FinalPreview component={component} className={classNameComponentContainer} />
         </TabsContent>
         <TabsContent value="code" className="border border-zinc-200 dark:border-zinc-800">

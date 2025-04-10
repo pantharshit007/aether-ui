@@ -1,5 +1,5 @@
+import BentoGrid from "@/content/bento-grid";
 import React from "react";
-import GridLayout from "./layout-grid";
 
 const data = [
   {
@@ -53,12 +53,8 @@ const data = [
   },
 ];
 
-const Page = () => {
-  return (
-    <div className="h-[600px] w-full">
-      <GridLayout cards={data} />
-    </div>
-  );
+const BentoGridDemo = () => {
+  return <BentoGrid cards={data} className="py-1.5" customId="bento-grid-demo" />;
 };
 
-export default Page;
+export default BentoGridDemo;
