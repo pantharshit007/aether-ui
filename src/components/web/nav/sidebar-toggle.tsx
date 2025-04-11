@@ -1,6 +1,7 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hook/use-mobile";
-import { Sidebar } from "lucide-react";
+import { MenuIcon, Sidebar, XIcon } from "lucide-react";
 import { createContext, useContext, useMemo, useState } from "react";
 
 type SidebarContextProps = {
@@ -55,13 +56,20 @@ function SidebarProvider({ children, defaultOpen = true }: SidebarProviderProps)
 }
 
 function SideBarToggle() {
-  const { toggleSidebar } = useSidebar();
+  const { toggleSidebar, isMobile, openMobile } = useSidebar();
+  console.log(openMobile);
   return (
-    <Sidebar
-      aria-activedescendant="active-item"
-      onClick={() => toggleSidebar()}
-      className="h-6 w-6"
-    />
+    <Button onClick={() => toggleSidebar()} variant={"ghost"} size={"icon"}>
+      {isMobile ? (
+        openMobile ? (
+          <XIcon className="!size-8" />
+        ) : (
+          <MenuIcon aria-activedescendant="active-item" className="!size-8" />
+        )
+      ) : (
+        <Sidebar aria-activedescendant="active-item" className="h-6 w-6" />
+      )}
+    </Button>
   );
 }
 

@@ -6,7 +6,7 @@ import SideBarToggle from "./sidebar-toggle";
 
 function Header({ landing = false }: { landing?: boolean }) {
   return (
-    <nav className="sticky top-0 z-10 border-b border-dotted border-zinc-200 bg-white px-6 dark:border-white/10 dark:bg-zinc-950">
+    <nav className="sticky top-0 z-10 border-b border-dotted border-zinc-400 bg-white px-6 dark:border-white/20 dark:bg-zinc-950">
       <div className="mx-auto flex h-[3.5rem] w-full items-center justify-between max-sm:px-2 md:max-w-7xl">
         {/* Logo */}
         <div className="px-1">

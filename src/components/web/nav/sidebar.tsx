@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use } from "react";
+import React from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -20,7 +20,7 @@ function NavigationDesktop() {
           animate={{ x: 0 }}
           exit={{ x: -200 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="sticky top-14 hidden h-[calc(100dvh-(--spacing(16)))] w-[220px] shrink-0 pt-8 md:block lg:pt-12"
+          className="sticky top-14 hidden h-[calc(100dvh-(--spacing(16)))] w-[220px] shrink-0 border-r-[1px] border-dotted border-zinc-400 pt-8 md:block lg:pt-12 dark:border-white/20"
         >
           <ScrollArea className="h-full w-full">
             <nav>
@@ -31,6 +31,7 @@ function NavigationDesktop() {
                       <div className="relative z-10 w-11/12 pb-4 font-sans text-sm tracking-wide text-zinc-950 dark:bg-zinc-950 dark:text-white">
                         {item.name}
                       </div>
+
                       <ul
                         role="list"
                         className="space-y-3.5 border-l border-zinc-200 dark:border-zinc-800"
@@ -53,12 +54,67 @@ function NavigationDesktop() {
 
 function NavigationMobile() {
   const pathname = usePathname();
-  const { openMobile, setOpenMobile } = useSidebar();
-  console.log(openMobile);
-  return <></>;
+  const { openMobile, toggleSidebar } = useSidebar();
+  return (
+    <AnimatePresence>
+      {openMobile && (
+        <motion.nav
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.5,
+            type: "spring",
+            damping: 10,
+            stiffness: 100,
+          }}
+          exit={{ opacity: 0, y: -20 }}
+          className="border-primary/10 bg-background/70 fixed z-[999] h-full w-full border-b backdrop-blur-md"
+        >
+          <ScrollArea className="h-full w-full pb-20">
+            <div className="pt-4">
+              <ul role="list" className="h-full pb-9 [&>li:not(:first-child)>div]:pt-6">
+                {NavigationLinks.map((item, index) => {
+                  return (
+                    <li key={`${item.name}-${index}`}>
+                      <div className="relative z-10 w-11/12 pb-4 font-sans text-lg tracking-wide text-zinc-950 dark:text-white">
+                        {item.name}
+                      </div>
+                      <ul
+                        role="list"
+                        className="space-y-3.5 border-l border-zinc-200 dark:border-zinc-800"
+                      >
+                        {item.children.map((child: NavigationItem) =>
+                          NavSubItems({
+                            item: child,
+                            pathname,
+                            className: "text-lg",
+                            clickHandler: () => toggleSidebar(),
+                          })
+                        )}
+                      </ul>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </ScrollArea>
+        </motion.nav>
+      )}
+    </AnimatePresence>
+  );
 }
 
-function NavSubItems({ item, pathname }: { item: NavigationItem; pathname: string }) {
+function NavSubItems({
+  item,
+  pathname,
+  className,
+  clickHandler,
+}: {
+  item: NavigationItem;
+  pathname: string;
+  className?: string;
+  clickHandler?: () => void;
+}) {
   {
     const isActive = pathname === item.href;
 
@@ -67,9 +123,11 @@ function NavSubItems({ item, pathname }: { item: NavigationItem; pathname: strin
         <Link
           className={cn(
             "relative inline-flex items-center pl-4 text-sm font-normal text-zinc-700 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100",
-            isActive && "text-zinc-950 dark:text-zinc-100"
+            isActive && "text-zinc-950 dark:text-zinc-100",
+            className
           )}
           href={item.href}
+          onClick={clickHandler}
         >
           {isActive && (
             <motion.div
