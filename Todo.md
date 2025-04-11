@@ -6,7 +6,7 @@
 [ ] add search bar
 [ ] add side menu bar with content on the page
 [ ] add option for other package managers also.
-[ ] make the sidebar collapsable
+[x] make the sidebar collapsable
 [ ] instead of #usage, use table instead
 [ ] add prev, next components at the bottom of the page
 [ ] add v0 button.
