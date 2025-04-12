@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithoutRef } from "react";
+import React, { ComponentPropsWithoutRef, HTMLProps } from "react";
 import Link from "next/link";
 import { highlight } from "sugar-high";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -6,24 +6,60 @@ import { cn } from "./lib/utils";
 import CodeBlock from "./components/web/code-block";
 import { InstallationCli } from "./components/web/installation-cli";
 
-type HeadingProps = ComponentPropsWithoutRef<"h1">;
+type HeadingProps = ComponentPropsWithoutRef<"h1"> & HTMLProps<HTMLHeadingElement>;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
-type ListProps = ComponentPropsWithoutRef<"ul">;
+type OrderedListProps = ComponentPropsWithoutRef<"ol">;
+type UnOrderedListProps = ComponentPropsWithoutRef<"ul">;
 type ListItemProps = ComponentPropsWithoutRef<"li">;
 type AnchorProps = ComponentPropsWithoutRef<"a">;
 type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 type CodeBlockProps = ComponentPropsWithoutRef<"code">;
 
+const generateId = (name: string) => {
+  return name
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "");
+};
+
 const components = {
-  h1: (props: HeadingProps) => <h1 className="" {...props} />,
-  h2: (props: HeadingProps) => <h2 className="" {...props} />,
-  h3: (props: HeadingProps) => <h3 className="" {...props} />,
-  h4: (props: HeadingProps) => <h4 className="" {...props} />,
+  h1: ({ children, ...props }: HeadingProps) => {
+    const id = generateId(children?.toString() ?? "");
+    return (
+      <h1 id={id} data-heading="1" {...props}>
+        {children}
+      </h1>
+    );
+  },
+  h2: ({ children, ...props }: HeadingProps) => {
+    const id = generateId(children?.toString() ?? "");
+    return (
+      <h2 id={id} data-heading="2" {...props}>
+        {children}
+      </h2>
+    );
+  },
+  h3: ({ children, ...props }: HeadingProps) => {
+    const id = generateId(children?.toString() ?? "");
+    return (
+      <h3 id={id} data-heading="3" {...props}>
+        {children}
+      </h3>
+    );
+  },
+  h4: ({ children, ...props }: HeadingProps) => {
+    const id = generateId(children?.toString() ?? "");
+    return (
+      <h4 id={id} data-heading="4" {...props}>
+        {children}
+      </h4>
+    );
+  },
   p: (props: ParagraphProps) => <p className="" {...props} />,
-  ol: (props: ListProps) => (
+  ol: (props: OrderedListProps) => (
     <ol className="list-decimal space-y-2 pl-5 text-gray-800 dark:text-zinc-300" {...props} />
   ),
-  ul: (props: ListProps) => (
+  ul: (props: UnOrderedListProps) => (
     <ul className="list-disc space-y-1 pl-5 text-gray-800 dark:text-zinc-300" {...props} />
   ),
   li: (props: ListItemProps) => <li className="pl-1" {...props} />,
@@ -64,24 +100,36 @@ const components = {
     return <code className="not-prose" dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
   },
   Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
-    <table>
-      <thead>
-        <tr>
-          {data.headers.map((header, index) => (
-            <th key={index}>{header}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {data.rows.map((row, index) => (
-          <tr key={index}>
-            {row.map((cell, cellIndex) => (
-              <td key={cellIndex}>{cell}</td>
+    <div className="not-prose relative w-full table-auto overflow-auto rounded-lg border border-zinc-200 text-sm dark:border-zinc-800">
+      <table className="w-full">
+        <thead className="bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100">
+          <tr className="h-10">
+            {data.headers.map((header, index) => (
+              <th key={index} className="px-4 pb-0 text-left align-middle font-medium">
+                {header}
+              </th>
             ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody className="divide-y divide-zinc-200 dark:divide-y dark:divide-zinc-600">
+          {data.rows.map((row, index) => (
+            <tr key={index} className="h-10">
+              {row.map((cell, cellIndex) => (
+                <td
+                  key={cellIndex}
+                  className={cn(
+                    "px-4 py-2 text-left align-middle",
+                    cellIndex < 3 ? "font-mono" : ""
+                  )}
+                >
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   ),
   blockquote: (props: BlockquoteProps) => <blockquote className="" {...props} />,
   Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (

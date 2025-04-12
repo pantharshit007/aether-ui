@@ -68,12 +68,28 @@ Transition from one text to another with a fuzzy effect of alpha numerical chara
 
 </Tabs>
 
-### Usage
+### Component Props
 
 You can use the `FuzzyText` component by passing the following props to it.
 
-- `text`: (Optional) The text to be displayed. If not provided, the `orignal` text will be used.
-- `orignal`: The original text to be displayed.
-- `children`: The text to be displayed.
-- `className`: Additional class names to be applied to the component.
-- `delay`: (Optional) The delay in milliseconds between each character change. Default is 30.
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["text", "string (Optional)", "Uses `orignal` text if not provided", "The text to be displayed."],
+    ["orignal", "string", "", "The original text to be displayed."],
+    ["children", "ReactNode", "", "Content to be displayed."],
+    ["className", "string", "", "Additional CSS classes for styling the component."],
+    ["delay", "number (Optional)", "30", "The delay in milliseconds between each character change."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop      | Type              | Default                             | Description                                              |
+| --------- | ----------------- | ----------------------------------- | -------------------------------------------------------- |
+| text      | string (Optional) | Uses `orignal` text if not provided | The text to be displayed.                                |
+| orignal   | string            |                                     | The original text to be displayed.                       |
+| children  | ReactNode         |                                     | Content to be displayed.                                 |
+| className | string            |                                     | Additional CSS classes for styling the component.        |
+| delay     | number (Optional) | 30                                  | The delay in milliseconds between each character change. |
+
+</Table>

@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx", "md"],
   experimental: {
-    mdxRs: true, // avoid in prod
+    // mdxRs: true, // avoid in prod
   },
   eslint: {
     ignoreDuringBuilds: true,
@@ -30,6 +30,7 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
+    remarkPlugins: [remarkGfm, remarkCodeHike],
     // remarkPlugins: NODE_ENV === "development" ? [remarkGfm, remarkCodeHike] : [],
   },
 });

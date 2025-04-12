@@ -7,7 +7,10 @@
 [ ] add side menu bar with content on the page
 [ ] add option for other package managers also.
 [x] make the sidebar collapsable
-[ ] instead of #usage, use table instead
+[x] instead of #usage, use table instead
 [ ] add prev, next components at the bottom of the page
 [ ] add v0 button.
 [ ] update the landing page.
+[ ] update the manual hook installation for respective comp.
+[ ] fix scroll bar in manual boxes.
+[ ] setup custom meta tags with img setup.

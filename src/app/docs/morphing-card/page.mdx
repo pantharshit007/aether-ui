@@ -68,21 +68,47 @@ As you switch between states the card will change its appearance.
 
 You can customize the content of the morphing card by passing the following props to the component.
 
-- `customId`: A unique identifier for the morphing card.
-- `children`: Optional content to be displayed inside the morphing card.
-- `className`: Additional class names to be applied to the morphing card.
-- `icon`: Optional icon to be displayed in the morphing card. Default is a pencil icon.
-- `iconClassname`: Additional class names to be applied to the icon.
-- `title`: Optional title to be displayed in the morphing card.
-- `description`: Optional description to be displayed in the morphing card.
-- `cancelButtonText`: Text to be displayed on the cancel button. Default is "Cancel".
-- `confirmButtonText`: Text to be displayed on the confirm button. Default is "Create".
-- `dialogTitle`: Optional title to be displayed in the confirmation dialog.
-- `dialogDescription`: Optional description to be displayed in the confirmation dialog.
-- `dialogCancelText`: Text to be displayed on the cancel button in the confirmation dialog. Default is "Cancel".
-- `dialogConfirmText`: Text to be displayed on the confirm button in the confirmation dialog. Default is "Confirm".
-- `onConfirm`: Optional callback function to be called when the confirm button is clicked.
-- `variant`: Optional variant of the morphing card. Positive | Negative | Default. Default is "Default".
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["customId", "string", "", "A unique identifier for the morphing card."],
+    ["children", "ReactNode (Optional)", "", "Content to be displayed inside the morphing card."],
+    ["className", "string", "", "Additional class names to be applied to the morphing card."],
+    ["icon", "ReactNode (Optional)", "Pencil Icon", "Icon to be displayed in the morphing card."],
+    ["iconClassname", "string", "", "Additional class names to be applied to the icon."],
+    ["title", "string (Optional)", "", "Title to be displayed in the morphing card."],
+    ["description", "string (Optional)", "", "Description to be displayed in the morphing card."],
+    ["cancelButtonText", "string", "Cancel", "Text to be displayed on the cancel button."],
+    ["confirmButtonText", "string", "Create", "Text to be displayed on the confirm button."],
+    ["dialogTitle", "string (Optional)", "", "Title to be displayed in the confirmation dialog."],
+    ["dialogDescription", "string (Optional)", "", "Description to be displayed in the confirmation dialog."],
+    ["dialogCancelText", "string", "Cancel", "Text to be displayed on the cancel button in the confirmation dialog."],
+    ["dialogConfirmText", "string", "Confirm", "Text to be displayed on the confirm button in the confirmation dialog."],
+    ["onConfirm", "function (Optional)", "", "Callback function to be called when the confirm button is clicked."],
+    ["variant", "enum (Optional)", "Default", "Variant of the morphing card: Positive | Negative | Default."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop              | Type                 | Default     | Description                                                            |
+| ----------------- | -------------------- | ----------- | ---------------------------------------------------------------------- |
+| customId          | string               |             | A unique identifier for the morphing card.                             |
+| children          | ReactNode (Optional) |             | Content to be displayed inside the morphing card.                      |
+| className         | string               |             | Additional class names to be applied to the morphing card.             |
+| icon              | ReactNode (Optional) | Pencil Icon | Icon to be displayed in the morphing card.                             |
+| iconClassname     | string               |             | Additional class names to be applied to the icon.                      |
+| title             | string (Optional)    |             | Title to be displayed in the morphing card.                            |
+| description       | string (Optional)    |             | Description to be displayed in the morphing card.                      |
+| cancelButtonText  | string               | Cancel      | Text to be displayed on the cancel button.                             |
+| confirmButtonText | string               | Create      | Text to be displayed on the confirm button.                            |
+| dialogTitle       | string (Optional)    |             | Title to be displayed in the confirmation dialog.                      |
+| dialogDescription | string (Optional)    |             | Description to be displayed in the confirmation dialog.                |
+| dialogCancelText  | string               | Cancel      | Text to be displayed on the cancel button in the confirmation dialog.  |
+| dialogConfirmText | string               | Confirm     | Text to be displayed on the confirm button in the confirmation dialog. |
+| onConfirm         | function (Optional)  |             | Callback function to be called when the confirm button is clicked.     |
+| variant           | enum (Optional)      | Default     | Variant of the morphing card: Positive / Negative / Default.           |
+
+</Table>
 
 ### Credits
 

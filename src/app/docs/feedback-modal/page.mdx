@@ -66,32 +66,79 @@ You can customize the content of the feedback modal by your own styles.
 
 </Tabs>
 
-## Usage
+## Component Props
 
-You can customize the content of the feedback modal by passing the following props to the component.
+You can customize the content of the `feedback modal` by passing the following props to the component.
 
 ### Feedback Modal
 
-- `customId`: A unique identifier for the feedback modal.
-- `title`: Optional title to be displayed in the feedback modal default is "Feedback".
-- `className`: Additional class names to be applied to the feedback modal.
-- `callback`: Optional callback function to be called when the submit button is clicked.
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["customId", "string", "", "A unique identifier for the feedback modal."],
+    ["title", "string (Optional)", "Feedback", "Title to be displayed in the feedback modal."],
+    ["className", "string", "", "Additional class names to be applied to the feedback modal."],
+    ["callback", "function (Optional)", "", "Callback function to be called when the submit button is clicked."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop      | Type                | Default  | Description                                                       |
+| --------- | ------------------- | -------- | ----------------------------------------------------------------- |
+| customId  | string              |          | A unique identifier for the feedback modal.                       |
+| title     | string (Optional)   | Feedback | Title to be displayed in the feedback modal.                      |
+| className | string              |          | Additional class names to be applied to the feedback modal.       |
+| callback  | function (Optional) |          | Callback function to be called when the submit button is clicked. |
+
+</Table>
 
 ### Feedback Modal Props
 
-- `customId`: A unique identifier for the feedback modal.
-- `title`: Optional title to be displayed in the feedback modal default is "Feedback".
-- `className`: Additional class names to be applied to the feedback modal.
-- `callback`: Optional callback function to be called when the submit button is clicked.
-- `children`: Optional content to be displayed inside the feedback modal.
-- `...props`: Additional props to be passed to the feedback modal.
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["customId", "string", "", "A unique identifier for the feedback modal."],
+    ["title", "string (Optional)", "Feedback", "Title to be displayed in the feedback modal."],
+    ["className", "string", "", "Additional class names to be applied to the feedback modal."],
+    ["callback", "function (Optional)", "", "Callback function to be called when the submit button is clicked."],
+    ["children", "ReactNode (Optional)", "", "Content to be displayed inside the feedback modal."],
+    ["...props", "any", "", "Additional props to be passed to the feedback modal."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop      | Type                 | Default  | Description                                                       |
+| --------- | -------------------- | -------- | ----------------------------------------------------------------- |
+| customId  | string               |          | A unique identifier for the feedback modal.                       |
+| title     | string (Optional)    | Feedback | Title to be displayed in the feedback modal.                      |
+| className | string               |          | Additional class names to be applied to the feedback modal.       |
+| callback  | function (Optional)  |          | Callback function to be called when the submit button is clicked. |
+| children  | ReactNode (Optional) |          | Content to be displayed inside the feedback modal.                |
+| ...props  | any                  |          | Additional props to be passed to the feedback modal.              |
+
+</Table>
 
 ### Feedback Modal Content Props
 
-- `textClassName`: Additional class names to be applied to the text area.
-- `className`: Additional class names to be applied to the feedback modal content.
-- `children`: Optional content to be displayed inside the feedback modal content.
-- `...props`: Additional props to be passed to the feedback modal content.
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["textClassName", "string", "", "Additional class names to be applied to the text area."],
+    ["className", "string", "", "Additional class names to be applied to the feedback modal content."],
+    ["children", "ReactNode (Optional)", "", "Content to be displayed inside the feedback modal content."],
+    ["...props", "any", "", "Additional props to be passed to the feedback modal content."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop          | Type                 | Default | Description                                                         |
+| ------------- | -------------------- | ------- | ------------------------------------------------------------------- |
+| textClassName | string               |         | Additional class names to be applied to the text area.              |
+| className     | string               |         | Additional class names to be applied to the feedback modal content. |
+| children      | ReactNode (Optional) |         | Content to be displayed inside the feedback modal content.          |
+| ...props      | any                  |         | Additional props to be passed to the feedback modal content.        |
+
+</Table>
 
 ### Credits
 
