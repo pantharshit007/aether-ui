@@ -4,13 +4,14 @@
 [x] create mobile view of navigation sidebar
 [ ] check mobile responsiveness of the components previous to feedback modal.
 [ ] add search bar
-[ ] add side menu bar with content on the page
+[x] add side menu bar with content on the page
 [ ] add option for other package managers also.
 [x] make the sidebar collapsable
 [x] instead of #usage, use table instead
 [ ] add prev, next components at the bottom of the page
 [ ] add v0 button.
 [ ] update the landing page.
-[ ] update the manual hook installation for respective comp.
+[ ] update the manual hook installation for respective comp. (steps)
 [ ] fix scroll bar in manual boxes.
 [ ] setup custom meta tags with img setup.
+[ ] do we need bread crumbs for sub headings?
