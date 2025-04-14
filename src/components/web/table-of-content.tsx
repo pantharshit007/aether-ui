@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useMounted } from "@/hook/use-mounted";
+import { useMounted } from "@/hooks/use-mounted";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 

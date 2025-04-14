@@ -58,4 +58,16 @@ export const NavigationLinks: NavigationGroup[] = [
       },
     ],
   },
-];
+] as const;
+
+export const useNavigationLinks = () =>
+  NavigationLinks.flatMap((group) =>
+    group.children.map((item) => ({
+      ...item,
+      name: item.name.toLowerCase().replaceAll(" ", "-"),
+    }))
+  );
+
+// TODO: find a way to enforce string literal type in registery-examples
+// const NavItems = NavigationLinks.flatMap((group) => group.children.map((item) => item.name));
+// export type NavItemNames = (typeof NavItems)[number];

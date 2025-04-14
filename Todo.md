@@ -8,10 +8,13 @@
 [ ] add option for other package managers also.
 [x] make the sidebar collapsable
 [x] instead of #usage, use table instead
-[ ] add prev, next components at the bottom of the page
-[ ] add v0 button.
+[x] add prev, next components at the bottom of the page
+[x] add v0 button.
 [ ] update the landing page.
 [ ] update the manual hook installation for respective comp. (steps)
 [ ] fix scroll bar in manual boxes.
 [ ] setup custom meta tags with img setup.
 [ ] do we need bread crumbs for sub headings?
+[ ] update docs to `Fuma docs`
+[ ] add expand button in manual.
+[ ] create custom 404 page.
