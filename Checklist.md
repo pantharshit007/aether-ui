@@ -6,8 +6,9 @@
 - [ ] Create a new file `.tsx` in the `src/apps/docs[folder]` folder with the name of your component (demo/basic).
 - [ ] Create a new file `page.mdx` in the `src/docs` folder you created in the previous step.
 - [ ] Fill in the metadata and all the required docs in the `page.mdx` file.
-- [ ] Create a new file `[component-name].json` in the `public/c` folder.
+- [ ] Create a new file `[component-name].json` in the `public/c` folder now this cmd can be used `pnpm create-json --name [component-name]`.
 - [ ] Fill in the required fields in the `[component-name].json` file [Be Very Careful with the naming of the fields].
+- [ ] Create a new file for v0 `[component-name].json` in the `public/e` folder now this cmd can be used `pnpm register:v0 --name [component-name]`.
 
 ## Once you are done with the above steps, check again if all things are in order.
 
