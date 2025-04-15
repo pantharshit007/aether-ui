@@ -24,11 +24,11 @@ const PrevNextBtn = ({ current }: { current: string }) => {
   return (
     <div className="my-4 flex items-center justify-between">
       {prev && (
-        <Button className="flex items-center gap-2" disabled={!prev} variant={"ghost"}>
-          <ChevronLeft className="h-5 w-5" />
+        <Button className="group flex items-center gap-2" disabled={!prev} variant={"ghost"}>
+          <ChevronLeft className="h-5 w-5 transition-transform duration-200 group-hover:-translate-x-1.5" />
           <Link
             href={`/docs/${prev}`}
-            className="text-zinc-500 capitalize no-underline dark:text-zinc-400"
+            className="text-zinc-700 capitalize no-underline group-hover:text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-100"
           >
             {prev.split("-").join(" ")}
           </Link>
@@ -36,14 +36,14 @@ const PrevNextBtn = ({ current }: { current: string }) => {
       )}
 
       {next && (
-        <Button className="flex items-center gap-2" disabled={!next} variant={"ghost"}>
-          <ChevronRight className="h-5 w-5" />
+        <Button className="group flex items-center gap-2" disabled={!next} variant={"ghost"}>
           <Link
             href={`/docs/${next}`}
-            className="text-zinc-500 capitalize no-underline dark:text-zinc-400"
+            className="text-zinc-700 capitalize no-underline group-hover:text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-100"
           >
             {next.split("-").join(" ")}
           </Link>
+          <ChevronRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1.5" />
         </Button>
       )}
     </div>

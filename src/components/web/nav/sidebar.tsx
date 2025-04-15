@@ -62,13 +62,13 @@ function NavigationMobile() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 0.5,
+            duration: 0.3,
             type: "spring",
             damping: 10,
-            stiffness: 100,
+            stiffness: 70,
           }}
           exit={{ opacity: 0, y: -20 }}
-          className="border-primary/10 bg-background/70 fixed z-[999] h-full w-full border-b backdrop-blur-md"
+          className="border-primary/10 bg-background/85 fixed z-[999] h-full w-full border-b backdrop-blur-md"
         >
           <ScrollArea className="h-full w-full pb-20">
             <div className="pt-4">

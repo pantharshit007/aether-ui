@@ -3,7 +3,7 @@
 [ ] remove the todo form `/page.tsx`
 [x] create mobile view of navigation sidebar
 [ ] check mobile responsiveness of the components previous to feedback modal.
-[ ] add search bar
+[x] add search bar
 [x] add side menu bar with content on the page
 [ ] add option for other package managers also.
 [x] make the sidebar collapsable
@@ -12,7 +12,7 @@
 [x] add v0 button.
 [ ] update the landing page.
 [ ] update the manual hook installation for respective comp. (steps)
-[ ] fix scroll bar in manual boxes.
+[ ] fix scroll bar in manual boxes (either make them small or remove them).
 [ ] setup custom meta tags with img setup.
 [ ] do we need bread crumbs for sub headings?
 [ ] update docs to `Fuma docs`

@@ -13,7 +13,7 @@ type ComponentPreviewProps = {
 // TODO: hasReTrigger tobe implemented
 const FinalPreview = ({ component, className, filePath, disable }: ComponentPreviewProps) => {
   const componentName = filePath.split("/").pop()?.split(".")[0];
-  const registeryURL = `${srcUrl}/v/${componentName}.json`;
+  const registeryURL = `${srcUrl}/e/${componentName}.json`;
 
   return (
     <div

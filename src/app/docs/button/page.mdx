@@ -48,4 +48,30 @@ A simple customizable button component with **default** and **destructive** vari
 
 </Tabs>
 
+## Component Props
+
+You can customize the content of the `button` by passing the following props to the component.
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["children", "ReactNode", "", "Content to be displayed inside the button."],
+    ["className", "string", "", "Additional class names to be applied to the button."],
+    ["variant", "string (Optional)", "default", "Variant of the button. default or destructive."],
+    ["size", "string (Optional)", "default", "Size of the button."],
+    ["...props", "any", "", "Additional props to be passed to the button."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop      | Type              | Default | Description                                         |
+| --------- | ----------------- | ------- | --------------------------------------------------- |
+| children  | ReactNode         |         | Content to be displayed inside the button.          |
+| className | string            |         | Additional class names to be applied to the button. |
+| variant   | string (Optional) | default | Variant of the button. default or destructive.      |
+| size      | string (Optional) | default | Size of the button.                                 |
+| ...props  | any               |         | Additional props to be passed to the button.        |
+
+</Table>
+
 <PrevNextBtn current="button" />

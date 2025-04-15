@@ -72,7 +72,6 @@
 }
 
 @layer utilities {
-
   :root {
     --scrollbar-color: rgba(0, 0, 0, 0.3);
   }
@@ -105,6 +104,13 @@
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+  }
+
+  .custom-scrollbar {
+    -webkit-tap-highlight-color: transparent;
+    scrollbar-color: var(--scrollbar-color) transparent;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
   }
 }
 
@@ -218,5 +224,4 @@
   ::-webkit-scrollbar {
     scrollbar-base-color: aqua;
   } */
-
 }

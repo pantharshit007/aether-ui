@@ -50,7 +50,7 @@ export const NavigationLinks: NavigationGroup[] = [
     ],
   },
   {
-    name: "Text",
+    name: "Animations",
     children: [
       {
         name: "Fuzzy Text",
