@@ -112,6 +112,10 @@
     scrollbar-width: thin;
     scrollbar-gutter: stable;
   }
+
+  .editor-bg {
+    background-color: #1b1a26;
+  }
 }
 
 @layer components {

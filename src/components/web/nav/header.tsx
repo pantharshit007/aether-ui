@@ -12,7 +12,7 @@ import CommandMenu from "./command-menu";
 function Header({ landing = false }: { landing?: boolean }) {
   const pathname = usePathname();
   return (
-    <nav className="sticky top-0 z-10 border-b border-dotted border-zinc-400 bg-white px-6 dark:border-white/20 dark:bg-zinc-950">
+    <nav className="sticky top-0 z-15 border-b border-dotted border-zinc-400 bg-white px-6 dark:border-white/20 dark:bg-zinc-950">
       <div className="mx-auto flex h-[3.5rem] w-full items-center justify-between max-sm:px-2 md:max-w-7xl">
         {/* Logo */}
         <div className="flex items-center gap-x-4 px-1">

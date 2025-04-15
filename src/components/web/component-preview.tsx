@@ -40,8 +40,11 @@ function ComponentCodePreview({
             filePath={filePath}
           />
         </TabsContent>
-        <TabsContent value="code" className="border border-zinc-200 dark:border-zinc-800">
-          <CodePreview code={fileContent}>
+        <TabsContent
+          value="code"
+          className="rounded-md border border-zinc-200 dark:border-zinc-800"
+        >
+          <CodePreview code={fileContent} expandable>
             <CodeRenderer code={fileContent} lang="tsx" />
           </CodePreview>
         </TabsContent>
