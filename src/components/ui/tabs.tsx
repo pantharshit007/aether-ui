@@ -32,8 +32,9 @@ function TabsList({ className, ...props }: React.ComponentProps<typeof TabsPrimi
 function TabsTrigger({
   className,
   children,
+  triggerClass,
   ...props
-}: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
+}: React.ComponentProps<typeof TabsPrimitive.Trigger> & { triggerClass?: string }) {
   const triggerRef = React.useRef<HTMLButtonElement>(null);
   const [active, setActive] = React.useState(false);
 
@@ -62,7 +63,7 @@ function TabsTrigger({
       {...props}
     >
       <motion.div
-        className="absolute -bottom-1 flex h-0.5 w-full justify-center"
+        className={cn("absolute -bottom-1 flex h-0.5 w-full justify-center", triggerClass)}
         animate={{
           opacity: active ? 1 : 0,
         }}

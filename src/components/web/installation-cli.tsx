@@ -4,8 +4,9 @@ import { useState } from "react";
 import { ShadcnLogo } from "./icon/shadcn-icon";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { CheckIcon, CopyIcon } from "lucide-react";
+import { CheckIcon, CopyIcon, Terminal } from "lucide-react";
 import { srcUrl } from "@/lib/data";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
 type Command = {
   label: string;
@@ -19,19 +20,38 @@ export type InstallationCliProps = {
 };
 
 export function InstallationCli({ value, className }: InstallationCliProps) {
-  const command: Command = {
-    label: "shadcn",
-    icon: <ShadcnLogo className="size-4" />,
-    code: `npx shadcn@latest add "${srcUrl}/c/${value}.json"`,
-  };
+  const pkgManager: Command[] = [
+    {
+      label: "npm",
+      icon: <ShadcnLogo className="size-4" />,
+      code: `npx shadcn@latest add "${srcUrl}/c/${value}.json"`,
+    },
+    {
+      label: "pnpm",
+      icon: <Terminal className="size-4" />,
+      code: `pnpm dlx shadcn@latest add "${srcUrl}/c/${value}.json"`,
+    },
+    {
+      label: "yarn",
+      icon: <ShadcnLogo className="size-4" />,
+      code: `npx shadcn@latest add "${srcUrl}/c/${value}.json"`,
+    },
+    {
+      label: "bun",
+      icon: <ShadcnLogo className="size-4" />,
+      code: `bunx --bun add "${srcUrl}/c/${value}.json"`,
+    },
+  ];
 
+  const [activeTab, setActiveTab] = useState(pkgManager[0].label);
   const [isCopied, setIsCopied] = useState(false);
+  const currentTab = pkgManager.find((tab) => tab.label === activeTab);
 
   const onCopy = async () => {
-    if (!command?.code) return;
+    if (!currentTab?.code) return;
 
     try {
-      await navigator.clipboard.writeText(command.code);
+      await navigator.clipboard.writeText(currentTab.code);
       setIsCopied(true);
       setTimeout(() => setIsCopied(false), 2000);
     } catch (err) {
@@ -40,17 +60,28 @@ export function InstallationCli({ value, className }: InstallationCliProps) {
   };
 
   return (
-    <div
+    <Tabs
+      defaultValue={activeTab}
+      onValueChange={setActiveTab}
       className={cn(
-        "group overflow-hidden rounded-md border border-zinc-200 dark:border-zinc-800",
+        "group mt-2 gap-0 overflow-hidden rounded-md border border-zinc-200 dark:border-zinc-800",
         className
       )}
     >
-      <div className="bg-secondary flex flex-row items-center justify-between p-3">
-        <div className="flex items-center gap-1.5 text-zinc-950 dark:text-white">
-          {command.icon}
-          {command.label}
-        </div>
+      <div className="bg-accent flex flex-row items-center justify-between overflow-hidden rounded-t-md border border-b-0 border-zinc-200 dark:border-zinc-800">
+        <TabsList className="">
+          {pkgManager.map((tab) => (
+            <TabsTrigger
+              key={tab.label}
+              value={tab.label}
+              className="flex flex-row items-center justify-center gap-x-1 p-2 font-mono text-sm text-zinc-800 dark:text-zinc-200"
+              triggerClass="bottom-0"
+            >
+              <span>{tab.label}</span>
+            </TabsTrigger>
+          ))}
+        </TabsList>
+
         <Button
           variant="ghost"
           size="icon"
@@ -69,14 +100,23 @@ export function InstallationCli({ value, className }: InstallationCliProps) {
           />
         </Button>
       </div>
-      <pre
-        className="not-prose p-4 font-mono text-sm text-zinc-50"
-        style={{
-          backgroundColor: "#18181b",
-        }}
-      >
-        {command.code}
-      </pre>
-    </div>
+
+      {pkgManager.map((cmd) => (
+        <TabsContent
+          key={cmd.label}
+          value={cmd.label}
+          className="overflow-hidden rounded-b-md border-none"
+        >
+          <pre
+            className="not-prose p-4 font-mono text-sm text-zinc-50"
+            style={{
+              backgroundColor: "#18181b",
+            }}
+          >
+            {cmd.code}
+          </pre>
+        </TabsContent>
+      ))}
+    </Tabs>
   );
 }
