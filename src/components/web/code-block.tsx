@@ -9,6 +9,7 @@ type CodeBlockProps = {
   code?: string;
   lang?: BundledLanguage;
   className?: string;
+  shouldExpand?: boolean;
 };
 
 export default function CodeBlock({
@@ -16,6 +17,7 @@ export default function CodeBlock({
   code = "",
   lang = "tsx",
   className,
+  shouldExpand = true,
 }: CodeBlockProps) {
   const fileContent = filePath ? readCode(filePath) : code;
 
@@ -26,7 +28,7 @@ export default function CodeBlock({
         className
       )}
     >
-      <CodePreview code={fileContent} expandable={lang !== "bash"}>
+      <CodePreview code={fileContent} expandable={lang !== "bash" && shouldExpand}>
         <CodeRenderer code={fileContent} lang={lang} />
       </CodePreview>
     </div>

@@ -18,6 +18,7 @@ type CodeBlockProps = ComponentPropsWithoutRef<"code">;
 const generateId = (name: string) => {
   return name
     .toLowerCase()
+    .replace(/_/g, "")
     .replace(/\s+/g, "-")
     .replace(/[^\w-]+/g, "");
 };
@@ -92,7 +93,16 @@ const components = {
   Steps: (props: ComponentPropsWithoutRef<"div">) => (
     <div className="steps mb-12 ml-4 flex flex-col border-l pl-8 [counter-reset:step]" {...props} />
   ),
-  Step: (props: ComponentPropsWithoutRef<"div">) => <h3 className="" {...props} />,
+  Step: ({ children, className, ...props }: ComponentPropsWithoutRef<"h3">) => (
+    <h3
+      id={generateId(children?.toString() || "")}
+      className={cn("step", className)}
+      data-heading="3"
+      {...props}
+    >
+      {children}
+    </h3>
+  ),
   // code: (props: CodeBlockProps) => <code className="text-sm" {...props} />,
 
   code: ({ children, ...props }: ComponentPropsWithoutRef<"code">) => {

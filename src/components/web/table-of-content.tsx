@@ -17,7 +17,7 @@ function Toc() {
   const pathname = usePathname();
 
   useEffect(() => {
-    function handleRouteChange() {
+    function updateHeadings() {
       const elements = Array.from(document.querySelectorAll("[data-heading]"));
       const subheadings: Heading[] = elements
         .map((elem) => {
@@ -36,10 +36,12 @@ function Toc() {
       setHeadings(subheadings);
     }
 
-    handleRouteChange();
+    updateHeadings();
 
-    // window.addEventListener("hashchange", handleRouteChange);
-    // return () => window.removeEventListener("hashchange", handleRouteChange);
+    const observer = new MutationObserver(updateHeadings);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
   }, [pathname]);
 
   const activeHeading = useActiveHeading(headings);
