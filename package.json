@@ -33,6 +33,7 @@
     "motion": "^12.6.2",
     "next": "15.2.4",
     "next-themes": "^0.4.6",
+    "posthog-js": "^1.236.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remark-gfm": "^4.0.1",

@@ -2,9 +2,6 @@ import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
 import { remarkCodeHike } from "@code-hike/mdx";
-import { env } from "process";
-
-const NODE_ENV = process.env.NODE_ENV;
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -12,9 +9,7 @@ const nextConfig: NextConfig = {
   experimental: {
     mdxRs: true, // avoid in prod
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  eslint: { ignoreDuringBuilds: true },
   images: {
     remotePatterns: [
       {
@@ -25,6 +20,26 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  async rewrites() {
+    return [
+      {
+        source: "/ingest/static/:path*",
+        destination: "https://us-assets.i.posthog.com/static/:path*",
+      },
+      {
+        source: "/ingest/:path*",
+        destination: "https://us.i.posthog.com/:path*",
+      },
+      {
+        source: "/ingest/decide",
+        destination: "https://us.i.posthog.com/decide",
+      },
+    ];
+  },
+
+  // This is required to support PostHog trailing slash API requests
+  skipTrailingSlashRedirect: true,
 };
 
 const withMDX = createMDX({
