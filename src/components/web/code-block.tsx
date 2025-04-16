@@ -1,13 +1,13 @@
-// import { extractCodeFromFilePath } from "@/lib/code";
 import { readCode } from "@/lib/readFile";
 import CodePreview from "./code-preview";
 import CodeRenderer from "./code-renderer";
 import { cn } from "@/lib/utils";
+import type { BundledLanguage } from "shiki/bundle/web";
 
 type CodeBlockProps = {
   filePath?: string;
   code?: string;
-  lang?: string;
+  lang?: BundledLanguage;
   className?: string;
 };
 
@@ -22,11 +22,11 @@ export default function CodeBlock({
   return (
     <div
       className={cn(
-        "not-prose max-h-[650px] overflow-auto overflow-x-auto overflow-y-hidden rounded-md text-sm dark:border dark:border-zinc-800",
+        "not-prose overflow-auto overflow-x-auto overflow-y-hidden rounded-md text-sm dark:border dark:border-zinc-800",
         className
       )}
     >
-      <CodePreview code={fileContent}>
+      <CodePreview code={fileContent} expandable={lang !== "bash"}>
         <CodeRenderer code={fileContent} lang={lang} />
       </CodePreview>
     </div>

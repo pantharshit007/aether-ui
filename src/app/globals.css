@@ -72,10 +72,49 @@
 }
 
 @layer utilities {
+  :root {
+    --scrollbar-color: rgba(0, 0, 0, 0.3);
+  }
+
+  :root.dark {
+    --scrollbar-color: rgba(255, 255, 255, 0.3);
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scrollbar-color: var(--scrollbar-color) transparent;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
+
   code {
     font-family: var(--font-geist-mono);
     font-feature-settings: var(--default-mono-font-feature-settings);
     font-variation-settings: var(--default-mono-font-variation-settings);
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .custom-scrollbar {
+    -webkit-tap-highlight-color: transparent;
+    scrollbar-color: var(--scrollbar-color) transparent;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
+
+  .editor-bg {
+    background-color: #1b1a26;
   }
 }
 
@@ -174,7 +213,19 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
+
+  /* ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar {
+    scrollbar-base-color: aqua;
+  } */
 }

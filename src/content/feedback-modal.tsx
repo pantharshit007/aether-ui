@@ -1,8 +1,8 @@
 "use client";
-import React, { createContext, Fragment, useContext, useRef, useState } from "react";
+import React, { createContext, useContext, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { useClickOutside } from "@/hook/useClickOutside";
+import { useClickOutside } from "@/hooks/useClickOutside";
 import { LoaderIcon } from "lucide-react";
 
 interface ModalContextProps {

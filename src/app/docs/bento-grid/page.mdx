@@ -6,6 +6,7 @@ export const metadata = {
 import ComponentPreview from "@/components/web/component-preview";
 import BentoGridDemo from "./bento-grid-demo";
 import BentoGridDemo2 from "./bento-grid-demo2";
+import PrevNextBtn from "@/components/web/prev-next-btn";
 
 # Bento Grid
 
@@ -22,7 +23,7 @@ You can add upto 7 cards in the bento grid and minimum of 3 cards.
   filePath="src/app/docs/bento-grid/bento-grid-demo.tsx"
 />
 
-### Implementation of bento grid with different number of cards and custom click functionality
+### Multiple cards & click functionality
 
 Hover over the bento grid and click any card.
 
@@ -74,8 +75,26 @@ You can customize the content of the bento grid by passing the following props t
 
 ### Bento Grid Props
 
-- `cards`: An array of cards to be displayed in the bento grid (minimum of 3 cards and maximum of 7 cards).
-- `className`: Additional class names to be applied to the bento grid.
-- `customId`: A unique identifier for the bento grid.
-- `isClickable`: A boolean prop to enable click functionality on the bento grid. Default value is `false`.
-- `...props`: Additional props to be passed to the bento grid.
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["cards", "Array", "", "An array of cards to be displayed in the bento grid (minimum of 3 cards and maximum of 7 cards)."],
+    ["className", "string", "", "Additional class names to be applied to the bento grid."],
+    ["customId", "string", "", "A unique identifier for the bento grid."],
+    ["isClickable", "boolean", "false", "A boolean prop to enable click functionality on the bento grid."],
+    ["...props", "any", "", "Additional props to be passed to the bento grid."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop        | Type    | Default | Description                                                                                      |
+| ----------- | ------- | ------- | ------------------------------------------------------------------------------------------------ |
+| cards       | Array   |         | An array of cards to be displayed in the bento grid (minimum of 3 cards and maximum of 7 cards). |
+| className   | string  |         | Additional class names to be applied to the bento grid.                                          |
+| customId    | string  |         | A unique identifier for the bento grid.                                                          |
+| isClickable | boolean | false   | A boolean prop to enable click functionality on the bento grid.                                  |
+| ...props    | any     |         | Additional props to be passed to the bento grid.                                                 |
+
+</Table>
+
+<PrevNextBtn current="bento-grid" />

@@ -6,6 +6,7 @@ export const metadata = {
 import ComponentPreview from "@/components/web/component-preview";
 import HoverCardDemo from "./hover-card-demo";
 import HoverCardDemo2 from "./hover-card-demo-2";
+import PrevNextBtn from "@/components/web/prev-next-btn";
 
 # Hover Card
 
@@ -65,6 +66,26 @@ _NOTE: If you are seeing bad background color try editing the_ `after:bg-backgro
 
 You can customize the content of the hover card by passing the following props to the component.
 
-- `color`: (Optional) The color of the hover card. Default is "blue".
-- `className`: Additional class names to be applied to the hover card.
-- `children`: content to be displayed inside the hover card.
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["color", "string (Optional)", "blue", "The color of the hover card."],
+    ["className", "string", "", "Additional class names to be applied to the hover card."],
+    ["children", "ReactNode", "", "Content to be displayed inside the hover card."],
+    ["size", "number (Optional)", "300", "The size of the hover card."],
+    ["...props", "any", "", "Additional props to be passed to the hover card."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop      | Type              | Default | Description                                             |
+| --------- | ----------------- | ------- | ------------------------------------------------------- |
+| color     | string (Optional) | blue    | The color of the hover card.                            |
+| className | string            |         | Additional class names to be applied to the hover card. |
+| children  | ReactNode         |         | Content to be displayed inside the hover card.          |
+| size      | number (Optional) | 300     | The size of the hover card.                             |
+| ...props  | any               |         | Additional props to be passed to the hover card.        |
+
+</Table>
+
+<PrevNextBtn current="hover-card" />
