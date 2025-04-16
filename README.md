@@ -4,6 +4,10 @@
 
 ![Aether UI](./public/img/marketing.jpg)
 
+### How to contribute
+
+Before creating a new component, check the [Checklist](./Checklist.md) to see the steps to follow.
+
 ## Big Thanks to
 
 [Shadcn](https://github.com/shadcn-ui/ui)
