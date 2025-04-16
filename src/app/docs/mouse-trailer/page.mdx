@@ -1,0 +1,92 @@
+export const metadata = {
+  title: "Mouse Trailer",
+  description: "Colorful mouse trailer with bunch of customization options.",
+};
+
+import ComponentPreview from "@/components/web/component-preview";
+import MouseTrailerDemo from "./mouse-trailer-demo";
+import PrevNextBtn from "@/components/web/prev-next-btn";
+
+# Mouse Trailer
+
+A mouse trailer with bunch of customization options including blur, fade, and custom image.
+
+## Examples
+
+### Implementation of mouse trailer
+
+<ComponentPreview
+  component={<MouseTrailerDemo />}
+  filePath="src/app/docs/mouse-trailer/mouse-trailer-demo.tsx"
+  classNameComponentContainer="h-full"
+/>
+
+## Intallation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+<InstallationCli value="mouse-trailer" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step> _If you haven't completed the installation refer to guide [here](/docs/installation)._</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<CodeBlock filePath="src/content/mouse-trailer.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Component Props
+
+You can customize the content of the `mouse trailer` by passing the following props to the component.
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["trailLength", "number", "20", "The number of points in the trail."],
+    ["speed", "number", "3", "The speed of the trail."],
+    ["blur", "{enabled:boolean, intensity:number}", "{enabled: false, intensity: 5}", "The blur effect of the trail."],
+    ["fade", "{enabled:boolean, startOpacity:number, endOpacity:number}", "{enabled: false, startOpacity: 1, endOpacity: 0.1}", "The fade effect of the trail."],
+    ["customImage", "object", "", "The custom image to be used for the trail."],        
+    ["color", "string", "#3B82F6", "The color of the trail."],
+    ["size", "number", "12", "The size of the trail."],
+    ["springPreset", "{stiffness:number, damping:number, mass:number}", "strict-controlled", "The spring preset for the trail."],
+    ["className", "string", "", "Additional class names to be applied to the mouse trailer."],
+  ],
+}}
+>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop         | Type                                                        | Default                                              | Description                                                |
+| ------------ | ----------------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------- |
+| trailLength  | number                                                      | 20                                                   | The number of points in the trail.                         |
+| speed        | number                                                      | 3                                                    | The speed of the trail.                                    |
+| blur         | `{enabled:boolean, intensity:number}`                       | `{enabled: false, intensity: 5}`                     | The blur effect of the trail.                              |
+| fade         | `{enabled:boolean, startOpacity:number, endOpacity:number}` | `{enabled: false, startOpacity: 1, endOpacity: 0.1}` | The fade effect of the trail.                              |
+| customImage  | object                                                      |                                                      | The custom image to be used for the trail.                 |
+| color        | string                                                      | #3B82F6                                              | The color of the trail.                                    |
+| size         | number                                                      | 12                                                   | The size of the trail.                                     |
+| springPreset | `{stiffness:number, damping:number, mass:number}`           | strict-controlled                                    | The spring preset for the trail.                           |
+| className    | string                                                      |                                                      | Additional class names to be applied to the mouse trailer. |
+
+</Table>
+
+<PrevNextBtn current="mouse-trailer" />

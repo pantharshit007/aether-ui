@@ -240,4 +240,26 @@ export const examples: Record<string, ComponentDefinition[]> = {
       ],
     },
   ],
+  "mouse-trailer": [
+    {
+      name: "mouse-trailer-demo",
+      path: path.join(
+        process.cwd(),
+        "src",
+        "app",
+        "docs",
+        "mouse-trailer",
+        "mouse-trailer-demo.tsx"
+      ),
+      description: "Colorful mouse trailer with bunch of customization options.",
+      componentName: "mouse-trailer",
+      files: [
+        {
+          name: "mouse-trailer.tsx",
+          path: path.join(process.cwd(), "src", "content", "mouse-trailer.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+  ],
 };
