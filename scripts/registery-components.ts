@@ -78,4 +78,12 @@ export const components: ComponentDefinition[] = [
     dependencies: [],
     description: "Experience Fuzzy effect on hover",
   },
+  {
+    name: "mouse-trailer",
+    path: path.join(process.cwd(), "src", "content", "mouse-trailer.tsx"),
+    registryDependencies: [],
+    title: "Mouse Trailer",
+    dependencies: [],
+    description: "Colorful mouse trailer with bunch of customization options.",
+  },
 ];

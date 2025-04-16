@@ -47,6 +47,11 @@ export const NavigationLinks: NavigationGroup[] = [
         name: "Bento Grid",
         href: "/docs/bento-grid",
       },
+      {
+        name: "Mouse Trailer",
+        href: "/docs/mouse-trailer",
+        isNew: true,
+      },
     ],
   },
   {
