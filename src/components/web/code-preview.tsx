@@ -31,7 +31,7 @@ export default function CodePreview({
     <div className="relative">
       {/* Copy button */}
       <div className="absolute top-4 right-4 z-10">
-        <Button className="cursor-pointer bg-transparent p-2" onClick={onCopy}>
+        <button className="cursor-pointer bg-transparent p-2" onClick={onCopy}>
           <div
             className={`absolute inset-0 transform transition-all duration-300 ${
               hasCheckIcon ? "scale-0 opacity-0" : "scale-100 opacity-100"
@@ -47,7 +47,7 @@ export default function CodePreview({
           >
             <Check className="h-4 w-4 text-zinc-50" />
           </div>
-        </Button>
+        </button>
       </div>
 
       {shouldExpand && (
@@ -59,7 +59,7 @@ export default function CodePreview({
           {/* Collapse/Expand button */}
           <Button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-primary !bg-primary-foreground absolute bottom-1 left-1/2 flex -translate-x-1/2 items-center gap-1 px-3 py-1.5 text-xs transition-colors"
+            className="text-primary !bg-primary-foreground absolute bottom-1 left-1/2 flex -translate-x-1/2 items-center gap-1 px-3 py-1.5 font-sans text-xs transition-colors"
             variant={"outline"}
           >
             {isExpanded ? <span>Collapse</span> : <span>Expand</span>}

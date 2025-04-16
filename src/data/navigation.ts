@@ -55,6 +55,7 @@ export const NavigationLinks: NavigationGroup[] = [
       {
         name: "Fuzzy Text",
         href: "/docs/fuzzy-text",
+        isNew: true,
       },
     ],
   },

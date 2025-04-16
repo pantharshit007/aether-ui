@@ -19,3 +19,4 @@
 [x] add expand button in manual.
 [ ] create custom 404 page.
 [ ] thinking of sepearating landing:`aetherui.in` and docs:`ui.aetherui.in` by upgrading from nextjs to monorepo setup. This will allow us to divide the load.
+[ ] add analytics.

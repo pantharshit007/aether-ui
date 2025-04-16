@@ -146,13 +146,13 @@ function NavSubItems({
           <span>{item.name}</span>
 
           {item?.isNew && (
-            <span className="ml-2 rounded-lg bg-emerald-100 px-2 text-[10px] font-semibold whitespace-nowrap text-emerald-800 dark:bg-emerald-950 dark:text-emerald-50">
+            <span className="ml-2 rounded-md border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-medium tracking-wide text-emerald-700 dark:border-emerald-500 dark:bg-emerald-800/15 dark:text-emerald-100">
               New
             </span>
           )}
 
           {item?.isUpdated && (
-            <span className="ml-2 rounded-lg bg-amber-100 px-2 text-[10px] font-semibold whitespace-nowrap text-amber-800 dark:bg-amber-950 dark:text-amber-50">
+            <span className="ml-2 rounded-md border border-amber-200 bg-amber-50 px-2 py-0.5 text-xs font-medium tracking-wide text-amber-700 dark:border-amber-500 dark:bg-amber-800/15 dark:text-amber-100">
               Updated
             </span>
           )}
