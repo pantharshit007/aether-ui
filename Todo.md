@@ -14,3 +14,4 @@
 - [ ] create action analytics.
 - [ ] create sitemap and robots.txt.
 - [ ] there is a stupid bug in `page.mdx` file, where inside tabs "manual" the step 2's margin up is not working.(fix for now custom css)
+- [ ] update new components (internal testing)
