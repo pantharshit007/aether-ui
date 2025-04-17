@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Ms_Madi, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/web/theme-provide";
-import { Analytics } from "@vercel/analytics/react";
-import { SidebarProvider } from "@/components/web/nav/sidebar-toggle";
+import ParentProvider from "./_providers/parent-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,12 +40,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${MsMadi.variable} ${InstrumentSerif.variable} antialiased`}
       >
-        <SidebarProvider defaultOpen={true}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="">{children}</div>
-            <Analytics />
-          </ThemeProvider>
-        </SidebarProvider>
+        <ParentProvider>{children}</ParentProvider>
       </body>
     </html>
   );
