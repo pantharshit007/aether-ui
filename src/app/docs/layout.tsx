@@ -3,6 +3,7 @@ import Header from "@/components/web/nav/header";
 import { NavigationDesktop, NavigationMobile } from "@/components/web/nav/sidebar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Toc from "@/components/web/table-of-content";
+import { SiteFooter } from "@/components/web/site-footer";
 
 function layout({ children }: { children: React.ReactNode }) {
   return (
@@ -22,6 +23,7 @@ function layout({ children }: { children: React.ReactNode }) {
               </ScrollArea>
             </aside>
           </div>
+          <SiteFooter />
         </div>
       </div>
     </>

@@ -2,15 +2,16 @@
 - [ ] there is a bug in the `MorphingCard` component, where the Icon prop doesn't work if the component is called into is not a 'use client'.
 - [ ] remove the todo fromm `/page.tsx`
 - [ ] check mobile responsiveness of the components previous to feedback modal.
-- [ ] update the landing page.
+- [x] update the landing page.
 - [ ] update the manual hook installation for respective comp. (steps)
 - [ ] fix scroll bar in manual boxes and code boxes (either make them small or remove them).
 - [ ] setup custom meta tags with img setup (shadcn repo).
 - [ ] do we need bread crumbs for sub headings?
 - [ ] update docs to `Fuma docs`
-- [ ] create custom 404 page.
+- [x] create custom 404 page.
 - [ ] thinking of sepearating landing:`aetherui.in` and docs:`ui.aetherui.in` by upgrading from nextjs to monorepo setup. This will allow us to divide the load.
 - [x] add analytics.
 - [ ] create action analytics.
 - [ ] create sitemap and robots.txt.
 - [ ] there is a stupid bug in `page.mdx` file, where inside tabs "manual" the step 2's margin up is not working.(fix for now custom css)
+- [ ] update loading animation.

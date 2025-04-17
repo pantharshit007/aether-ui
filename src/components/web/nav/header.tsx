@@ -17,7 +17,7 @@ function Header({ landing = false }: { landing?: boolean }) {
         {/* Logo */}
         <div className="flex items-center gap-x-4 px-1">
           <Link href={landing ? "/" : "/docs"}>
-            <Logo className="text-2xl font-medium tracking-widest" />
+            <Logo imgClassName="size-9" className="text-zinc-950 dark:text-zinc-100" />
           </Link>
 
           {/* Navigation Links */}
