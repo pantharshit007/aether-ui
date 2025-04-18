@@ -1,11 +1,12 @@
-export const metadata = {
-  title: "Mouse Trailer",
-  description: "Colorful mouse trailer with bunch of customization options.",
-};
-
 import ComponentPreview from "@/components/web/component-preview";
 import MouseTrailerDemo from "./mouse-trailer-demo";
 import PrevNextBtn from "@/components/web/prev-next-btn";
+import { metaConfig } from "@/config/site";
+
+export const metadata = metaConfig({
+  title: "Mouse Trailer",
+  description: "Colorful mouse trailer with bunch of customization options.",
+});
 
 # Mouse Trailer
 

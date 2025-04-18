@@ -60,7 +60,7 @@ export const components: ComponentDefinition[] = [
     path: path.join(process.cwd(), "src", "content", "bento-grid.tsx"),
     registryDependencies: [],
     title: "Bento Grid",
-    dependencies: [],
+    dependencies: ["motion"],
     description: "A Multi-column grid layout with bento boxes.",
     files: [
       {
