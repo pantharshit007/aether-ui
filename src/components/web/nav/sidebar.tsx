@@ -68,7 +68,7 @@ function NavigationMobile() {
             stiffness: 70,
           }}
           exit={{ opacity: 0, y: -20 }}
-          className="border-primary/10 bg-background/85 fixed z-[999] h-full w-full border-b backdrop-blur-md"
+          className="border-primary/10 bg-background/85 fixed z-[999] h-full w-full border-b px-7 backdrop-blur-md"
         >
           <ScrollArea className="h-full w-full pb-20">
             <div className="pt-4">

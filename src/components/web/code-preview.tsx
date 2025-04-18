@@ -31,9 +31,12 @@ export default function CodePreview({
     <div className="relative">
       {/* Copy button */}
       <div className="absolute top-4 right-4 z-10">
-        <button className="cursor-pointer bg-transparent p-2" onClick={onCopy}>
+        <button
+          className="cursor-pointer place-items-center bg-transparent p-3 backdrop-blur-md"
+          onClick={onCopy}
+        >
           <div
-            className={`absolute inset-0 transform transition-all duration-300 ${
+            className={`absolute inset-0 top-1 left-1 transform transition-all duration-300 ${
               hasCheckIcon ? "scale-0 opacity-0" : "scale-100 opacity-100"
             }`}
           >
@@ -41,7 +44,7 @@ export default function CodePreview({
           </div>
 
           <div
-            className={`absolute inset-0 transform transition-all duration-300 ${
+            className={`absolute inset-0 top-1 left-1 transform transition-all duration-300 ${
               hasCheckIcon ? "scale-100 opacity-100" : "scale-0 opacity-0"
             }`}
           >

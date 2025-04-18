@@ -8,6 +8,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import ParentProvider from "./_providers/parent-provider";
+import { rootSiteConfig } from "@/config/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,10 +38,7 @@ const BricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Aether UI",
-  description: "Upgrade boring UIs with Aether UI",
-};
+export const metadata: Metadata = rootSiteConfig;
 
 export default function RootLayout({
   children,
