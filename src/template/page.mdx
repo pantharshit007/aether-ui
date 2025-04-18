@@ -1,11 +1,12 @@
-export const metadata = {
-  title: "Button | Aether UI",
-  description: "A customizable button component with default | destructive variants.",
-};
-
 import ComponentPreview from "@/components/web/component-preview";
 import ButtonBasic from "./button-basic"; // update this path according to your component
 import PrevNextBtn from "@/components/web/prev-next-btn";
+import { metaConfig } from "@/config/site";
+
+export const metadata = metaConfig({
+  title: "Button | Aether UI",
+  description: "A customizable button component with default | destructive variants.",
+});
 
 # Button
 

@@ -22,7 +22,7 @@ const FinalPreview = ({ component, className, filePath, disable }: ComponentPrev
         className
       )}
     >
-      <div className="absolute top-3 right-2 z-[50] md:top-14">
+      <div className="absolute top-3 right-2 z-[10] md:top-14">
         <div className="flex items-center gap-3 opacity-0 transition-opacity group-hover:opacity-100">
           {/* Re trigger */}
           <></>

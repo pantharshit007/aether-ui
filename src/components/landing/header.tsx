@@ -8,6 +8,7 @@ import ThemeToggle from "../web/theme-toggle";
 import Logo from "../web/logo";
 import { Button } from "../ui/button";
 import GithubIcon from "../web/icon/github";
+import { siteConfig } from "@/config/site";
 
 function LandingHeader() {
   return (
@@ -23,8 +24,9 @@ function LandingHeader() {
         </Link>
         <div className="flex items-center gap-x-4">
           <Button variant={"outline2"} size={"icon"} className="h-9 w-9 cursor-pointer px-0">
-            <a href="https://github.com/pantharshit007/aether-ui" target="_blank" rel="noreferrer">
+            <a href={siteConfig.links.github} target="_blank" rel="noreferrer">
               <GithubIcon className="!size-6" fill="currentColor" />
+              <span className="sr-only">GitHub</span>
             </a>
           </Button>
 

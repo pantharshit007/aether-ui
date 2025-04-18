@@ -96,7 +96,7 @@ const components = {
   Step: ({ children, className, ...props }: ComponentPropsWithoutRef<"h3">) => (
     <h3
       id={generateId(children?.toString() || "")}
-      className={cn("step", className)}
+      className={cn("step mt-7", className)}
       data-heading="3"
       {...props}
     >

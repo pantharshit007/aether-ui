@@ -31,7 +31,7 @@ const variant = {
 function Hero() {
   return (
     <main className="relative h-screen w-full">
-      <div className="pointer-events-none absolute top-0 right-0 left-0 h-32 bg-gradient-to-b from-zinc-950/80 to-transparent [mask-image:radial-gradient(ellipse_at_top,rgba(0,0,0,1)_0%,rgba(0,0,0,0.8)_20%,rgba(0,0,0,0.1)_60%,transparent_100%)]" />
+      <div className="pointer-events-none fixed top-0 right-0 left-0 z-20 h-32 bg-gradient-to-b from-zinc-950/80 via-cyan-500 to-transparent [mask-image:radial-gradient(ellipse_at_top,rgba(0,0,0,1)_0%,rgba(0,0,0,0.8)_20%,rgba(0,0,0,0.1)_60%,transparent_100%)]" />
 
       <Image
         src={src}
