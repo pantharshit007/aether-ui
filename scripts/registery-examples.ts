@@ -262,4 +262,46 @@ export const examples: Record<string, ComponentDefinition[]> = {
       ],
     },
   ],
+  "smooth-slider": [
+    {
+      name: "smooth-slider-demo-1",
+      path: path.join(
+        process.cwd(),
+        "src",
+        "app",
+        "docs",
+        "smooth-slider",
+        "smooth-slider-demo-1.tsx"
+      ),
+      description: "Google's new released series inspired slider component with smooth animation.",
+      componentName: "smooth-slider",
+      files: [
+        {
+          name: "smooth-slider.tsx",
+          path: path.join(process.cwd(), "src", "content", "smooth-slider.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "smooth-slider-demo-2",
+      path: path.join(
+        process.cwd(),
+        "src",
+        "app",
+        "docs",
+        "smooth-slider",
+        "smooth-slider-demo-2.tsx"
+      ),
+      description: "Google's new released series inspired slider component with smooth animation.",
+      componentName: "smooth-slider",
+      files: [
+        {
+          name: "smooth-slider.tsx",
+          path: path.join(process.cwd(), "src", "content", "smooth-slider.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+  ],
 };

@@ -4,12 +4,11 @@
 - [ ] check mobile responsiveness of the components previous to feedback modal.
 - [ ] update the manual hook installation for respective comp. (steps)
 - [ ] fix scroll bar in manual boxes and code boxes (either make them small or remove them).
-- [x] setup custom meta tags with img setup (shadcn repo).
 - [ ] do we need bread crumbs for sub headings?
 - [ ] update docs to `Fuma docs`
 - [ ] thinking of sepearating landing:`aetherui.in` and docs:`ui.aetherui.in` by upgrading from nextjs to monorepo setup. This will allow us to divide the load.
-- [x] create action analytics.
 - [ ] create sitemap and robots.txt.
 - [ ] there is a stupid bug in `page.mdx` file, where inside tabs "manual" the step 2's margin up is not working.(fix for now custom css)
 - [ ] update loading animation.
 - [ ] update readme!
+- [ ] right now the `SmoothSlider` doesnt shift content to right in extreme left and vice versa. Its a bug.

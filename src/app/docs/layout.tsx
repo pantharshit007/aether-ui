@@ -9,7 +9,7 @@ function layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <div className="px-6 lg:px-8">
+      <div className="px-6 lg:px-8" suppressHydrationWarning>
         <div className="mx-auto md:max-w-7xl">
           <div className="mx-auto flex w-full flex-col items-start justify-between font-sans md:flex-row md:space-x-12">
             <NavigationDesktop />

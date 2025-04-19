@@ -1,0 +1,191 @@
+import { metaConfig } from "@/config/site";
+import ComponentPreview from "@/components/web/component-preview";
+import PrevNextBtn from "@/components/web/prev-next-btn";
+import SmoothSliderDemo1 from "./smooth-slider-demo-1";
+import SmoothSliderDemo2 from "./smooth-slider-demo-2";
+
+export const metadata = metaConfig({
+  title: "Smooth Slider",
+  description: "Google's new released series inspired slider component with smooth animation.",
+});
+
+# Smooth Slider
+
+Fully customizable slider component with smooth and satisfying hover animations.
+
+## Examples
+
+### Implementation of smooth slider with Anime catalog
+
+<ComponentPreview
+  component={<SmoothSliderDemo1 />}
+  filePath="src/app/docs/smooth-slider/smooth-slider-demo-1.tsx"
+/>
+
+### Customized catalog of Anime
+
+<ComponentPreview
+  component={<SmoothSliderDemo2 />}
+  filePath="src/app/docs/smooth-slider/smooth-slider-demo-2.tsx"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+<InstallationCli value="smooth-slider" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>If you haven't completed the installation refer to guide [here](/docs/installation).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<CodeBlock filePath="src/content/smooth-slider.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Component Props
+
+You can customize the content of the `smooth-slider` by passing the following props to the component.
+
+### AnimatedSlider Props
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["title", "string", "", "Title of the slider."],
+    ["children", "ReactNode", "", "Content to be displayed inside the slider."],
+    ["className", "string", "(none)", "Additional class names to be applied to the slider."],
+    ["gap", "number (Optional)", "16", "Gap between the cards."],
+    ["scrollAmount", "number (Optional)", "300", "Scroll amount of the slider."],
+    ["...props", "any", "", "Additional props to be passed to the slider."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop         | Type              | Default | Description                                         |
+| ------------ | ----------------- | ------- | --------------------------------------------------- |
+| title        | string            |         | Title of the slider.                                |
+| children     | ReactNode         |         | Content to be displayed inside the slider.          |
+| className    | string            | none    | Additional class names to be applied to the slider. |
+| gap          | number (Optional) | 16      | Gap between the cards.                              |
+| scrollAmount | number (Optional) | 300     | Scroll amount of the slider.                        |
+| ...props     | any               |         | Additional props to be passed to the slider.        |
+
+</Table>
+
+### AnimatedCard Props
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["children", "ReactNode", "", "Content to be displayed inside the card."],
+    ["className", "string", "(none)", "Additional class names to be applied to the card."],
+    ["defaultWidth", "string (Optional)", "180px", "Default width of the card."],
+    ["expandedWidth", "string (Optional)", "320px", "Expanded width of the card."],
+    ["height", "string (Optional)", "270px", "Height of the card."],
+    ["transitionDuration", "string (Optional)", "0.4s", "Transition duration of the card."],
+    ["transitionEasing", "linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(number, number, number, number)", "ease", "Transition easing of the card."],
+    ["...props", "any", "", "Additional props to be passed to the card."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop               | Type              | Default | Description                                       |
+| ------------------ | ----------------- | ------- | ------------------------------------------------- | -------- | ----------- | -------------------------------------------- | ------------------------------ |
+| children           | ReactNode         |         | Content to be displayed inside the card.          |
+| className          | string            | none    | Additional class names to be applied to the card. |
+| defaultWidth       | string (Optional) | 180px   | Default width of the card.                        |
+| expandedWidth      | string (Optional) | 320px   | Expanded width of the card.                       |
+| height             | string (Optional) | 270px   | Height of the card.                               |
+| transitionDuration | string (Optional) | 0.4s    | Transition duration of the card.                  |
+| transitionEasing   | linear            | ease    | ease-in                                           | ease-out | ease-in-out | cubic-bezier(number, number, number, number) | Transition easing of the card. |
+| ...props           | any               |         | Additional props to be passed to the card.        |
+
+</Table>
+
+### CardContent Props
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["children", "ReactNode", "", "Content to be displayed inside the card."],
+    ["className", "string", "(none)", "Additional class names to be applied to the card."],
+    ["defaultAspectRatio", "string (Optional)", "aspect-[2/3]", "Default aspect ratio of the card."],
+    ["expandedAspectRatio", "string (Optional)", "aspect-video", "Expanded aspect ratio of the card."],
+    ["...props", "any", "", "Additional props to be passed to the card."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop                | Type              | Default      | Description                                       |
+| ------------------- | ----------------- | ------------ | ------------------------------------------------- |
+| children            | ReactNode         |              | Content to be displayed inside the card.          |
+| className           | string            | none         | Additional class names to be applied to the card. |
+| defaultAspectRatio  | string (Optional) | aspect-[2/3] | Default aspect ratio of the card.                 |
+| expandedAspectRatio | string (Optional) | aspect-video | Expanded aspect ratio of the card.                |
+| ...props            | any               |              | Additional props to be passed to the card.        |
+
+</Table>
+
+### OnHover Props
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["children", "ReactNode", "", "Content to be displayed inside the card."],
+    ["className", "string", "(none)", "Additional class names to be applied to the card."],
+    ["fadeInDuration", "string (Optional)", "0.3s", "Fade in duration of the card."],
+    ["...props", "any", "", "Additional props to be passed to the card."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop           | Type              | Default | Description                                       |
+| -------------- | ----------------- | ------- | ------------------------------------------------- |
+| children       | ReactNode         |         | Content to be displayed inside the card.          |
+| className      | string            | none    | Additional class names to be applied to the card. |
+| fadeInDuration | string (Optional) | 0.3s    | Fade in duration of the card.                     |
+| ...props       | any               |         | Additional props to be passed to the card.        |
+
+</Table>
+
+### DefaultView Props
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["children", "ReactNode", "", "Content to be displayed inside the card."],
+    ["className", "string", "none", "Additional class names to be applied to the card."],
+    ["...props", "any", "", "Additional props to be passed to the card."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop      | Type      | Default | Description                                       |
+| --------- | --------- | ------- | ------------------------------------------------- |
+| children  | ReactNode |         | Content to be displayed inside the card.          |
+| className | string    | none    | Additional class names to be applied to the card. |
+| ...props  | any       |         | Additional props to be passed to the card.        |
+
+</Table>
+
+<PrevNextBtn current="smooth-slider" />

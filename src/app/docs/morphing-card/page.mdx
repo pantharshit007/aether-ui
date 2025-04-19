@@ -1,12 +1,13 @@
-export const metadata = {
-  title: "Morpying Card | Aether UI",
-  description: "A morpying card component with customizable content.",
-};
-
 import ComponentPreview from "@/components/web/component-preview";
 import MorphingCardBasic from "./morphing-card-basic";
 import MorphingCardCustom from "./morphing-card-custom";
 import PrevNextBtn from "@/components/web/prev-next-btn";
+import { metaConfig } from "@/config/site";
+
+export const metadata = metaConfig({
+  title: "Morpying Card",
+  description: "A morpying card component with customizable content.",
+});
 
 # Morphing Card
 
