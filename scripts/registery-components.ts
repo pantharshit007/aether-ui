@@ -86,4 +86,12 @@ export const components: ComponentDefinition[] = [
     dependencies: [],
     description: "Colorful mouse trailer with bunch of customization options.",
   },
+  {
+    name: "smooth-slider",
+    path: path.join(process.cwd(), "src", "content", "smooth-slider.tsx"),
+    registryDependencies: [],
+    title: "Smooth Slider",
+    dependencies: [],
+    description: "Google's new released series inspired slider component with smooth animation.",
+  },
 ];

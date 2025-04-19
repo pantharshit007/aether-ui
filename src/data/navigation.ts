@@ -60,6 +60,10 @@ export const NavigationLinks: NavigationGroup[] = [
       {
         name: "Fuzzy Text",
         href: "/docs/fuzzy-text",
+      },
+      {
+        name: "Smooth Slider",
+        href: "/docs/smooth-slider",
         isNew: true,
       },
     ],
