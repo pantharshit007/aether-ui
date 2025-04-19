@@ -5,6 +5,13 @@ export const metadata = {
 
 import ComponentPreview from "@/components/web/component-preview";
 import ButtonBasic from "./button-basic";
+import ButtonBall from "./button-ball";
+import ButtonLiquidMetal from "./button-liquid-metal";
+import ButtonGhost from "./button-ghost";
+import ButtonDestructive from "./button-destructive";
+import ButtonMarketing from "./button-marketing";
+import ButtonOutline from "./button-outline";
+import ButtonLink from "./button-link";
 
 # Button
 
@@ -13,6 +20,39 @@ A simple customizable button component with **default** and **destructive** vari
 ## Examples
 
 <ComponentPreview component={<ButtonBasic />} filePath="src/app/docs/button/button-basic.tsx" />
+
+Gradient Ball follow the cursor pointer
+
+<ComponentPreview component={<ButtonBall />} filePath="src/app/docs/button/button-ball.tsx" />
+
+Sleek liquid metal ui for your website
+
+<ComponentPreview
+  component={<ButtonLiquidMetal />}
+  filePath="src/app/docs/button/button-liquid-metal.tsx"
+/>
+
+This button should be used for cancel or delete button
+
+<ComponentPreview
+  component={<ButtonDestructive />}
+  filePath="src/app/docs/button/button-destructive.tsx"
+/>
+
+This button should be used for link button
+
+<ComponentPreview component={<ButtonLink />} filePath="src/app/docs/button/button-link.tsx" />
+
+Ghost button for less attetion
+
+<ComponentPreview component={<ButtonGhost />} filePath="src/app/docs/button/button-ghost.tsx" />
+
+marketing Button for you marketing button
+
+<ComponentPreview
+  component={<ButtonMarketing />}
+  filePath="src/app/docs/button/button-marketing.tsx"
+/>
 
 ## Intallation
 
