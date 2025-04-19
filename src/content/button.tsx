@@ -1,9 +1,20 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import React, { useEffect, useRef, useState } from "react";
 
 type ButtonProps = {
   children: React.ReactNode;
-  variant?: "default" | "destructive" | "metal" | "ball";
+  variant?:
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link"
+    | "marketing"
+    | "metal"
+    | "ball";
   size?: "default" | "sm" | "lg" | "icon";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -22,13 +33,20 @@ function Button({
       "bg-gray-900 text-white hover:bg-gray-700 focus-visible:outline-gray-900 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-200 dark:focus-visible:outline-gray-50",
     destructive:
       "bg-red-500 text-white hover:bg-red-700 focus-visible:outline-red-600 dark:bg-red-700 dark:hover:bg-red-800 dark:focus-visible:outline-red-700",
+    outline:
+      "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+    secondary: "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+    ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+    link: "text-primary underline-offset-4 hover:underline",
+    marketing:
+      "rounded-md bg-gradient-to-r from-cyan-600 to-cyan-800 px-4 py-1 text-2xl text-white hover:shadow-lg",
     metal: {
       outer:
         "relative inline-flex transform-gpu rounded-full bg-gradient-to-b from-[#000] to-[#A0A0A0] p-[1.25px] will-change-transform",
       inner:
-        "absolute inset-[1px] transform-gpu rounded-full bg-gradient-to-b from-[#FAFAFA] via-[#3E3E3E] to-[#E5E5E5] will-change-transform",
+        "absolute inset-[1px] transform-gpu rounded-full bg-gradient-to-b from-[#FAFAFA] via-[#3E3E3E] to-[#E5E5E5] will-change-transform ",
       button:
-        "relative z-10 m-[2.5px] inline-flex h-11 transform-gpu cursor-pointer items-center justify-center overflow-hidden rounded-full bg-gradient-to-b from-[#B9B9B9] to-[#969696] px-6 pt-4 pb-5 text-2xl leading-none font-bold text-white will-change-transform outline-none [text-shadow:_0_-1px_0_rgb(80_80_80_/_100%)]",
+        "relative z-10 m-[2.5px] inline-flex h-11 transform-gpu cursor-pointer items-center justify-center overflow-hidden rounded-full bg-gradient-to-b from-[#B9B9B9] to-[#969696] px-6 pt-4 pb-5 text-2xl leading-none font-bold text-white will-change-transform outline-none [text-shadow:_0_-1px_0_rgb(80_80_80_/_100%)] hover:bg-gradient-to-b hover-from-transparent hover:to-white/1",
     },
     ball: {
       button:
@@ -44,6 +62,7 @@ function Button({
     lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
     icon: "size-9",
   };
+
   //Adding algorithm for metal button
 
   const [isPressed, setIsPressed] = React.useState(false);
@@ -78,7 +97,7 @@ function Button({
 
   //making sure device is not touchscreen for meata
 
-  useEffect(() => {
+  React.useEffect(() => {
     setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
   }, []);
 
@@ -109,7 +128,6 @@ function Button({
     const handleInternalTouchCancel = () => {
       setIsPressed(false);
     };
-
     // function to dynamically handle animation of hover , click and pressed
     const dynamicBtnStyle = (isPressed: boolean, isHovered: boolean, isTouchDevice: boolean) => {
       const transitionStyle = "all 250ms cubic-bezier(0.1, 0.4, 0.2, 1)";
@@ -157,7 +175,11 @@ function Button({
     };
 
     return (
-      <div className={variantClasses.metal.outer} style={dynamicBtnStyleState.wrapperStyle}>
+      <div
+        className={cn(variantClasses.metal.outer)}
+        style={dynamicBtnStyleState.wrapperStyle}
+        onMouseEnter={handleInternalMouseEnter}
+      >
         <div className={variantClasses.metal.inner} style={dynamicBtnStyleState.innerStyle}></div>
         <button
           className={cn(variantClasses.metal.button, className)}
@@ -166,16 +188,12 @@ function Button({
           onMouseDown={handleInternalMouseDown}
           onMouseUp={handleInternalMouseUp}
           onMouseLeave={handleInternalMouseLeave}
-          onMouseEnter={handleInternalMouseEnter}
           onTouchStart={handleInternalTouchStart}
           onTouchEnd={handleInternalTouchEnd}
           onTouchCancel={handleInternalTouchCancel}
         >
           <ShineEffect isPressed={isPressed} />
           {buttonText}
-          {isHovered && !isPressed && !isTouchDevice && (
-            <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-t from-transparent to-white/5" />
-          )}
         </button>
       </div>
     );
