@@ -1,0 +1,57 @@
+import { metaConfig } from "@/config/site";
+import ComponentPreview from "@/components/web/component-preview";
+import PrevNextBtn from "@/components/web/prev-next-btn";
+import HelpDeskDemo1 from "./help-desk-demo-1";
+
+export const metadata = metaConfig({
+  title: "Help Desk",
+  description: "Got a question? We're here to help, ask us form pop up.",
+});
+
+# Help Desk
+
+User don't know how to ask a question? help desk is here to help you, plug in the form and grow those numbers.
+
+## Examples
+
+Basic usage of the help desk component.
+
+<ComponentPreview
+  component={<HelpDeskDemo1 />}
+  filePath="src/app/docs/help-desk/help-desk-demo-1.tsx"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+<InstallationCli value="help-desk" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>If you haven't completed the installation refer to guide [here](/docs/installation).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<CodeBlock filePath="src/content/help-desk.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+<PrevNextBtn current="help-desk" />
