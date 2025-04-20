@@ -10,7 +10,7 @@ import React, { useState } from "react";
 
 const HelpDeskDemo1 = () => {
   const [status, setStatus] = useState<FeedbackStatus>("idle");
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   const handleSubmit = async (data: { email: string; message: string }) => {
     try {
@@ -18,7 +18,10 @@ const HelpDeskDemo1 = () => {
 
       // Simulate API call
       await new Promise((res, rej) => {
-        setTimeout(() => res(data), 1000);
+        setTimeout(() => {
+          console.log("Simulating API rejection now...");
+          rej(new Error("Simulated API failure"));
+        }, 1000);
       });
 
       console.log("Query submitted:", data);
@@ -46,9 +49,9 @@ const HelpDeskDemo1 = () => {
       {show && (
         <HelpDeskProvider onSubmit={handleSubmit} status={status}>
           <HelpDesk>
-            <HelpDeskForm />
+            <HelpDeskForm btnClassName="bg-red-400 hover:bg-red-500" />
           </HelpDesk>
-          <HelpDeskButton />
+          <HelpDeskButton className="bg-red-400 hover:bg-red-500" />
         </HelpDeskProvider>
       )}
     </div>

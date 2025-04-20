@@ -2,23 +2,43 @@ import { metaConfig } from "@/config/site";
 import ComponentPreview from "@/components/web/component-preview";
 import PrevNextBtn from "@/components/web/prev-next-btn";
 import HelpDeskDemo1 from "./help-desk-demo-1";
+import HelpDeskDemo2 from "./help-desk-demo-2";
+import HelpDeskDemo3 from "./help-desk-demo-3";
 
 export const metadata = metaConfig({
   title: "Help Desk",
-  description: "Got a question? We're here to help, ask us form pop up.",
+  description: "Got a question? We're here to help, click the help desk and resolve your queries.",
 });
 
 # Help Desk
 
-User don't know how to ask a question? help desk is here to help you, plug in the form and grow those numbers.
+Your user's are having hard time to ask questions? help desk is here to help you, plug in the form and grow those numbers.
 
 ## Examples
 
-Basic usage of the help desk component.
+### Basic usage of the help desk component.
+
+**Note:** enable one form at a time the last one holds the preference.
 
 <ComponentPreview
   component={<HelpDeskDemo1 />}
   filePath="src/app/docs/help-desk/help-desk-demo-1.tsx"
+/>
+
+### Help desk when we have an error.
+
+<ComponentPreview
+  component={<HelpDeskDemo2 />}
+  filePath="src/app/docs/help-desk/help-desk-demo-2.tsx"
+  disable
+/>
+
+### Customized help desk.
+
+<ComponentPreview
+  component={<HelpDeskDemo3 />}
+  filePath="src/app/docs/help-desk/help-desk-demo-3.tsx"
+  disable
 />
 
 ## Installation
@@ -53,5 +73,99 @@ Basic usage of the help desk component.
 </TabsContent>
 
 </Tabs>
+
+## Component Props
+
+You can use the `HelpDesk` component by passing the following props to it.
+
+### HelpDeskProvider Props
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["children", "ReactNode", "", "Content to be displayed inside the help desk."],
+    ["defaultOpen", "boolean (Optional)", "false", "Initial open state of the help desk."],
+    ["open", "boolean (Optional)", "false", "Control the open state (controlled mode)."],
+    ["onOpenChange", "function (Optional)", "", "Callback function to be called open state changes."],
+    ["status", "'idle' | 'submitting' | 'success' | 'error'", "idle", "Status of the help desk."],
+    ["onSubmit", "function (Optional)", "", "Callback function to be called when the submit button is clicked."],
+    ["...props", "any", "", "Additional props to be passed to the help desk."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop         | Type                                          | Default | Description                                                       |
+| ------------ | --------------------------------------------- | ------- | ----------------------------------------------------------------- |
+| children     | ReactNode                                     |         | Content to be displayed inside the help desk.                     |
+| defaultOpen  | boolean (Optional)                            | false   | Initial open state of the help desk.                              |
+| open         | boolean (Optional)                            | false   | Control the open state (controlled mode).                         |
+| onOpenChange | function (Optional)                           |         | Callback function to be called open state changes.                |
+| status       | 'idle \| 'submitting' \| 'success' \| 'error' | idle    | Status of the help desk.                                          |
+| onSubmit     | function (Optional)                           |         | Callback function to be called when the submit button is clicked. |
+| ...props     | any                                           |         | Additional props to be passed to the help desk.                   |
+
+</Table>
+
+### HelpDesk Props
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["children", "ReactNode", "", "Content to be displayed inside the help desk."],
+    ["title", "string (Optional)", "Query(title)", "Title to be displayed in the help desk."],
+    ["subtitle", "string (Optional)", "Query(subtitle)", "Subtitle to be displayed in the help desk."],
+    ["className", "string", "", "Additional class names to be applied to the help desk."],
+    ["...props", "any", "", "Additional props to be passed to the help desk."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop      | Type              | Default         | Description                                            |
+| --------- | ----------------- | --------------- | ------------------------------------------------------ |
+| children  | ReactNode         |                 | Content to be displayed inside the help desk.          |
+| title     | string (Optional) | Query(title)    | Title to be displayed in the help desk.                |
+| subtitle  | string (Optional) | Query(subtitle) | Subtitle to be displayed in the help desk.             |
+| className | string            |                 | Additional class names to be applied to the help desk. |
+| ...props  | any               |                 | Additional props to be passed to the help desk.        |
+
+</Table>
+
+### HelpDeskFomr Props
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["className", "string", "", "Additional class names to be applied to the help desk form."],
+    ["btnClassName", "string", "", "Additional class names to be applied to the help desk form submit button."],
+    ["...props", "any", "", "Additional props to be passed to the help desk form."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop         | Type   | Default | Description                                                               |
+| ------------ | ------ | ------- | ------------------------------------------------------------------------- |
+| className    | string |         | Additional class names to be applied to the help desk form.               |
+| btnClassName | string |         | Additional class names to be applied to the help desk form submit button. |
+| ...props     | any    |         | Additional props to be passed to the help desk form.                      |
+
+</Table>
+
+### HelpDeskButton Props
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["className", "string", "", "Additional class names to be applied to the help desk button."],
+    ["...props", "any", "", "Additional props to be passed to the help desk button."],
+  ],
+}}>
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop      | Type   | Default | Description                                                   |
+| --------- | ------ | ------- | ------------------------------------------------------------- |
+| className | string |         | Additional class names to be applied to the help desk button. |
+| ...props  | any    |         | Additional props to be passed to the help desk button.        |
+
+</Table>
 
 <PrevNextBtn current="help-desk" />

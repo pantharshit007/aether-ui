@@ -304,4 +304,48 @@ export const examples: Record<string, ComponentDefinition[]> = {
       ],
     },
   ],
+  "help-desk": [
+    {
+      name: "help-desk-demo-1",
+      path: path.join(process.cwd(), "src", "app", "docs", "help-desk", "help-desk-demo-1.tsx"),
+      description:
+        "Got a question? We're here to help, click the help desk and resolve your queries.",
+      componentName: "help-desk",
+      files: [
+        {
+          name: "help-desk.tsx",
+          path: path.join(process.cwd(), "src", "content", "help-desk.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "help-desk-demo-2",
+      path: path.join(process.cwd(), "src", "app", "docs", "help-desk", "help-desk-demo-2.tsx"),
+      description:
+        "Got a question? We're here to help, click the help desk and resolve your queries.",
+      componentName: "help-desk",
+      files: [
+        {
+          name: "help-desk.tsx",
+          path: path.join(process.cwd(), "src", "content", "help-desk.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "help-desk-demo-3",
+      path: path.join(process.cwd(), "src", "app", "docs", "help-desk", "help-desk-demo-3.tsx"),
+      description:
+        "Got a question? We're here to help, click the help desk and resolve your queries.",
+      componentName: "help-desk",
+      files: [
+        {
+          name: "help-desk.tsx",
+          path: path.join(process.cwd(), "src", "content", "help-desk.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+  ],
 };

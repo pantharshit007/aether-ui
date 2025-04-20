@@ -94,4 +94,13 @@ export const components: ComponentDefinition[] = [
     dependencies: [],
     description: "Google's new released series inspired slider component with smooth animation.",
   },
+  {
+    name: "help-desk",
+    path: path.join(process.cwd(), "src", "content", "help-desk.tsx"),
+    registryDependencies: [],
+    title: "Help Desk",
+    dependencies: [],
+    description:
+      "Got a question? We're here to help, click the help desk and resolve your queries.",
+  },
 ];
