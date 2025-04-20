@@ -1,12 +1,16 @@
-<h1 align="center">Aether UI</h1>
+<h1 align="center">Aether/ui</h1>
 
-> A simple, lightweight, and customizable UI component library for React with tailwindcss.
+Breathe life into your website with beautifully designed animated components, a collection of stunning motion components designed to captivate.
 
-![Aether UI](./public/img/marketing.jpg)
+![Aether/ui](./public/img/landing_page.png)
 
-### How to contribute
+## Documentation
 
-Before creating a new component, check the [Checklist](./Checklist.md) to see the steps to follow.
+Visit http://aetherui.in/docs to view the documentation.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](/CONTRIBUTING.md).
 
 ## Big Thanks to
 
@@ -14,3 +18,7 @@ Before creating a new component, check the [Checklist](./Checklist.md) to see th
 [Ibelick (Motion-primitives)](https://github.com/ibelick/motion-primitives)
 
 Learned a lot from these amazing libraries and there open source code.
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/pantharshit007/aether-ui/blob/main/LICENCE).
