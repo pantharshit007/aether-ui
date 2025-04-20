@@ -309,7 +309,7 @@ function SuccessBox() {
         </svg>
       </div>
       <h3 className="text-xl font-bold dark:text-white">Thanks for your feedback!</h3>
-      <p className="text-zinc-500 dark:text-zinc-400">We'll get back to you soon.</p>
+      <p className="text-zinc-500 dark:text-zinc-400">We&apos;ll get back to you soon.</p>
     </div>
   );
 }
