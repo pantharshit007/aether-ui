@@ -22,7 +22,7 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     title: "Button",
     dependencies: [],
-    description: "A simple button component with default and destructive variants.",
+    description: "A customizable button component with a variety of variants to choose from.",
   },
   {
     name: "hover-card",
