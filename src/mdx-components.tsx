@@ -13,7 +13,6 @@ type UnOrderedListProps = ComponentPropsWithoutRef<"ul">;
 type ListItemProps = ComponentPropsWithoutRef<"li">;
 type AnchorProps = ComponentPropsWithoutRef<"a">;
 type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
-type CodeBlockProps = ComponentPropsWithoutRef<"code">;
 
 const generateId = (name: string) => {
   return name

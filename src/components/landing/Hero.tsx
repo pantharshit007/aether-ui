@@ -39,6 +39,7 @@ function Hero() {
         fill
         alt="hero-bg-image"
         priority
+        placeholder="empty"
       />
 
       <div className="relative flex h-full flex-col items-center justify-center">

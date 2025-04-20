@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 type ButtonProps = {
   children: React.ReactNode;
-  variant?: "default" | "destructive";
+  variant?: "default" | "destructive" | "success";
   size?: "default" | "sm" | "lg" | "icon";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -21,6 +21,8 @@ function Button({
       "bg-gray-900 text-white hover:bg-gray-700 focus-visible:outline-gray-900 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-200 dark:focus-visible:outline-gray-50",
     destructive:
       "bg-red-500 text-white hover:bg-red-700 focus-visible:outline-red-600 dark:bg-red-700 dark:hover:bg-red-800 dark:focus-visible:outline-red-700",
+    success:
+      "bg-emerald-500 text-white hover:bg-emerald-700 focus-visible:outline-emerald-600 dark:bg-emerald-700 dark:hover:bg-emerald-800 dark:focus-visible:outline-emerald-700",
   };
 
   const sizeClasses = {
