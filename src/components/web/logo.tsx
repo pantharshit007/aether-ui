@@ -17,9 +17,9 @@ function Logo({
   const { theme } = useTheme();
   const val = defaultTheme ?? theme;
   const logo =
-    val === "dark"
-      ? "https://res.cloudinary.com/di0av3xly/image/upload/v1744924537/Aether-ui/au-logo-light.png"
-      : "https://res.cloudinary.com/di0av3xly/image/upload/v1744924578/Aether-ui/au-logo-black.png";
+    val === "light"
+      ? "https://res.cloudinary.com/di0av3xly/image/upload/v1744924578/Aether-ui/au-logo-black.png"
+      : "https://res.cloudinary.com/di0av3xly/image/upload/v1744924537/Aether-ui/au-logo-light.png";
   return (
     <div className="flex cursor-pointer items-center gap-1.5">
       <Image

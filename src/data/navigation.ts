@@ -52,6 +52,10 @@ export const NavigationLinks: NavigationGroup[] = [
         href: "/docs/mouse-trailer",
         isNew: true,
       },
+      {
+        name: "Help Desk",
+        href: "/docs/help-desk",
+      },
     ],
   },
   {
@@ -60,6 +64,10 @@ export const NavigationLinks: NavigationGroup[] = [
       {
         name: "Fuzzy Text",
         href: "/docs/fuzzy-text",
+      },
+      {
+        name: "Smooth Slider",
+        href: "/docs/smooth-slider",
         isNew: true,
       },
     ],

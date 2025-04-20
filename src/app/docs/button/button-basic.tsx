@@ -3,7 +3,17 @@ import { Button } from "@/content/button";
 import React from "react";
 
 function ButtonBasic() {
-  return <Button onClick={() => alert("clicked")}>Click me</Button>;
+  return (
+    <div className="flex flex-col gap-4">
+      <Button onClick={() => alert("clicked")}>Click me</Button>
+      <Button variant="destructive" onClick={() => alert("clicked")}>
+        Destructive
+      </Button>
+      <Button variant="success" onClick={() => alert("clicked")}>
+        Success
+      </Button>
+    </div>
+  );
 }
 
 export default ButtonBasic;

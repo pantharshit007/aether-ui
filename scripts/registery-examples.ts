@@ -28,7 +28,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
     {
       name: "button-basic",
       path: path.join(process.cwd(), "src", "app", "docs", "button", "button-basic.tsx"),
-      description: "A simple button component with default and destructive variants.",
+      description: "A customizable button component with a variety of variants to choose from.",
       componentName: "button-basic",
       files: [
         {
@@ -257,6 +257,92 @@ export const examples: Record<string, ComponentDefinition[]> = {
         {
           name: "mouse-trailer.tsx",
           path: path.join(process.cwd(), "src", "content", "mouse-trailer.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+  ],
+  "smooth-slider": [
+    {
+      name: "smooth-slider-demo-1",
+      path: path.join(
+        process.cwd(),
+        "src",
+        "app",
+        "docs",
+        "smooth-slider",
+        "smooth-slider-demo-1.tsx"
+      ),
+      description: "Google's new released series inspired slider component with smooth animation.",
+      componentName: "smooth-slider",
+      files: [
+        {
+          name: "smooth-slider.tsx",
+          path: path.join(process.cwd(), "src", "content", "smooth-slider.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "smooth-slider-demo-2",
+      path: path.join(
+        process.cwd(),
+        "src",
+        "app",
+        "docs",
+        "smooth-slider",
+        "smooth-slider-demo-2.tsx"
+      ),
+      description: "Google's new released series inspired slider component with smooth animation.",
+      componentName: "smooth-slider",
+      files: [
+        {
+          name: "smooth-slider.tsx",
+          path: path.join(process.cwd(), "src", "content", "smooth-slider.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+  ],
+  "help-desk": [
+    {
+      name: "help-desk-demo-1",
+      path: path.join(process.cwd(), "src", "app", "docs", "help-desk", "help-desk-demo-1.tsx"),
+      description:
+        "Got a question? We're here to help, click the help desk and resolve your queries.",
+      componentName: "help-desk",
+      files: [
+        {
+          name: "help-desk.tsx",
+          path: path.join(process.cwd(), "src", "content", "help-desk.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "help-desk-demo-2",
+      path: path.join(process.cwd(), "src", "app", "docs", "help-desk", "help-desk-demo-2.tsx"),
+      description:
+        "Got a question? We're here to help, click the help desk and resolve your queries.",
+      componentName: "help-desk",
+      files: [
+        {
+          name: "help-desk.tsx",
+          path: path.join(process.cwd(), "src", "content", "help-desk.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "help-desk-demo-3",
+      path: path.join(process.cwd(), "src", "app", "docs", "help-desk", "help-desk-demo-3.tsx"),
+      description:
+        "Got a question? We're here to help, click the help desk and resolve your queries.",
+      componentName: "help-desk",
+      files: [
+        {
+          name: "help-desk.tsx",
+          path: path.join(process.cwd(), "src", "content", "help-desk.tsx"),
           type: "registry:ui",
         },
       ],

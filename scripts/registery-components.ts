@@ -22,7 +22,7 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     title: "Button",
     dependencies: [],
-    description: "A simple button component with default and destructive variants.",
+    description: "A customizable button component with a variety of variants to choose from.",
   },
   {
     name: "hover-card",
@@ -85,5 +85,22 @@ export const components: ComponentDefinition[] = [
     title: "Mouse Trailer",
     dependencies: [],
     description: "Colorful mouse trailer with bunch of customization options.",
+  },
+  {
+    name: "smooth-slider",
+    path: path.join(process.cwd(), "src", "content", "smooth-slider.tsx"),
+    registryDependencies: [],
+    title: "Smooth Slider",
+    dependencies: [],
+    description: "Google's new released series inspired slider component with smooth animation.",
+  },
+  {
+    name: "help-desk",
+    path: path.join(process.cwd(), "src", "content", "help-desk.tsx"),
+    registryDependencies: [],
+    title: "Help Desk",
+    dependencies: [],
+    description:
+      "Got a question? We're here to help, click the help desk and resolve your queries.",
   },
 ];
