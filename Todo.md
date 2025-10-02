@@ -9,6 +9,6 @@
 - [ ] create sitemap and robots.txt.
 - [ ] there is a stupid bug in `page.mdx` file, where inside tabs "manual" the step 2's margin up is not working.(fix for now custom css)
 - [ ] update loading animation.
-- [ ] update readme!
 - [ ] right now the `SmoothSlider` doesnt shift content to right in extreme left and vice versa. Its a bug.
 - [ ] wrap the text in `code-preview`/`code-renderer` in the `pre` tag.
+- [ ] fix the add to v0 issue

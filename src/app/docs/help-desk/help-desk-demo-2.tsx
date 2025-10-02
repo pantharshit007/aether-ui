@@ -38,7 +38,7 @@ const HelpDeskDemo1 = () => {
   };
   return (
     <div className="place-items-center">
-      <p className="text-base">Look at the right side of the screen to see the help desk.</p>
+      <p className="text-base">Look at the bottom-right side of the screen to see the help desk.</p>
 
       <button
         className="bg-accent-foreground/90 text-accent mt-2 rounded-md px-2.5 py-1"
