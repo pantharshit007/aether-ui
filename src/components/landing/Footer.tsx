@@ -1,4 +1,3 @@
-import Link from "next/link";
 import GithubIcon from "../web/icon/github";
 import Logo from "../web/logo";
 import XIcon from "../web/icon/twitter";

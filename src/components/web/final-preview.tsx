@@ -26,7 +26,7 @@ const FinalPreview = ({ component, className, filePath, disable }: ComponentPrev
         <div className="flex items-center gap-3 opacity-0 transition-opacity group-hover:opacity-100">
           {/* Re trigger */}
           <></>
-          <OpenInV0 url={registeryURL} disable={disable} />
+          {/* <OpenInV0 url={registeryURL} disable={disable} /> */}
         </div>
       </div>
 

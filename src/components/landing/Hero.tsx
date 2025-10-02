@@ -55,7 +55,7 @@ function Hero() {
               Build <span className="text-shadow-glow text-cyan-900">Fast.</span> Animate{" "}
               <span className="text-shadow-glow text-cyan-900">Bold.</span>
             </p>
-            <p className="landing-gradient">
+            <p className="landing-gradient pb-1.5">
               Ship <span className="text-shadow-glow text-cyan-900">Beautiful.</span>
             </p>
           </div>
