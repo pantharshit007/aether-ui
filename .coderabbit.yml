@@ -1,0 +1,65 @@
+# Complete reference: https://docs.coderabbit.ai/reference/configuration
+
+# Language for the review
+language: "en-US"
+
+reviews:
+  profile: "chill"
+  ignored_branches:
+    - "prod"
+  # Automatically review pull requests
+  auto_review:
+    enabled: true
+    # Do not review draft PRs
+    drafts: false
+  # Exclude certain files from review
+  path_filters:
+    - "!**/pnpm-lock.yaml"
+    - "!**/*.md"
+    - "!**/LICENSE"
+    - "!**/.gitignore"
+    - "!**/example.env"
+
+  # Generate a high-level summary of the changes in the PR description.
+  high_level_summary: true
+
+  # Path-specific review instructions.
+  file_path_instructions:
+    - path: "**/*" # General instructions for all files
+      instructions: |
+        Please review the following changes for correctness, clarity, and adherence to project conventions.
+        - Check for any breaking changes.
+        - Ensure that the code is well-documented.
+        - Verify that the changes are consistent with the existing coding style.
+        - cross check CHECKLIST.md for any new component additions.
+    - path: "src/app/docs/**/*.mdx"
+      instructions: |
+        These are documentation changes. Please check for:
+        - Clarity and accuracy of the content.
+        - Correct formatting and grammar.
+        - Any broken links or images.
+    - path: "src/components/**/*.tsx"
+      instructions: |
+        These are changes to UI components. Please check for:
+        - Correct rendering and functionality.
+        - Adherence to the design system.
+        - Responsiveness and accessibility.
+        - Proper use of state management.
+    - path: "src/content/**/*.tsx"
+      instructions: |
+        These are changes to component content/examples. Please check for:
+        - Correctness of the examples.
+        - Consistency with the documentation.
+    - path: "scripts/**/*.ts"
+      instructions: |
+        These are changes to build or utility scripts. Please check for:
+        - Correctness and efficiency of the script.
+        - Any potential side effects.
+        - Clear and concise logging.
+    - path: "package.json"
+      instructions: |
+        Dependency changes detected. Please verify:
+        - The necessity of any new dependencies.
+        - Potential for conflicts or security vulnerabilities.
+        - That the changes are reflected in the lock file.
+        Summarize the changes in package.json, focusing on new, updated, or removed dependencies.
