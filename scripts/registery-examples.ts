@@ -348,4 +348,48 @@ export const examples: Record<string, ComponentDefinition[]> = {
       ],
     },
   ],
+  "tilted-carousel": [
+    {
+      name: "tilted-carousel-demo",
+      path: path.join(
+        process.cwd(),
+        "src",
+        "app",
+        "docs",
+        "tilted-carousel",
+        "tilted-carousel-demo.tsx"
+      ),
+      description:
+        "A visually immersive tilted carousel component with smooth bidirectional animations.",
+      componentName: "tilted-carousel",
+      files: [
+        {
+          name: "tilted-carousel.tsx",
+          path: path.join(process.cwd(), "src", "content", "tilted-carousel.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+    {
+      name: "tilted-carousel-demo2",
+      path: path.join(
+        process.cwd(),
+        "src",
+        "app",
+        "docs",
+        "tilted-carousel",
+        "tilted-carousel-demo2.tsx"
+      ),
+      description:
+        "A visually immersive tilted carousel component with smooth bidirectional animations.",
+      componentName: "tilted-carousel",
+      files: [
+        {
+          name: "tilted-carousel.tsx",
+          path: path.join(process.cwd(), "src", "content", "tilted-carousel.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+  ],
 };
