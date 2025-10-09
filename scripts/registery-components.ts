@@ -103,4 +103,13 @@ export const components: ComponentDefinition[] = [
     description:
       "Got a question? We're here to help, click the help desk and resolve your queries.",
   },
+  {
+    name: "tilted-carousel",
+    path: path.join(process.cwd(), "src", "content", "tilted-carousel.tsx"),
+    registryDependencies: [],
+    title: "Tilted Carousel",
+    dependencies: [],
+    description:
+      "A visually immersive tilted carousel component with smooth bidirectional animations.",
+  },
 ];

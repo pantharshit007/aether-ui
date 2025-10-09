@@ -12,3 +12,4 @@
 - [ ] right now the `SmoothSlider` doesnt shift content to right in extreme left and vice versa. Its a bug.
 - [ ] wrap the text in `code-preview`/`code-renderer` in the `pre` tag.
 - [ ] fix the add to v0 issue
+- [ ] replace the image url in card component
