@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-
+import Image from "next/image";
 interface TiltedCarouselProps {
   images: string[];
   className?: string;
@@ -48,7 +48,8 @@ export function TiltedCarousel({ images, className, speed = 30, rows = 4 }: Tilt
                   transform: "translateZ(20px)",
                 }}
               >
-                <img
+                <Image
+                  fill
                   src={image || "/placeholder.svg"}
                   alt={`Carousel image ${imageIndex + 1}`}
                   className="h-full w-full object-cover"
