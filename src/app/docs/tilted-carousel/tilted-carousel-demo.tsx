@@ -12,7 +12,7 @@ function TiltedCarouselDemo() {
     "https://images.unsplash.com/photo-1755090281929-2f027ee94c98?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
 
-  return <TiltedCarousel images={images} speed={30} rows={5} />;
+  return <TiltedCarousel className="bg-cyan-400/30" images={images} pauseOnHover />;
 }
 
 export default TiltedCarouselDemo;
