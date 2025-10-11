@@ -130,6 +130,12 @@ export function TiltedCarousel({
       </div>
 
       <style jsx>{`
+        @media (prefers-reduced-motion: reduce) {
+          div[class*="flex shrink-0"] {
+            animation: none !important;
+          }
+        }
+
         @keyframes scroll-left {
           from {
             transform: translateX(0);
