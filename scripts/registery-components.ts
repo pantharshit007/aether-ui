@@ -8,6 +8,7 @@ type ComponentDefinition = Partial<
   path: string;
   description: string;
   title: string;
+  author?: string;
   files?: {
     name: string;
     path: string;
@@ -22,6 +23,7 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     title: "Button",
     dependencies: [],
+    author: "Harshit Pant <hrshit.in>",
     description: "A customizable button component with a variety of variants to choose from.",
   },
   {
@@ -30,6 +32,7 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     title: "Hover Card",
     dependencies: [],
+    author: "Harshit Pant <hrshit.in>",
     description: "A Esthetic hover card component with a glowing effect on the edges.",
   },
   {
@@ -38,6 +41,7 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     title: "Morphing Card",
     dependencies: ["motion"],
+    author: "Harshit Pant <hrshit.in>",
     description: "A morphing card component with a glowing effect on the edges.",
   },
   {
@@ -46,6 +50,7 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     title: "Feedback Modal",
     dependencies: ["motion"],
+    author: "Harshit Pant <hrshit.in>",
     description: "A feedback/suggestion modal component with customizable content.",
     files: [
       {
@@ -61,6 +66,7 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     title: "Bento Grid",
     dependencies: ["motion"],
+    author: "AbuPsng",
     description: "A Multi-column grid layout with bento boxes.",
     files: [
       {
@@ -76,6 +82,7 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     title: "Fuzzy Text",
     dependencies: [],
+    author: "Harshit Pant <hrshit.in>",
     description: "Experience Fuzzy effect on hover",
   },
   {
@@ -84,6 +91,7 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     title: "Mouse Trailer",
     dependencies: [],
+    author: "Aditya Joshi",
     description: "Colorful mouse trailer with bunch of customization options.",
   },
   {
@@ -92,6 +100,7 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     title: "Smooth Slider",
     dependencies: [],
+    author: "Harshit Pant <hrshit.in>",
     description: "Google's new released series inspired slider component with smooth animation.",
   },
   {
@@ -100,15 +109,17 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     title: "Help Desk",
     dependencies: [],
+    author: "Harshit Pant <hrshit.in>",
     description:
       "Got a question? We're here to help, click the help desk and resolve your queries.",
   },
   {
     name: "tilted-carousel",
-    path: path.join(process.cwd(), "src", "content", "tilted-carousel.tsx"),
+    path: path.join(process.cwd(), "src", "components", "content", "tilted-carousel.tsx"),
     registryDependencies: [],
     title: "Tilted Carousel",
     dependencies: [],
+    author: "Anmol-TheDev",
     description:
       "A visually immersive tilted carousel component with smooth bidirectional animations.",
   },

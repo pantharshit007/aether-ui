@@ -1,4 +1,4 @@
-import { TiltedCarousel } from "@/content/tilted-carousel";
+import { TiltedCarousel } from "@/components/content/tilted-carousel";
 
 function TiltedCarouselDemo2() {
   const images = [
@@ -16,10 +16,10 @@ function TiltedCarouselDemo2() {
     <div className="relative h-screen w-screen overflow-hidden">
       <div className="absolute inset-0 z-0">
         <TiltedCarousel images={images} pauseOnHover preset="dramatic" className="bg-cyan-200" />
-        <div className="absolute inset-0 z-10 bg-black/50 shadow-[inset_0_0_100px_40px_rgba(0,0,0,0.6)]" />
+        <div className="absolute inset-0 z-5 bg-black/50 shadow-[inset_0_0_100px_40px_rgba(0,0,0,0.6)]" />
       </div>
 
-      <div className="relative z-20 flex h-full w-full items-center justify-center px-6 text-center">
+      <div className="relative z-10 flex h-full w-full items-center justify-center px-6 text-center">
         <div className="mx-auto max-w-2xl rounded-xl bg-black/30 p-8 shadow-xl backdrop-blur-md md:p-12">
           <h1 className="font-bricolage-grotesque mb-4 text-4xl text-white drop-shadow-md md:text-5xl">
             Aether/<span className="text-gradient">ui</span>

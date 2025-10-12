@@ -11,7 +11,7 @@ export interface RegistryFile {
   path: string;
   content: string;
   type: RegistryType;
-  target?: string;
+  target: string;
 }
 
 export interface TailwindConfig {

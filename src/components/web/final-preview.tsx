@@ -22,11 +22,11 @@ const FinalPreview = ({ component, className, filePath, disable }: ComponentPrev
         className
       )}
     >
-      <div className="absolute top-1 right-2 z-[10] md:top-14">
+      <div className="absolute top-1 right-2 z-20 md:top-14">
         <div className="flex items-center gap-3 opacity-0 transition-opacity group-hover:opacity-100">
           {/* Re trigger */}
           <></>
-          {/* <OpenInV0 url={registeryURL} disable={disable} /> */}
+          <OpenInV0 url={registeryURL} disable={disable} />
         </div>
       </div>
 

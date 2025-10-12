@@ -38,9 +38,10 @@ export function registerComponent(name: string, author?: string) {
       for (const dependfile of component.files) {
         try {
           files.push({
-            path: dependfile.path,
+            path: dependfile.name,
             content: fs.readFileSync(dependfile.path, "utf8"),
             type: dependfile.type,
+            target: dependfile.name,
           });
         } catch (e) {
           throw new Error(`File ${dependfile.path} not found / not readable`);
@@ -53,7 +54,7 @@ export function registerComponent(name: string, author?: string) {
       type: "registry:ui",
       registryDependencies: component.registryDependencies ?? [],
       title: component.title,
-      author: author ?? "Harshit Pant <hrshit.in>",
+      author: author ?? component.author ?? "Harshit Pant <hrshit.in>",
       description: component.description,
       dependencies: component.dependencies,
       devDependencies: component.devDependencies,

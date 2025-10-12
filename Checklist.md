@@ -76,7 +76,7 @@ Follow these steps to add a new component to the project. Each step includes det
   ```
   pnpm run register -- --name=[component-name] --author=["Your Name"]
   ```
-  This creates `[component-name].json` in `public/c`, author is optional, replace `[component-name]` with your component name (e.g., `button`).
+  This creates `[component-name].json` in `public/c`, author is optional if you have added it in the component meta data file, replace `[component-name]` with your component name (e.g., `button`).
 
 ## 10. Verify JSON
 
