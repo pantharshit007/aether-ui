@@ -12,3 +12,5 @@
 - [ ] right now the `SmoothSlider` doesnt shift content to right in extreme left and vice versa. Its a bug.
 - [ ] wrap the text in `code-preview`/`code-renderer` in the `pre` tag.
 - [ ] fix the add to v0 issue
+- [ ] the side bar in the doc which show the break point for the headings should slice the text and show the first line of the heading.
+- [ ] update the eslint rule for `unused-vars` to `error` and fix all the issues.

@@ -4,6 +4,8 @@ Follow these steps to add a new component to the project. Each step includes det
 
 ---
 
+**Tip:** Replace `[component-name]` with your actual component name (e.g., `fancy-button`).
+
 ## 1. Navigation Update
 
 - [ ] **Add your component to navigation:**  
@@ -11,7 +13,7 @@ Follow these steps to add a new component to the project. Each step includes det
        Add an entry for your component with its name and href.  
        _Example:_
   ```ts
-  { name: "Mouse Pointer", href: "/docs/mouse-pointer" }
+  { name: "Fancy Button", href: "/docs/fancy-button" }
   ```
 
 ## 2. Component Source File
@@ -20,7 +22,7 @@ Follow these steps to add a new component to the project. Each step includes det
        In `src/content`, create a new file named `[component-name].tsx`.  
        _Example:_
   ```
-  src/content/mouse-pointer.tsx
+  src/content/fancy-button.tsx
   ```
 
 ## 3. Documentation Folder
@@ -29,7 +31,7 @@ Follow these steps to add a new component to the project. Each step includes det
        In `src/apps/docs`, create a folder named `[component-name]`.  
        _Example:_
   ```
-  src/apps/docs/mouse-pointer/
+  src/apps/docs/fancy-button/
   ```
 
 ## 4. Demo Example
@@ -38,7 +40,7 @@ Follow these steps to add a new component to the project. Each step includes det
        Inside your docs folder, create `[component-name]-demo.tsx` (or another example file).  
        _Example:_
   ```
-  src/apps/docs/mouse-pointer/mouse-pointer-demo.tsx
+  src/apps/docs/fancy-button/fancy-button-demo.tsx
   ```
 
 ## 5. MDX Documentation Page
@@ -47,13 +49,13 @@ Follow these steps to add a new component to the project. Each step includes det
        In your docs folder, add `page.mdx`.  
        _Example:_
   ```
-  src/apps/docs/mouse-pointer/page.mdx
+  src/apps/docs/fancy-button/page.mdx
   ```
 
 ## 6. Fill Metadata and Docs
 
 - [ ] **Complete the MDX page:**  
-       Use the template at `src/template/page.mdx` to fill in metadata and documentation for your component.
+       Use the template at `src/template/page.mdx` to fill in metadata and documentation based on your component.
 
 ## 7. Register Component
 
@@ -72,9 +74,9 @@ Follow these steps to add a new component to the project. Each step includes det
 - [ ] **Create component JSON:**  
        Run:
   ```
-  pnpm register --name=[component-name] --author=["Your Name"]
+  pnpm run register -- --name=[component-name] --author=["Your Name"]
   ```
-  This creates `[component-name].json` in `public/c`, author is optional, replace `[component-name]` with your component name.
+  This creates `[component-name].json` in `public/c`, author is optional, replace `[component-name]` with your component name (e.g., `button`).
 
 ## 10. Verify JSON
 
@@ -86,7 +88,7 @@ Follow these steps to add a new component to the project. Each step includes det
 - [ ] **Create example JSON:**  
        Run:
   ```
-  pnpm register:v0 --name=[component-name]
+  pnpm run register:v0 -- --name=[component-name]
   ```
   This creates `[component-name]-demo.json` in `public/e`, replace `[component-name]` with your component name.
 
@@ -101,5 +103,4 @@ Follow these steps to add a new component to the project. Each step includes det
 
 ---
 
-**Tip:** Replace `[component-name]` with your actual component name (e.g., `mouse-pointer`).  
-If you have questions, ask in the discussions or check existing components for reference.
+If you have questions, ask in the discussions (issues) or check existing components for reference.
