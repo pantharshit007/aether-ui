@@ -1,0 +1,105 @@
+import { metaConfig } from "@/config/site";
+import ComponentPreview from "@/components/web/component-preview";
+import PrevNextBtn from "@/components/web/prev-next-btn";
+import TiltedCarouselDemo from "./tilted-carousel-demo";
+import TiltedCarouselDemo2 from "./tilted-carousel-demo2";
+
+export const metadata = metaConfig({
+  title: "Tilted Carousel",
+  description:
+    "A visually immersive tilted carousel component with smooth bidirectional animations.",
+});
+
+# Tilted Carousel
+
+A visually immersive carousel component with a 3D-tilted perspective and smooth bidirectional animations. The inspiration for this component comes from the Netflix landing page.
+
+## Examples
+
+### Default Tilted Carousel Implementation, with background color as `Cyan-400/30`
+
+<ComponentPreview
+  component={<TiltedCarouselDemo />}
+  filePath="src/app/docs/tilted-carousel/tilted-carousel-demo.tsx"
+/>
+
+### Implementation of the component in a setting where it can be used as a background for the hero section of the page.
+
+<ComponentPreview
+  component={<TiltedCarouselDemo2 />}
+  filePath="src/app/docs/tilted-carousel/tilted-carousel-demo2.tsx"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+  <InstallationCli value="tilted-carousel" />
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>
+  If you haven't completed the installation refer to the guide [here](/docs/installation).
+</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<CodeBlock filePath="src/content/tilted-carousel.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Component Props
+
+You can customize the behavior and appearance of the `TiltedCarousel` component using the following props.
+
+### TiltedCarousel Props
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["images", "string[]", "[]", "Array of image URLs to be displayed in the carousel."],
+    ["className", "string (Optional)", "(null)", "Additional class names to apply to the carousel container."],
+    ["rowClassName", "string (Optional)", "(null)", "Additional class names to apply to the row wrapper."],
+    ["imageClassName", "string (Optional)", "(null)", "Additional class names to apply to the image container."],
+    ["speed", "number (Optional)", "30", "Animation speed in seconds (lower is faster)."],
+    ["rows", "number (Optional)", "4", "Number of horizontal image rows in the carousel layout."],
+    ["multiplier", "number (Optional)", "6", "Number of times to duplicate the images array for seamless loop."],
+    ["direction", "string (Optional)", "alternate", "Animation direction (left or right or alternate)."],
+    ["pauseOnHover", "boolean (Optional)", "false", "Pause animation on hover."],
+    ["preset", "string (Optional)", "default", "Preset configuration with custom values `compact`, `spacious`, `dramatic`."],
+  ],
+}}>
+
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION, USED BY DEVs */}
+
+| Prop           | Type               | Default   | Description                                                                |
+| -------------- | ------------------ | --------- | -------------------------------------------------------------------------- |
+| images         | string[]           | []        | Array of image URLs to be displayed in the carousel.                       |
+| className      | string (Optional)  | null      | Additional class names to apply to the carousel container.                 |
+| rowClassName   | string (Optional)  | null      | Additional class names to apply to the row wrapper.                        |
+| imageClassName | string (Optional)  | null      | Additional class names to apply to the image container.                    |
+| speed          | number (Optional)  | 30        | Animation speed in seconds (lower is faster).                              |
+| rows           | number (Optional)  | 4         | Number of horizontal rows in the carousel layout.                          |
+| multiplier     | number (Optional)  | 6         | Number of times to duplicate the images array for seamless loop.           |
+| direction      | string (Optional)  | alternate | Animation direction (left or right or alternate).                          |
+| pauseOnHover   | boolean (Optional) | false     | Pause animation on hover.                                                  |
+| preset         | string (Optional)  | default   | Preset configuration with custom values `compact`, `spacious`, `dramatic`. |
+
+</Table>
+
+<PrevNextBtn current="tilted-carousel" />
