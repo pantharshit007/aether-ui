@@ -4,7 +4,7 @@ import {
   CardContent,
   OnHover,
   DefaultView,
-} from "@/content/smooth-slider";
+} from "@/components/content/smooth-slider";
 import { animeData } from "@/lib/data";
 import React from "react";
 

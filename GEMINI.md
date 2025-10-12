@@ -42,7 +42,7 @@ Components are managed through a registry system. Each component has its own sou
 The `CHECKLIST.md` file outlines a clear, multi-step process for adding a new component to the library. The key steps are:
 
 1.  **Update Navigation:** Add the component to `src/data/navigation.ts`.
-2.  **Create Source File:** Add the component's `.tsx` file to `src/content/`.
+2.  **Create Source File:** Add the component's `.tsx` file to `src/components/content/`.
 3.  **Create Docs & Demo:** Add a documentation folder in `src/app/docs/` containing a `page.mdx` and at least one demo file (e.g., `[component-name]-demo.tsx`).
 4.  **Register Component & Example:** Update `scripts/registery-components.ts` and `scripts/registery-examples.ts`.
 5.  **Generate JSON:** Run the following commands to generate the registry JSON files:

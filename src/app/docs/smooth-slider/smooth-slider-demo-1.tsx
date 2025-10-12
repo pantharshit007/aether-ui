@@ -4,7 +4,7 @@ import {
   CardContent,
   OnHover,
   DefaultView,
-} from "@/content/smooth-slider";
+} from "@/components/content/smooth-slider";
 import { Bookmark } from "lucide-react";
 import Image from "next/image";
 import { animeData } from "@/lib/data";

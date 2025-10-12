@@ -18,7 +18,7 @@ type ComponentDefinition = Partial<
 export const components: ComponentDefinition[] = [
   {
     name: "button",
-    path: path.join(process.cwd(), "src", "content", "button.tsx"),
+    path: path.join(process.cwd(), "src", "components", "content", "button.tsx"),
     registryDependencies: [],
     title: "Button",
     dependencies: [],
@@ -26,7 +26,7 @@ export const components: ComponentDefinition[] = [
   },
   {
     name: "hover-card",
-    path: path.join(process.cwd(), "src", "content", "hover-card.tsx"),
+    path: path.join(process.cwd(), "src", "components", "content", "hover-card.tsx"),
     registryDependencies: [],
     title: "Hover Card",
     dependencies: [],
@@ -34,7 +34,7 @@ export const components: ComponentDefinition[] = [
   },
   {
     name: "morphing-card",
-    path: path.join(process.cwd(), "src", "content", "morphing-card.tsx"),
+    path: path.join(process.cwd(), "src", "components", "content", "morphing-card.tsx"),
     registryDependencies: [],
     title: "Morphing Card",
     dependencies: ["motion"],
@@ -42,7 +42,7 @@ export const components: ComponentDefinition[] = [
   },
   {
     name: "feedback-modal",
-    path: path.join(process.cwd(), "src", "content", "feedback-modal.tsx"),
+    path: path.join(process.cwd(), "src", "components", "content", "feedback-modal.tsx"),
     registryDependencies: [],
     title: "Feedback Modal",
     dependencies: ["motion"],
@@ -57,7 +57,7 @@ export const components: ComponentDefinition[] = [
   },
   {
     name: "bento-grid",
-    path: path.join(process.cwd(), "src", "content", "bento-grid.tsx"),
+    path: path.join(process.cwd(), "src", "components", "content", "bento-grid.tsx"),
     registryDependencies: [],
     title: "Bento Grid",
     dependencies: ["motion"],
@@ -72,7 +72,7 @@ export const components: ComponentDefinition[] = [
   },
   {
     name: "fuzzy-text",
-    path: path.join(process.cwd(), "src", "content", "fuzzy-text.tsx"),
+    path: path.join(process.cwd(), "src", "components", "content", "fuzzy-text.tsx"),
     registryDependencies: [],
     title: "Fuzzy Text",
     dependencies: [],
@@ -80,7 +80,7 @@ export const components: ComponentDefinition[] = [
   },
   {
     name: "mouse-trailer",
-    path: path.join(process.cwd(), "src", "content", "mouse-trailer.tsx"),
+    path: path.join(process.cwd(), "src", "components", "content", "mouse-trailer.tsx"),
     registryDependencies: [],
     title: "Mouse Trailer",
     dependencies: [],
@@ -88,7 +88,7 @@ export const components: ComponentDefinition[] = [
   },
   {
     name: "smooth-slider",
-    path: path.join(process.cwd(), "src", "content", "smooth-slider.tsx"),
+    path: path.join(process.cwd(), "src", "components", "content", "smooth-slider.tsx"),
     registryDependencies: [],
     title: "Smooth Slider",
     dependencies: [],
@@ -96,7 +96,7 @@ export const components: ComponentDefinition[] = [
   },
   {
     name: "help-desk",
-    path: path.join(process.cwd(), "src", "content", "help-desk.tsx"),
+    path: path.join(process.cwd(), "src", "components", "content", "help-desk.tsx"),
     registryDependencies: [],
     title: "Help Desk",
     dependencies: [],

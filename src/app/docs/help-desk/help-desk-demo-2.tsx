@@ -5,10 +5,10 @@ import {
   HelpDeskButton,
   HelpDeskForm,
   HelpDeskProvider,
-} from "@/content/help-desk";
+} from "@/components/content/help-desk";
 import React, { useState } from "react";
 
-const HelpDeskDemo1 = () => {
+const HelpDeskDemo2 = () => {
   const [status, setStatus] = useState<FeedbackStatus>("idle");
   const [show, setShow] = useState(false);
 
@@ -58,4 +58,4 @@ const HelpDeskDemo1 = () => {
   );
 };
 
-export default HelpDeskDemo1;
+export default HelpDeskDemo2;

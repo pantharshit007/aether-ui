@@ -19,10 +19,10 @@ Follow these steps to add a new component to the project. Each step includes det
 ## 2. Component Source File
 
 - [ ] **Create the component file:**  
-       In `src/content`, create a new file named `[component-name].tsx`.  
+       In `src/components/content`, create a new file named `[component-name].tsx`.  
        _Example:_
   ```
-  src/content/fancy-button.tsx
+       src/components/content/fancy-button.tsx
   ```
 
 ## 3. Documentation Folder
