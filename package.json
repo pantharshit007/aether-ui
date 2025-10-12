@@ -11,7 +11,8 @@
     "prepare": "husky",
     "register": "tsx scripts/registery-build.ts",
     "register:v0": "tsx scripts/registery-build.ts --v0",
-    "register:sh": "bash create-json.sh"
+    "register:sh": "bash create-json.sh",
+    "register:all": "tsx scripts/registery-build-all.ts"
   },
   "dependencies": {
     "@code-hike/mdx": "^0.9.0",

@@ -49,8 +49,8 @@ export const components: ComponentDefinition[] = [
     description: "A feedback/suggestion modal component with customizable content.",
     files: [
       {
-        name: "hook/useClickOutside.ts",
-        path: path.join(process.cwd(), "src", "hook", "useClickOutside.ts"),
+        name: "hooks/useClickOutside.ts",
+        path: path.join(process.cwd(), "src", "hooks", "useClickOutside.ts"),
         type: "registry:hook",
       },
     ],
@@ -64,8 +64,8 @@ export const components: ComponentDefinition[] = [
     description: "A Multi-column grid layout with bento boxes.",
     files: [
       {
-        name: "hook/useClickOutside.ts",
-        path: path.join(process.cwd(), "src", "hook", "useClickOutside.ts"),
+        name: "hooks/useClickOutside.ts",
+        path: path.join(process.cwd(), "src", "hooks", "useClickOutside.ts"),
         type: "registry:hook",
       },
     ],
