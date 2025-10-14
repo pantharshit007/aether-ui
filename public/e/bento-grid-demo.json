@@ -17,10 +17,10 @@
       "target": "components/content/bento-grid.tsx"
     },
     {
-      "path": "components/content/hooks/useClickOutside.ts",
+      "path": "hooks/useClickOutside.ts",
       "content": "import { RefObject, useEffect } from \"react\";\r\n\r\nfunction useClickOutside<T extends HTMLElement>(\r\n  ref: RefObject<T | null>,\r\n  callback: (e: MouseEvent | TouchEvent) => void\r\n) {\r\n  useEffect(() => {\r\n    function handleClickOutside(event: MouseEvent | TouchEvent) {\r\n      if (ref.current && !ref.current.contains(event.target as Node)) {\r\n        callback(event);\r\n      }\r\n    }\r\n\r\n    document.addEventListener(\"mousedown\", handleClickOutside);\r\n    document.addEventListener(\"touchstart\", handleClickOutside);\r\n\r\n    return () => {\r\n      document.removeEventListener(\"mousedown\", handleClickOutside);\r\n      document.removeEventListener(\"touchstart\", handleClickOutside);\r\n    };\r\n  }, [ref, callback]);\r\n}\r\n\r\nexport { useClickOutside };\r\n",
       "type": "registry:hook",
-      "target": "components/content/hooks/useClickOutside.ts"
+      "target": "hooks/useClickOutside.ts"
     }
   ]
 }

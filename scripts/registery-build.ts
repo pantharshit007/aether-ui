@@ -95,11 +95,17 @@ export function registerExample(name: string) {
       if (ex.files && ex.files.length > 0) {
         for (const dependfile of ex.files) {
           try {
+            const dependencyType = dependfile.type || "registry:ui";
+            const targetPath =
+              dependencyType === "registry:ui"
+                ? `components/content/${dependfile.name}`
+                : dependfile.name;
+
             files.push({
-              path: `components/content/${dependfile.name}`,
+              path: targetPath,
               content: fs.readFileSync(dependfile.path, "utf8"),
               type: dependfile.type || "registry:ui",
-              target: `components/content/${dependfile.name}`,
+              target: targetPath,
             });
           } catch (e) {
             throw new Error(`File ${dependfile.path} not found / not readable`);
