@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { MorphingCard } from "@/content/morphing-card";
+import { MorphingCard } from "@/components/content/morphing-card";
 
 const MorphingCardBasic = () => {
   return (

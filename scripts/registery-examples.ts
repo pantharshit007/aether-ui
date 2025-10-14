@@ -33,7 +33,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "button.tsx",
-          path: path.join(process.cwd(), "src", "content", "button.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "button.tsx"),
           type: "registry:ui",
         },
       ],
@@ -48,7 +48,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "hover-card.tsx",
-          path: path.join(process.cwd(), "src", "content", "hover-card.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "hover-card.tsx"),
           type: "registry:ui",
         },
       ],
@@ -61,7 +61,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "hover-card.tsx",
-          path: path.join(process.cwd(), "src", "content", "hover-card.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "hover-card.tsx"),
           type: "registry:ui",
         },
       ],
@@ -83,7 +83,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "morphing-card.tsx",
-          path: path.join(process.cwd(), "src", "content", "morphing-card.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "morphing-card.tsx"),
           type: "registry:ui",
         },
       ],
@@ -103,7 +103,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "morphing-card.tsx",
-          path: path.join(process.cwd(), "src", "content", "morphing-card.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "morphing-card.tsx"),
           type: "registry:ui",
         },
       ],
@@ -125,7 +125,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "feedback-modal.tsx",
-          path: path.join(process.cwd(), "src", "content", "feedback-modal.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "feedback-modal.tsx"),
           type: "registry:ui",
         },
         {
@@ -150,7 +150,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "feedback-modal.tsx",
-          path: path.join(process.cwd(), "src", "content", "feedback-modal.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "feedback-modal.tsx"),
           type: "registry:ui",
         },
         {
@@ -170,7 +170,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "bento-grid.tsx",
-          path: path.join(process.cwd(), "src", "content", "bento-grid.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "bento-grid.tsx"),
           type: "registry:ui",
         },
         {
@@ -188,7 +188,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "bento-grid.tsx",
-          path: path.join(process.cwd(), "src", "content", "bento-grid.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "bento-grid.tsx"),
           type: "registry:ui",
         },
         {
@@ -208,7 +208,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "fuzzy-text.tsx",
-          path: path.join(process.cwd(), "src", "content", "fuzzy-text.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "fuzzy-text.tsx"),
           type: "registry:ui",
         },
       ],
@@ -221,7 +221,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "fuzzy-text.tsx",
-          path: path.join(process.cwd(), "src", "content", "fuzzy-text.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "fuzzy-text.tsx"),
           type: "registry:ui",
         },
       ],
@@ -234,7 +234,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "fuzzy-text.tsx",
-          path: path.join(process.cwd(), "src", "content", "fuzzy-text.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "fuzzy-text.tsx"),
           type: "registry:ui",
         },
       ],
@@ -256,7 +256,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "mouse-trailer.tsx",
-          path: path.join(process.cwd(), "src", "content", "mouse-trailer.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "mouse-trailer.tsx"),
           type: "registry:ui",
         },
       ],
@@ -278,7 +278,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "smooth-slider.tsx",
-          path: path.join(process.cwd(), "src", "content", "smooth-slider.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "smooth-slider.tsx"),
           type: "registry:ui",
         },
       ],
@@ -298,7 +298,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "smooth-slider.tsx",
-          path: path.join(process.cwd(), "src", "content", "smooth-slider.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "smooth-slider.tsx"),
           type: "registry:ui",
         },
       ],
@@ -314,7 +314,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "help-desk.tsx",
-          path: path.join(process.cwd(), "src", "content", "help-desk.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "help-desk.tsx"),
           type: "registry:ui",
         },
       ],
@@ -328,7 +328,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "help-desk.tsx",
-          path: path.join(process.cwd(), "src", "content", "help-desk.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "help-desk.tsx"),
           type: "registry:ui",
         },
       ],
@@ -342,7 +342,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "help-desk.tsx",
-          path: path.join(process.cwd(), "src", "content", "help-desk.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "help-desk.tsx"),
           type: "registry:ui",
         },
       ],
@@ -365,7 +365,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "tilted-carousel.tsx",
-          path: path.join(process.cwd(), "src", "content", "tilted-carousel.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "tilted-carousel.tsx"),
           type: "registry:ui",
         },
       ],
@@ -386,7 +386,7 @@ export const examples: Record<string, ComponentDefinition[]> = {
       files: [
         {
           name: "tilted-carousel.tsx",
-          path: path.join(process.cwd(), "src", "content", "tilted-carousel.tsx"),
+          path: path.join(process.cwd(), "src", "components", "content", "tilted-carousel.tsx"),
           type: "registry:ui",
         },
       ],

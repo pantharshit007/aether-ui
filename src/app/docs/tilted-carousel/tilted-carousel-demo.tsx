@@ -1,4 +1,4 @@
-import { TiltedCarousel } from "@/content/tilted-carousel";
+import { TiltedCarousel } from "@/components/content/tilted-carousel";
 
 function TiltedCarouselDemo() {
   const images = [

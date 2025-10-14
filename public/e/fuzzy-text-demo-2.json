@@ -1,18 +1,20 @@
 {
   "name": "fuzzy-text-demo-2",
-  "type": "registry:ui",
+  "type": "registry:component",
   "description": "Experience Fuzzy effect on hover",
   "componentName": "fuzzy-text-demo-2",
   "files": [
     {
       "path": "fuzzy-text-demo-2.tsx",
-      "content": "import { FuzzyText } from \"@/content/fuzzy-text\";\r\nimport React from \"react\";\r\n\r\nconst FuzzyTextDemo2 = () => {\r\n  return (\r\n    <p className=\"text-xl font-medium\">\r\n      Hover{\" \"}\r\n      <FuzzyText orignal=\"over me!\" className=\"font-semibold\">\r\n        over me!\r\n      </FuzzyText>\r\n    </p>\r\n  );\r\n};\r\n\r\nexport default FuzzyTextDemo2;\r\n",
-      "type": "registry:component"
+      "content": "import { FuzzyText } from \"@/components/content/fuzzy-text\";\r\nimport React from \"react\";\r\n\r\nconst FuzzyTextDemo2 = () => {\r\n  return (\r\n    <p className=\"text-xl font-medium\">\r\n      Hover{\" \"}\r\n      <FuzzyText orignal=\"over me!\" className=\"font-semibold\">\r\n        over me!\r\n      </FuzzyText>\r\n    </p>\r\n  );\r\n};\r\n\r\nexport default FuzzyTextDemo2;\r\n",
+      "type": "registry:component",
+      "target": "components/fuzzy-text-demo-2.tsx"
     },
     {
-      "path": "component/content/fuzzy-text.tsx",
+      "path": "components/content/fuzzy-text.tsx",
       "content": "\"use client\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport React from \"react\";\r\n\r\ntype FuzzyTextProps = {\r\n  text?: string;\r\n  orignal: string;\r\n  children: React.ReactNode;\r\n  className?: string;\r\n  delay?: number;\r\n} & React.HTMLAttributes<HTMLDivElement>;\r\n\r\nfunction FuzzyText({ text, orignal, children, className, delay = 30, ...props }: FuzzyTextProps) {\r\n  const element = React.useRef<HTMLSpanElement | null>(null);\r\n  const childrenCopy = text && text?.length !== 0 ? text : orignal;\r\n  const fuzzyText = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\";\r\n  let interval: NodeJS.Timeout | null = null;\r\n\r\n  if (orignal.length === 0) {\r\n    return <span className=\"text-red-500\">ORIGNAL TEXT CANNOT BE EMPTY</span>;\r\n  }\r\n\r\n  function animateText(targetText: string, callback?: () => void) {\r\n    let iteration = 0;\r\n    clearInterval(interval as NodeJS.Timeout);\r\n\r\n    interval = setInterval(() => {\r\n      if (!element.current || element.current.innerText === \"\") {\r\n        clearInterval(interval as NodeJS.Timeout);\r\n        return;\r\n      }\r\n\r\n      const newText = targetText.replace(/./g, (char, idx) => {\r\n        if (idx < iteration) return targetText[idx];\r\n        const randomIndex = Math.floor(Math.random() * fuzzyText.length);\r\n        return fuzzyText[randomIndex];\r\n      });\r\n\r\n      element.current.innerText = newText;\r\n      iteration += 1 / 3;\r\n\r\n      if (iteration >= targetText.length) {\r\n        clearInterval(interval as NodeJS.Timeout);\r\n        interval = null;\r\n        if (callback) {\r\n          callback();\r\n        }\r\n      }\r\n    }, delay);\r\n  }\r\n\r\n  function handleMouseOver(e: React.MouseEvent<HTMLSpanElement>) {\r\n    animateText(childrenCopy);\r\n  }\r\n\r\n  function handleMouseLeave(e: React.MouseEvent<HTMLSpanElement, MouseEvent>) {\r\n    animateText(orignal);\r\n  }\r\n\r\n  return (\r\n    <span\r\n      ref={element}\r\n      className={cn(\r\n        \"cursor-crosshair rounded-sm px-1.5 py-1 font-mono uppercase transition-all duration-200 hover:bg-black/90 hover:text-white/90 dark:hover:bg-white/90 dark:hover:text-black/80\",\r\n        className\r\n      )}\r\n      onMouseOver={handleMouseOver}\r\n      onMouseLeave={handleMouseLeave}\r\n      {...props}\r\n    >\r\n      {children}\r\n    </span>\r\n  );\r\n}\r\n\r\nexport { FuzzyText };\r\nFuzzyText.displayName = \"FuzzyText\";\r\n\r\n// DevelopedBy: AetherUI\r\n",
-      "type": "registry:ui"
+      "type": "registry:ui",
+      "target": "components/content/fuzzy-text.tsx"
     }
   ]
 }
