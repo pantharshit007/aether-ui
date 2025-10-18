@@ -1,14 +1,4 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { HoverArea, HoverCard } from "@/content/hover-card";
-import { Rocket, Server, Trophy, Users, Lock } from "lucide-react";
+import { HoverArea, HoverCard } from "@/components/content/hover-card";
 import Image from "next/image";
 import React from "react";
 
@@ -19,16 +9,18 @@ const HoverCardDemo2 = () => {
         <div className="h-[400px] w-[300px] rounded-xl bg-slate-100 p-4 shadow-lg dark:bg-zinc-900/90">
           <Image
             className="rounded-t-xl object-cover"
-            src="https://loremflickr.com/320/240"
+            src="https://images.unsplash.com/photo-1525253086316-d0c936c814f8?auto=format&fit=crop&w=800&q=80"
             alt="Card image"
             height={150}
             width={300}
           />
 
           <div className="mt-4">
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Hey Kitty</h3>
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+              Hey Little Puppy
+            </h3>
             <p className="mt-2 text-gray-600 dark:text-gray-300">
-              Kitty is so chill, because she uses Aether UI. Are you using it?
+              These guys are so chill, because they uses Aether UI. Are you using it?
             </p>
             <div className="mt-4 flex items-center justify-between">
               <span className="text-sm font-semibold text-gray-500 dark:text-gray-400">

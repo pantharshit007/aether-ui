@@ -72,6 +72,16 @@ export const NavigationLinks: NavigationGroup[] = [
       },
     ],
   },
+  {
+    name: "Backgrounds",
+    children: [
+      {
+        name: "Tilted Carousel",
+        href: "/docs/tilted-carousel",
+        isNew: true,
+      },
+    ],
+  },
 ] as const;
 
 export const useNavigationLinks = () =>

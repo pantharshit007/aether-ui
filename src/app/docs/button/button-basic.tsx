@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/content/button";
+import { Button } from "@/components/content/button";
 import React from "react";
 
 function ButtonBasic() {

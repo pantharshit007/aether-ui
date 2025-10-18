@@ -6,7 +6,7 @@ import {
   HelpDeskForm,
   HelpDeskProvider,
   useHelpDesk,
-} from "@/content/help-desk";
+} from "@/components/content/help-desk";
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 
@@ -17,7 +17,7 @@ type CustomSubmitData = {
   category: FeedbackCategory;
 };
 
-const HelpDeskDemo1 = () => {
+const HelpDeskDemo3 = () => {
   const [status, setStatus] = useState<FeedbackStatus>("idle");
   const [category, setCategory] = useState<FeedbackCategory>("General Feedback");
   const [show, setShow] = useState(false);
@@ -168,4 +168,4 @@ function CustomFeedbackForm({
   );
 }
 
-export default HelpDeskDemo1;
+export default HelpDeskDemo3;

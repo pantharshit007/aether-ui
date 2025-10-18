@@ -1,6 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import { BlurEffect, FadeEffect, MouseTrailer, MouseTrailerProps } from "@/content/mouse-trailer";
+import {
+  BlurEffect,
+  FadeEffect,
+  MouseTrailer,
+  MouseTrailerProps,
+} from "@/components/content/mouse-trailer";
 
 interface Settings {
   trailLength: number;

@@ -1,5 +1,5 @@
 "use client";
-import { Modal, ModalContent } from "@/content/feedback-modal";
+import { Modal, ModalContent } from "@/components/content/feedback-modal";
 
 const FeedbackModalDemo2 = () => {
   function log(val: string) {

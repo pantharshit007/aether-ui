@@ -35,7 +35,7 @@ if [ -z "$TITLE" ]; then
 fi
 
 # Source file path
-SOURCE_PATH="src/content/${NAME}.tsx"
+SOURCE_PATH="src/components/content/${NAME}.tsx"
 
 # Check if source file exists
 if [ ! -f "$SOURCE_PATH" ]; then
@@ -65,7 +65,7 @@ JSON_CONTENT="{
   \"type\": \"registry:ui\",
   \"registryDependencies\": [],
   \"title\": \"$TITLE\",
-  \"author\": \"Harshit Pant\",
+  \"author\": \"Harshit Pant <hrshit.in>\",
   \"description\": \"A shadcn/ui based $NAME but it's simple\",
   \"dependencies\": $DEPS_JSON,
   \"devDependencies\": [],

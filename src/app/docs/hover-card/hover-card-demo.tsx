@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { HoverArea, HoverCard } from "@/content/hover-card";
+import { HoverArea, HoverCard } from "@/components/content/hover-card";
 import { Rocket, Server, Trophy, Users, Lock } from "lucide-react";
 import React from "react";
 

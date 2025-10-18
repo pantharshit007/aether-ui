@@ -1,4 +1,4 @@
-import BentoGrid from "@/content/bento-grid";
+import BentoGrid from "@/components/content/bento-grid";
 import React from "react";
 
 const data = [

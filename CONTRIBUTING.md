@@ -68,4 +68,4 @@ pnpm install
 
 ## How to proceed with your contribution
 
-You can find the how-to of adding components in the [Checklist.md](Checklist.md) file.
+You can find the how-to of adding components in the [Checklist.md](CHECKLIST.md) file.

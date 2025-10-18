@@ -1,6 +1,6 @@
 "use client";
 
-import { FuzzyText } from "@/content/fuzzy-text";
+import { FuzzyText } from "@/components/content/fuzzy-text";
 import React from "react";
 
 const FuzzyTextDemo3 = () => {
