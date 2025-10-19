@@ -1,5 +1,5 @@
 "use client";
-import { MorphingCard } from "@/content/morphing-card";
+import { MorphingCard } from "@/components/content/morphing-card";
 import { Users } from "lucide-react";
 import React from "react";
 

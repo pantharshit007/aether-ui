@@ -14,7 +14,7 @@ const AnimatedCardContext = createContext<AnimatedCardContextType | null>(null);
 export const useAnimatedCard = () => {
   const context = useContext(AnimatedCardContext);
   if (!context) {
-    throw new Error("useAnimatedCard must be used within a AnimatedCard Profvider");
+    throw new Error("useAnimatedCard must be used within a AnimatedCard Provider");
   }
 
   return context;
@@ -39,8 +39,6 @@ function AnimatedSlider({ gap = 16, scrollAmount = 300, ...props }: AnimatedSlid
     const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
     setShowLeftArrow(scrollLeft > 0);
     setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10); // when there is enough space to scroll to the right
-    console.log("scrolLeft", scrollLeft > 0);
-    console.log("scrollWidth", scrollLeft < scrollWidth - clientWidth - 10);
   };
 
   useEffect(() => {

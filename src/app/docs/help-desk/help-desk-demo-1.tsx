@@ -5,7 +5,7 @@ import {
   HelpDeskButton,
   HelpDeskForm,
   HelpDeskProvider,
-} from "@/content/help-desk";
+} from "@/components/content/help-desk";
 import React, { useState } from "react";
 
 const HelpDeskDemo1 = () => {

@@ -32,12 +32,14 @@ reviews:
         - Ensure that the code is well-documented.
         - Verify that the changes are consistent with the existing coding style.
         - cross check CHECKLIST.md for any new component additions.
+        - Every new change (in the form of PR) should bump the version in package.json.
     - path: "src/app/docs/**/*.mdx"
       instructions: |
         These are documentation changes. Please check for:
         - Clarity and accuracy of the content.
         - Correct formatting and grammar.
         - Any broken links or images.
+        - check for if we have any new component additions it follows the same format as the other examples or the src/template/page.mdx.
     - path: "src/components/**/*.tsx"
       instructions: |
         These are changes to UI components. Please check for:
@@ -45,7 +47,7 @@ reviews:
         - Adherence to the design system.
         - Responsiveness and accessibility.
         - Proper use of state management.
-    - path: "src/content/**/*.tsx"
+    - path: "src/components/content/**/*.tsx"
       instructions: |
         These are changes to component content/examples. Please check for:
         - Correctness of the examples.
