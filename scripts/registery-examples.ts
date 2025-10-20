@@ -392,4 +392,27 @@ export const examples: Record<string, ComponentDefinition[]> = {
       ],
     },
   ],
+  "thinking-loader": [
+    {
+      name: "thinking-loader-demo",
+      path: path.join(
+        process.cwd(),
+        "src",
+        "app",
+        "docs",
+        "thinking-loader",
+        "thinking-loader-demo.tsx"
+      ),
+      description:
+        "A customizable loader component that displays a sequence of phrases with an icon.",
+      componentName: "thinking-loader",
+      files: [
+        {
+          name: "thinking-loader.tsx",
+          path: path.join(process.cwd(), "src", "components", "content", "thinking-loader.tsx"),
+          type: "registry:ui",
+        },
+      ],
+    },
+  ],
 };

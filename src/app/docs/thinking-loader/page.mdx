@@ -1,11 +1,11 @@
-import ComponentPreview from "@/components/web/component-preview";
-import ThinkingLoaderDemo from "./thinking-loader-demo";
-import PrevNextBtn from "@/components/web/prev-next-btn";
 import { metaConfig } from "@/config/site";
+import ComponentPreview from "@/components/web/component-preview";
+import PrevNextBtn from "@/components/web/prev-next-btn";
+import ThinkingLoaderDemo from "./thinking-loader-demo";
 
 export const metadata = metaConfig({
-  title: "Thinking Loader | Aether UI",
-  description: "A customizable loader component that displays a sequence of phrases.",
+  title: "Thinking Loader",
+  description: "A customizable loader component that displays a sequence of phrases with an icon.",
 });
 
 # Thinking Loader
@@ -13,6 +13,8 @@ export const metadata = metaConfig({
 A customizable loader component that displays a sequence of phrases with an icon.
 
 ## Examples
+
+### Default Implementation
 
 <ComponentPreview
   component={<ThinkingLoaderDemo />}
@@ -45,17 +47,29 @@ A customizable loader component that displays a sequence of phrases with an icon
 
 You can customize the `ThinkingLoader` by passing the following props:
 
-<Table
-  data={{
-    headers: ["Prop", "Type", "Default", "Description"],
-    rows: [
-      ["children", "ReactNode", "", "Custom icon or element to display. Defaults to a brain icon."],
-      ["className", "string", "", "Additional class names for the root element."],
-      ["textClassName", "string", "", "Additional class names for the text container."],
-      ["phrases", "string[]", "DEFAULT_LOADING_PHRASES", "An array of phrases to cycle through."],
-      ["duration", "number", "2500", "The duration (in ms) each phrase is displayed."],
-    ],
-  }}
-/>
+### ThinkingLoader Props
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["children", "ReactNode", "<Brain />", "Custom icon or element to display. Defaults to a brain icon."],
+    ["className", "string", "nil", "Additional class names for the root element."],
+    ["textClassName", "string", "nil", "Additional class names for the text container."],
+    ["phrases", "string[]", "DEFAULT_LOADING_PHRASES", "An array of phrases to cycle through."],
+    ["duration", "number", "2500", "The duration (in ms) each phrase is displayed."],
+  ],
+}}>
+
+{/* THIS IS FOR DEVELOPMENT ONLY IT WILL NOT APPEAR IN THE FINAL VERSION, USED BY DEVs */}
+
+| Prop          | Type      | Default                 | Description                                                  |
+| ------------- | --------- | ----------------------- | ------------------------------------------------------------ |
+| children      | ReactNode |                         | Custom icon or element to display. Defaults to a brain icon. |
+| className     | string    |                         | Additional class names for the root element.                 |
+| textClassName | string    |                         | Additional class names for the text container.               |
+| phrases       | string[]  | DEFAULT_LOADING_PHRASES | An array of phrases to cycle through.                        |
+| duration      | number    | 2500                    | The duration (in ms) each phrase is displayed.               |
+
+</Table>
 
 <PrevNextBtn current="thinking-loader" />

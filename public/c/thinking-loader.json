@@ -1,0 +1,17 @@
+{
+  "name": "thinking-loader",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "title": "Thinking Loader",
+  "author": "Harshit Pant <hrshit.in>",
+  "description": "A customizable loader component that displays a sequence of phrases with an icon.",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "thinking-loader.tsx",
+      "content": "\"use client\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\nimport { Brain } from \"lucide-react\";\r\nimport { useEffect, useState } from \"react\";\r\n\r\nconst DEFAULT_LOADING_PHRASES = [\r\n  \"Loading tools…\",\r\n  \"Hooking up things…\",\r\n  \"Wiring logic…\",\r\n  \"Almost there…\",\r\n  \"Just thinking…\",\r\n  \"Finalizing stuff…\",\r\n  \"Staring into the void…\",\r\n  \"Summoning electrons…\",\r\n];\r\n\r\ninterface ThinkingLoaderProps {\r\n  className?: string;\r\n  phrases?: string[];\r\n  duration?: number;\r\n  children?: React.ReactNode;\r\n  textClassName?: string;\r\n}\r\n\r\nfunction ThinkingLoader({\r\n  className,\r\n  phrases = DEFAULT_LOADING_PHRASES,\r\n  duration = 2500,\r\n  children,\r\n  textClassName,\r\n}: ThinkingLoaderProps) {\r\n  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);\r\n\r\n  useEffect(() => {\r\n    const interval = setInterval(() => {\r\n      setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);\r\n    }, duration);\r\n\r\n    return () => clearInterval(interval);\r\n  }, [phrases, duration]);\r\n\r\n  return (\r\n    <div className={cn(\"text-muted-foreground flex items-center gap-2\", className)}>\r\n      {children || <Brain className=\"h-5 w-5 flex-shrink-0\" />}\r\n      <span className={cn(\"relative inline-block w-40 truncate overflow-hidden\", textClassName)}>\r\n        <span\r\n          className=\"animate-shimmer via-foreground/80 bg-gradient-to-r from-transparent to-transparent bg-[length:200%_100%] bg-clip-text text-transparent\"\r\n          style={{\r\n            animation: \"shimmer 3s ease-in-out infinite\",\r\n          }}\r\n        >\r\n          {phrases[currentPhraseIndex]}\r\n        </span>\r\n      </span>\r\n      <style>\r\n        {`\r\n        @keyframes shimmer {\r\n        0% {\r\n          background-position: -200% 0;\r\n        }\r\n        100% {\r\n          background-position: 200% 0;\r\n        }\r\n        }\r\n      `}\r\n      </style>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default ThinkingLoader;\r\n\r\n// DevelopedBy: AetherUI\r\n",
+      "type": "registry:ui",
+      "target": "components/content/thinking-loader.tsx"
+    }
+  ]
+}

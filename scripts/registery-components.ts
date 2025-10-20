@@ -123,4 +123,14 @@ export const components: ComponentDefinition[] = [
     description:
       "A visually immersive tilted carousel component with smooth bidirectional animations.",
   },
+  {
+    name: "thinking-loader",
+    path: path.join(process.cwd(), "src", "components", "content", "thinking-loader.tsx"),
+    registryDependencies: [],
+    title: "Thinking Loader",
+    dependencies: [],
+    author: "Harshit Pant <hrshit.in>",
+    description:
+      "A customizable loader component that displays a sequence of phrases with an icon.",
+  },
 ];
