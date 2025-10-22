@@ -55,6 +55,11 @@ export const NavigationLinks: NavigationGroup[] = [
         name: "Help Desk",
         href: "/docs/help-desk",
       },
+      {
+        name: "Scroll Indicator",
+        href: "/docs/scroll-indicator",
+        isNew: true,
+      },
     ],
   },
   {
