@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { useMobile } from "@/hooks/use-mobile";
 import { MenuIcon, Sidebar, XIcon } from "lucide-react";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
@@ -33,7 +33,7 @@ type SidebarProviderProps = {
 function SidebarProvider({ children, defaultOpen = true }: SidebarProviderProps) {
   const [open, setOpen] = useState(defaultOpen);
   const [openMobile, setOpenMobile] = useState(false);
-  const isMobile = useIsMobile();
+  const isMobile = useMobile();
 
   const toggleSidebar = () => {
     return isMobile ? setOpenMobile((open) => !open) : setOpen((open) => !open);

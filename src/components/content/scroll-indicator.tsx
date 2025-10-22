@@ -3,23 +3,35 @@
 import { useEffect, useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
 
-import { useIsMobile } from "@/hooks/use-mobile";
+import { useMobile } from "@/hooks/use-mobile";
 
 export interface ScrollIndicatorProps {
   showOnMobile?: boolean;
   showCornerIndicator?: boolean;
   showTopBar?: boolean;
+  topBarClassName?: string;
+  topBarGradient?: string;
+  indicatorClassName?: string;
+  indicatorSvgClassName?: string;
+  indicatorPercentageClassName?: string;
+  indicatorArrowClassName?: string;
 }
 
 export function ScrollIndicator({
   showOnMobile = false,
   showCornerIndicator = true,
   showTopBar = false,
+  topBarClassName,
+  topBarGradient,
+  indicatorClassName,
+  indicatorSvgClassName,
+  indicatorPercentageClassName,
+  indicatorArrowClassName,
 }: ScrollIndicatorProps) {
   const [scrollPercentage, setScrollPercentage] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const isMobile = useIsMobile();
+  const isMobile = useMobile();
 
   const calculateScrollPercentage = useCallback(() => {
     const windowHeight = window.innerHeight;
@@ -71,9 +83,12 @@ export function ScrollIndicator({
   return (
     <>
       {showTopBar && (
-        <div className="fixed top-0 left-0 z-50 h-1 w-full bg-gray-900/20">
+        <div className={cn("fixed top-0 left-0 z-50 h-1 w-full bg-gray-900/20", topBarClassName)}>
           <div
-            className="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 transition-all duration-300 ease-out"
+            className={cn(
+              "h-full bg-gradient-to-r from-cyan-300 to-cyan-600 transition-all duration-300 ease-out",
+              topBarGradient
+            )}
             style={{ width: `${scrollPercentage}%` }}
           />
         </div>
@@ -86,13 +101,14 @@ export function ScrollIndicator({
           onMouseLeave={() => setIsHovered(false)}
           className={cn(
             "fixed right-4 bottom-4 z-50 flex h-15 w-15 items-center justify-center rounded-full bg-zinc-900 shadow-2xl transition-all duration-500 ease-out hover:scale-110",
-            isVisible ? "translate-x-0 opacity-100" : "pointer-events-none translate-x-32 opacity-0"
+            isVisible
+              ? "translate-x-0 opacity-100"
+              : "pointer-events-none translate-x-32 opacity-0",
+            indicatorClassName
           )}
           aria-label="Scroll to top"
-          style={{
-            transitionProperty: "transform, opacity",
-          }}
         >
+          {/* SVG Circle Progress */}
           <svg className="absolute inset-0 h-full w-full -rotate-90" viewBox="0 0 100 100">
             <circle
               cx="50"
@@ -102,17 +118,20 @@ export function ScrollIndicator({
               stroke="rgba(255, 255, 255, 0.1)"
               strokeWidth="4"
             />
+            {/* Progress circle */}
             <circle
               cx="50"
               cy="50"
               r="42"
               fill="none"
-              stroke="rgb(34, 211, 238)"
               strokeWidth="4"
               strokeLinecap="round"
               strokeDasharray={circumference}
               strokeDashoffset={strokeDashoffset}
-              className="transition-all duration-300 ease-out"
+              className={cn(
+                "stroke-cyan-400 transition-all duration-300 ease-out",
+                indicatorSvgClassName
+              )}
             />
           </svg>
 
@@ -120,15 +139,18 @@ export function ScrollIndicator({
             <span
               className={cn(
                 "text-sm font-bold text-white transition-all duration-300",
-                isHovered ? "scale-0 opacity-0" : "scale-100 opacity-100"
+                isHovered ? "scale-0 opacity-0" : "scale-100 opacity-100",
+                indicatorPercentageClassName
               )}
             >
               {Math.round(scrollPercentage)}%
             </span>
+
             <svg
               className={cn(
                 "absolute h-6 w-6 text-cyan-400 transition-all duration-300",
-                isHovered ? "scale-100 opacity-100" : "scale-0 opacity-0"
+                isHovered ? "scale-100 opacity-100" : "scale-0 opacity-0",
+                indicatorArrowClassName
               )}
               fill="none"
               viewBox="0 0 24 24"
@@ -143,3 +165,5 @@ export function ScrollIndicator({
     </>
   );
 }
+
+// DevelopedBy: AetherUI

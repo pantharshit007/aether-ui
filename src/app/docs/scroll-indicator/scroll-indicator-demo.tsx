@@ -1,7 +1,7 @@
 import { ScrollIndicator } from "@/components/content/scroll-indicator";
 import React from "react";
 
-const ScrollIndicatorDemo1 = () => {
+const ScrollIndicatorDemo = () => {
   return (
     <div className="bg-background">
       <div className="container mx-auto px-4 py-10">
@@ -26,4 +26,4 @@ const ScrollIndicatorDemo1 = () => {
   );
 };
 
-export default ScrollIndicatorDemo1;
+export default ScrollIndicatorDemo;
