@@ -1,5 +1,4 @@
 import { ScrollIndicator } from "@/components/content/scroll-indicator";
-import React from "react";
 
 const ScrollIndicatorDemo = () => {
   return (

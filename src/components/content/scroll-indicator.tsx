@@ -36,6 +36,13 @@ export function ScrollIndicator({
   const calculateScrollPercentage = useCallback(() => {
     const windowHeight = window.innerHeight;
     const documentHeight = document.documentElement.scrollHeight - windowHeight;
+
+    if (documentHeight <= 0) {
+      setScrollPercentage(0);
+      setIsVisible(false);
+      return;
+    }
+
     const scrolled = window.scrollY;
     const percentage = (scrolled / documentHeight) * 100;
 
