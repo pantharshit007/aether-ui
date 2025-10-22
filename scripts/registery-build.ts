@@ -41,7 +41,10 @@ export function registerComponent(name: string, author?: string) {
             path: dependfile.name,
             content: fs.readFileSync(dependfile.path, "utf8"),
             type: dependfile.type,
-            target: dependfile.name,
+            target:
+              dependfile.type === "registry:theme"
+                ? `components/content/${dependfile.name}`
+                : dependfile.name,
           });
         } catch (e) {
           throw new Error(`File ${dependfile.path} not found / not readable`);
@@ -97,7 +100,7 @@ export function registerExample(name: string) {
           try {
             const dependencyType = dependfile.type || "registry:ui";
             const targetPath =
-              dependencyType === "registry:ui"
+              dependencyType === "registry:ui" || dependencyType === "registry:theme"
                 ? `components/content/${dependfile.name}`
                 : dependfile.name;
 

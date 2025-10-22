@@ -5,7 +5,8 @@ export type RegistryType =
   | "registry:component"
   | "registry:lib"
   | "registry:page"
-  | "registry:file";
+  | "registry:file"
+  | "registry:theme";
 
 export interface RegistryFile {
   path: string;

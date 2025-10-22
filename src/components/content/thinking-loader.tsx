@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { Brain } from "lucide-react";
 import { useEffect, useState } from "react";
+import "./thinking-loader.css";
 
 const DEFAULT_LOADING_PHRASES = [
   "Loading tools…",
@@ -33,6 +34,7 @@ function ThinkingLoader({
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
 
   useEffect(() => {
+    if (phrases.length === 0) return;
     const interval = setInterval(() => {
       setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
     }, duration);
@@ -44,27 +46,10 @@ function ThinkingLoader({
     <div className={cn("text-muted-foreground flex items-center gap-2", className)}>
       {children || <Brain className="h-5 w-5 flex-shrink-0" />}
       <span className={cn("relative inline-block w-40 truncate overflow-hidden", textClassName)}>
-        <span
-          className="animate-shimmer via-foreground/80 bg-gradient-to-r from-transparent to-transparent bg-[length:200%_100%] bg-clip-text text-transparent"
-          style={{
-            animation: "shimmer 3s ease-in-out infinite",
-          }}
-        >
+        <span className="animate-shimmer via-foreground/80 bg-gradient-to-r from-transparent to-transparent bg-[length:200%_100%] bg-clip-text text-transparent">
           {phrases[currentPhraseIndex]}
         </span>
       </span>
-      <style>
-        {`
-        @keyframes shimmer {
-        0% {
-          background-position: -200% 0;
-        }
-        100% {
-          background-position: 200% 0;
-        }
-        }
-      `}
-      </style>
     </div>
   );
 }

@@ -28,18 +28,26 @@ A customizable loader component that displays a sequence of phrases with an icon
     <TabsTrigger value="cli">CLI</TabsTrigger>
     <TabsTrigger value="manual">Manual</TabsTrigger>
   </TabsList>
+  
   <TabsContent value="cli">
     <InstallationCli value="thinking-loader" />
   </TabsContent>
+
   <TabsContent value="manual">
     <Steps>
       <Step>
         If you haven't completed the installation refer to guide [here](/docs/installation).
       </Step>
+
       <Step>Copy and paste the following code into your project.</Step>
       <CodeBlock filePath="src/components/content/thinking-loader.tsx" />
+
+      <Step>Create a new file named `thinking-loader.css` in the same directory where you copied the above code.</Step>
+      <CodeBlock filePath="src/components/content/thinking-loader.css" />
+
       <Step>Update the import paths to match your project setup.</Step>
     </Steps>
+
   </TabsContent>
 </Tabs>
 

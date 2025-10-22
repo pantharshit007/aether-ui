@@ -19,7 +19,7 @@ type ComponentDefinition = Omit<
   files: {
     name: string;
     path: string;
-    type?: "registry:hook" | "registry:ui" | "registry:lib";
+    type?: "registry:hook" | "registry:ui" | "registry:lib" | "registry:theme";
   }[];
 };
 
@@ -411,6 +411,11 @@ export const examples: Record<string, ComponentDefinition[]> = {
           name: "thinking-loader.tsx",
           path: path.join(process.cwd(), "src", "components", "content", "thinking-loader.tsx"),
           type: "registry:ui",
+        },
+        {
+          name: "thinking-loader.css",
+          path: path.join(process.cwd(), "src", "components", "content", "thinking-loader.css"),
+          type: "registry:theme",
         },
       ],
     },
