@@ -19,7 +19,7 @@ type ComponentDefinition = Omit<
   files: {
     name: string;
     path: string;
-    type?: "registry:hook" | "registry:ui" | "registry:lib";
+    type?: "registry:hook" | "registry:ui" | "registry:lib" | "registry:theme";
   }[];
 };
 
@@ -388,6 +388,34 @@ export const examples: Record<string, ComponentDefinition[]> = {
           name: "tilted-carousel.tsx",
           path: path.join(process.cwd(), "src", "components", "content", "tilted-carousel.tsx"),
           type: "registry:ui",
+        },
+      ],
+    },
+  ],
+  "thinking-loader": [
+    {
+      name: "thinking-loader-demo",
+      path: path.join(
+        process.cwd(),
+        "src",
+        "app",
+        "docs",
+        "thinking-loader",
+        "thinking-loader-demo.tsx"
+      ),
+      description:
+        "A customizable loader component that displays a sequence of phrases with an icon.",
+      componentName: "thinking-loader",
+      files: [
+        {
+          name: "thinking-loader.tsx",
+          path: path.join(process.cwd(), "src", "components", "content", "thinking-loader.tsx"),
+          type: "registry:ui",
+        },
+        {
+          name: "thinking-loader.css",
+          path: path.join(process.cwd(), "src", "components", "content", "thinking-loader.css"),
+          type: "registry:theme",
         },
       ],
     },

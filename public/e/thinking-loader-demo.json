@@ -1,0 +1,26 @@
+{
+  "name": "thinking-loader-demo",
+  "type": "registry:component",
+  "description": "A customizable loader component that displays a sequence of phrases with an icon.",
+  "componentName": "thinking-loader-demo",
+  "files": [
+    {
+      "path": "thinking-loader-demo.tsx",
+      "content": "import React from \"react\";\nimport ThinkingLoader from \"@/components/content/thinking-loader\";\n\nconst ThinkingLoaderDemo = () => {\n  return (\n    <div className=\"flex flex-col items-center gap-8\">\n      <ThinkingLoader />\n    </div>\n  );\n};\n\nexport default ThinkingLoaderDemo;\n",
+      "type": "registry:component",
+      "target": "components/thinking-loader-demo.tsx"
+    },
+    {
+      "path": "components/content/thinking-loader.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Brain } from \"lucide-react\";\nimport { useEffect, useState } from \"react\";\nimport \"./thinking-loader.css\";\n\nconst DEFAULT_LOADING_PHRASES = [\n  \"Loading tools…\",\n  \"Hooking up things…\",\n  \"Wiring logic…\",\n  \"Almost there…\",\n  \"Just thinking…\",\n  \"Finalizing stuff…\",\n  \"Staring into the void…\",\n  \"Summoning electrons…\",\n];\n\ninterface ThinkingLoaderProps {\n  className?: string;\n  phrases?: string[];\n  duration?: number;\n  children?: React.ReactNode;\n  textClassName?: string;\n}\n\nfunction ThinkingLoader({\n  className,\n  phrases = DEFAULT_LOADING_PHRASES,\n  duration = 2500,\n  children,\n  textClassName,\n}: ThinkingLoaderProps) {\n  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);\n\n  useEffect(() => {\n    if (phrases.length === 0) return;\n    const interval = setInterval(() => {\n      setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);\n    }, duration);\n\n    return () => clearInterval(interval);\n  }, [phrases, duration]);\n\n  return (\n    <div className={cn(\"text-muted-foreground flex items-center gap-2\", className)}>\n      {children || <Brain className=\"h-5 w-5 flex-shrink-0\" />}\n      <span className={cn(\"relative inline-block w-40 truncate overflow-hidden\", textClassName)}>\n        <span className=\"animate-shimmer via-foreground/80 bg-gradient-to-r from-transparent to-transparent bg-[length:200%_100%] bg-clip-text text-transparent\">\n          {phrases[currentPhraseIndex]}\n        </span>\n      </span>\n    </div>\n  );\n}\n\nexport default ThinkingLoader;\n\n// DevelopedBy: AetherUI\n",
+      "type": "registry:ui",
+      "target": "components/content/thinking-loader.tsx"
+    },
+    {
+      "path": "components/content/thinking-loader.css",
+      "content": "@keyframes shimmer {\r\n    0% {\r\n        background-position: -200% 0;\r\n    }\r\n\r\n    100% {\r\n        background-position: 200% 0;\r\n    }\r\n}\r\n\r\n.animate-shimmer {\r\n    animation: shimmer 3s ease-in-out infinite;\r\n}",
+      "type": "registry:theme",
+      "target": "components/content/thinking-loader.css"
+    }
+  ]
+}
