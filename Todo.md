@@ -1,7 +1,7 @@
 - [ ] fix the `after:bg-background/90` class to be dynamic, so that it can be changed by the user via the component props.
 - [ ] there is a bug in the `MorphingCard` component, where the Icon prop doesn't work if the component is called into is not a 'use client'.
 - [ ] check mobile responsiveness of the components previous to feedback modal.
-- [ ] update the manual hook installation for respective comp. (steps)
+- [ ] [IMP] update the manual hook installation for respective comp. (steps)
 - [ ] fix scroll bar in manual boxes and code boxes (either make them small or remove them).
 - [ ] do we need bread crumbs for sub headings?
 - [ ] update docs to `Fuma docs`

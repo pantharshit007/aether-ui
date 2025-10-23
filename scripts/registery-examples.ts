@@ -420,4 +420,32 @@ export const examples: Record<string, ComponentDefinition[]> = {
       ],
     },
   ],
+  "scroll-indicator": [
+    {
+      name: "scroll-indicator-demo",
+      path: path.join(
+        process.cwd(),
+        "src",
+        "app",
+        "docs",
+        "scroll-indicator",
+        "scroll-indicator-demo.tsx"
+      ),
+      description:
+        "A scroll indicator component that shows scroll progress and allows scrolling to top.",
+      componentName: "scroll-indicator",
+      files: [
+        {
+          name: "scroll-indicator.tsx",
+          path: path.join(process.cwd(), "src", "components", "content", "scroll-indicator.tsx"),
+          type: "registry:ui",
+        },
+        {
+          name: "hooks/use-mobile.ts",
+          path: path.join(process.cwd(), "src", "hooks", "use-mobile.ts"),
+          type: "registry:hook",
+        },
+      ],
+    },
+  ],
 };

@@ -140,4 +140,21 @@ export const components: ComponentDefinition[] = [
       },
     ],
   },
+  {
+    name: "scroll-indicator",
+    path: path.join(process.cwd(), "src", "components", "content", "scroll-indicator.tsx"),
+    registryDependencies: [],
+    title: "Scroll Indicator",
+    dependencies: [],
+    author: "Harshit Pant <hrshit.in>",
+    description:
+      "A scroll indicator which shows scroll progress on page with visual cues to indicate page percentage coverage.",
+    files: [
+      {
+        name: "hooks/use-mobile.ts",
+        path: path.join(process.cwd(), "src", "hooks", "use-mobile.ts"),
+        type: "registry:hook",
+      },
+    ],
+  },
 ];

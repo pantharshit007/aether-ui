@@ -1,0 +1,96 @@
+import ComponentPreview from "@/components/web/component-preview";
+import ScrollIndicatorDemo from "./scroll-indicator-demo";
+
+import PrevNextBtn from "@/components/web/prev-next-btn";
+import { metaConfig } from "@/config/site";
+
+export const metadata = metaConfig({
+  title: "Scroll Indicator | Aether UI",
+  description:
+    "A scroll indicator which shows scroll progress on page with visual cues to indicate page percentage coverage.",
+});
+
+# Scroll Indicator
+
+A scroll indicator which shows scroll progress on page with visual cues to indicate page percentage coverage.
+
+## Examples
+
+This is a default implementation of the scroll indicator component. The scroll indicator in right-bottom shows the scroll progress and allows scrolling to top, and the progressing bar at the top of the screen shows you the similar progress just in a different way.
+
+<ComponentPreview
+  component={<ScrollIndicatorDemo />}
+  filePath="src/app/docs/scroll-indicator/scroll-indicator-demo.tsx"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+<InstallationCli value="scroll-indicator" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>If you haven't completed the installation refer to guide [here](/docs/installation).</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+<CodeBlock filePath="src/components/content/scroll-indicator.tsx" />
+
+<Step>
+  Create a new file named `use-mobile.ts` in `src/hooks` directory and paste the following code.
+</Step>
+<CodeBlock filePath="src/hooks/use-mobile.ts" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Component Props
+
+<Table data={{
+  headers: ["Prop", "Type", "Default", "Description"],
+  rows: [
+    ["showOnMobile", "boolean", "false", "Whether to show the indicator on mobile devices."],
+    ["showCornerIndicator", "boolean", "true", "Whether to show the circular corner indicator."],
+    ["showTopBar", "boolean", "false", "Whether to show the top progress bar."],
+    ["topBarClassName", "string", "", "Custom class for the top progress bar."],
+    ["topBarGradient", "string", "", "Custom class for the gradient bar."],
+    ["indicatorClassName", "string", "", "Custom class for the corner indicator button."],
+    ["indicatorSvgClassName", "string", "", "Custom class for the SVG element of the circular ring."],
+    ["indicatorPercentageClassName", "string", "", "Custom class for the percentage text inside the corner indicator."],
+    ["indicatorArrowClassName", "string", "", "Custom class for the arrow icon SVG inside the corner indicator."],
+  ],
+}}>
+
+{/* THIS IS FOR DEVELOPERS ONLY IT WILL NOT APPEAR IN THE FINAL VERSION */}
+
+| Prop Name                    | Type    | Default Value | Description                                                       |
+| :--------------------------- | :------ | :------------ | :---------------------------------------------------------------- |
+| showOnMobile                 | boolean | false         | Whether to show the indicator on mobile devices.                  |
+| showCornerIndicator          | boolean | true          | Whether to show the circular corner indicator.                    |
+| showTopBar                   | boolean | false         | Whether to show the top progress bar.                             |
+| topBarClassName              | string  |               | Custom class for the top progress bar.                            |
+| topBarGradient               | string  |               | Custom class for the gradient bar.                                |
+| indicatorClassName           | string  |               | Custom class for the corner indicator button.                     |
+| indicatorSvgClassName        | string  |               | Custom class for the SVG element of the circular ring.            |
+| indicatorPercentageClassName | string  |               | Custom class for the percentage text inside the corner indicator. |
+| indicatorArrowClassName      | string  |               | Custom class for the arrow icon SVG inside the corner indicator.  |
+
+</Table>
+
+<PrevNextBtn current="scroll-indicator" />
