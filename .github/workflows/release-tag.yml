@@ -1,0 +1,62 @@
+name: "Auto Tagging"
+
+on:
+  push:
+    branches:
+      - prod
+
+permissions:
+  contents: write
+
+jobs:
+  tag_release:
+    name: Create Tag - vX.X.X
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read version from package.json
+        id: pkg
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "Version from package.json: $VERSION"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Check if tag already exists
+        id: check
+        run: |
+          TAG="v${{ steps.pkg.outputs.version }}"
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists. Skipping."
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create and push tag
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          TAG="v${{ steps.pkg.outputs.version }}"
+          git tag "$TAG"
+          git push origin "$TAG"
+
+      - name: Create GitHub release
+        if: steps.check.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "v${{ steps.pkg.outputs.version }}"
+          name: "Release v${{ steps.pkg.outputs.version }}"
+          body: |
+            🚀 **Automatic Release**
+
+            Version: v${{ steps.pkg.outputs.version }}
+            Triggered by merge into \`prod\`.
+
+            Commit: ${{ github.sha }}
