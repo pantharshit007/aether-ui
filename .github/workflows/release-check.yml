@@ -11,8 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check Source Branch
+        env:
+          SOURCE_BRANCH: ${{ github.head_ref }}
         run: |
-          SOURCE_BRANCH="${{github.head_ref}}"
           ALLOWED_BRANCH="main"
 
           echo "Pull Request from branch $SOURCE_BRANCH"
