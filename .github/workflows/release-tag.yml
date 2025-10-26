@@ -58,16 +58,31 @@ jobs:
           git tag -a "$TAG" -m "Release $TAG"
           git push origin "$TAG"
 
+      - name: Generate release notes (GitHub-generated)
+        if: steps.check.outputs.exists == 'false'
+        id: gen
+        uses: actions/github-script@v7
+        env:
+          TAG: v${{ steps.pkg.outputs.version }}
+        with:
+          script: |
+            // Call the same API the UI uses to produce release notes
+            const resp = await github.rest.repos.generateReleaseNotes({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: process.env.TAG,
+              target_commitish: process.env.GITHUB_SHA
+              // optional: previous_tag_name: 'vX.Y.Z' to influence notes
+            });
+
+            // set workflow output so later steps can use the generated body
+            core.setOutput('body', resp.data.body || '');
+            console.log(`Generated release notes size: ${(resp.data.body || '').length}`);
+
       - name: Create GitHub release
         if: steps.check.outputs.exists == 'false'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: "v${{ steps.pkg.outputs.version }}"
           name: "Release v${{ steps.pkg.outputs.version }}"
-          body: |
-            🚀 **Automatic Release**
-
-            Version: v${{ steps.pkg.outputs.version }}
-            Triggered by merge into `prod`.
-
-            Commit: ${{ github.sha }}
+          body: ${{ steps.gen.outputs.body }}
