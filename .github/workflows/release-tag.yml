@@ -26,25 +26,36 @@ jobs:
           echo "Version from package.json: $VERSION"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
-      - name: Check if tag already exists
+      - name: Fetch tags from origin
+        run: |
+          git fetch --tags --prune
+
+      - name: Check if tag already exists (remote)
         id: check
         run: |
           TAG="v${{ steps.pkg.outputs.version }}"
-          if git rev-parse "$TAG" >/dev/null 2>&1; then
-            echo "Tag $TAG already exists. Skipping."
+          echo "Checking for tag $TAG on remote..."
+          if git ls-remote --tags origin "$TAG" | grep -q "$TAG"; then
+            echo "Tag $TAG already exists on remote. Skipping."
             echo "exists=true" >> $GITHUB_OUTPUT
           else
-            echo "exists=false" >> $GITHUB_OUTPUT
+            # also check locally as a fallback
+            if git rev-parse "$TAG" >/dev/null 2>&1; then
+              echo "Tag $TAG already exists locally. Skipping."
+              echo "exists=true" >> $GITHUB_OUTPUT
+            else
+              echo "exists=false" >> $GITHUB_OUTPUT
+            fi
           fi
 
-      - name: Create and push tag
+      - name: Create and push annotated tag
         if: steps.check.outputs.exists == 'false'
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
           TAG="v${{ steps.pkg.outputs.version }}"
-          git tag "$TAG"
+          git tag -a "$TAG" -m "Release $TAG"
           git push origin "$TAG"
 
       - name: Create GitHub release
@@ -57,6 +68,6 @@ jobs:
             🚀 **Automatic Release**
 
             Version: v${{ steps.pkg.outputs.version }}
-            Triggered by merge into \`prod\`.
+            Triggered by merge into `prod`.
 
             Commit: ${{ github.sha }}
