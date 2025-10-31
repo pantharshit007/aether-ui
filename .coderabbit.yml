@@ -40,6 +40,7 @@ reviews:
         - Correct formatting and grammar.
         - Any broken links or images.
         - check for if we have any new component additions it follows the same format as the other examples or the src/template/page.mdx.
+        - If you are updating a component's documentation, please ensure you also update the `lastModified` date for that component in `src/data/navigation.ts`. This is crucial for SEO.
     - path: "src/components/**/*.tsx"
       instructions: |
         These are changes to UI components. Please check for:
@@ -64,4 +65,5 @@ reviews:
         - The necessity of any new dependencies.
         - Potential for conflicts or security vulnerabilities.
         - That the changes are reflected in the lock file.
+        - For every new change (in the form of PR) should bump the version in package.json.
         Summarize the changes in package.json, focusing on new, updated, or removed dependencies.

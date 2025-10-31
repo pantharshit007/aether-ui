@@ -10,10 +10,15 @@ Follow these steps to add a new component to the project. Each step includes det
 
 - [ ] **Add your component to navigation:**  
        Edit `src/data/navigation.ts`.  
-       Add an entry for your component with its name and href.  
+       Add an entry for your component with its name, href, and `lastModified` date.  
        _Example:_
   ```ts
-  { name: "Fancy Button", href: "/docs/fancy-button" }
+  { name: "Fancy Button", href: "/docs/fancy-button", lastModified: "2025-10-31T12:00:00+05:30" }
+  ```
+- [ ] **Add the `lastModified` date.** This is important for SEO. To get the date, you can use the following command in your terminal:
+  ```bash
+  node
+  new Date().toISOString()
   ```
 
 ## 2. Component Source File
