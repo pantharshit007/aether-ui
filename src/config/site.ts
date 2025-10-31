@@ -25,9 +25,10 @@ const formatName = (name: string) => {
 export interface MetaConfigProps {
   title: string;
   description: string;
+  isRoot?: boolean;
 }
 
-const fallbackURL = "https://ui-aether.vercel.app";
+const fallbackURL = "https://aetherui.in";
 
 /**
  * @param title: Metadata["title"];
@@ -36,6 +37,7 @@ const fallbackURL = "https://ui-aether.vercel.app";
 export const metaConfig = ({
   title = siteConfig.name,
   description = siteConfig.description,
+  isRoot = false,
 }: MetaConfigProps): Metadata => ({
   title,
   description,
@@ -65,7 +67,7 @@ export const metaConfig = ({
     title,
     description,
     siteName: siteConfig.name,
-    url: `${siteConfig.url}/docs/${formatName(title)}`,
+    url: isRoot ? siteConfig.url : `${siteConfig.url}/docs/${formatName(title)}`,
     locale: "en_US",
     images: [
       {

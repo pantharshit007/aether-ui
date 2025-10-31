@@ -17,7 +17,7 @@
 
 ### SEO
 
-- [ ] create `sitemap.xml` and `robots.txt`.
-- [ ] Add specific metadata to the landing page.
-- [ ] Add specific metadata to MDX pages.
-- [ ] Review and update `site.ts` and ensure all the information is accurate and complete. The `fallbackURL` should be updated to the production URL.
+- [x] create `sitemap.xml` and `robots.txt`.
+- [x] Add specific metadata to the landing page.
+- [x] Add specific metadata to MDX pages.
+- [x] Review and update `site.ts` and ensure all the information is accurate and complete. The `fallbackURL` should be updated to the production URL.

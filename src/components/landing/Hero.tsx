@@ -37,7 +37,7 @@ function Hero() {
         src={src}
         className="absolute inset-0 h-full w-full object-cover"
         fill
-        alt="hero-bg-image"
+        alt="Abstract background image for the hero section of Aether/UI."
         priority
         placeholder="empty"
       />
@@ -50,15 +50,15 @@ function Hero() {
           transition={variant.transition}
           className="mx-auto -mt-12 flex w-fit max-w-screen-lg flex-col justify-center"
         >
-          <div className="font-instrument-serif text-5xl font-bold tracking-tight text-transparent md:text-6xl lg:text-7xl xl:text-[5rem] xl:leading-[1]">
-            <p className="landing-gradient">
+          <h1 className="font-instrument-serif text-5xl font-bold tracking-tight text-transparent md:text-6xl lg:text-7xl xl:text-[5rem] xl:leading-[1]">
+            <span className="landing-gradient block">
               Build <span className="text-shadow-glow text-cyan-900">Fast.</span> Animate{" "}
               <span className="text-shadow-glow text-cyan-900">Bold.</span>
-            </p>
-            <p className="landing-gradient pb-1.5">
+            </span>
+            <span className="landing-gradient block pb-1.5">
               Ship <span className="text-shadow-glow text-cyan-900">Beautiful.</span>
-            </p>
-          </div>
+            </span>
+          </h1>
 
           <p className="font-bricolage-grotesque text-shadow-glow-2 mx-auto mt-2.5 text-center text-base tracking-tight text-zinc-200 md:w-[70%] md:text-lg">
             Breathe life into your website with beautifully designed animated components, a
