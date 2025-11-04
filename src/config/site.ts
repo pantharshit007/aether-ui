@@ -55,7 +55,9 @@ export const metaConfig = ({
     card: "summary_large_image",
     images: [
       {
-        url: `/meta?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`,
+        url: isRoot
+          ? siteConfig.bgImage
+          : `${siteConfig.url}/meta?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`,
         width: 1200,
         height: 630,
         alt: title + " Banner",

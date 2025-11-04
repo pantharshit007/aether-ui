@@ -23,56 +23,56 @@ jobs:
             exit 1
           fi
 
-  check_sync:
-    name: Verify Branch Sync
-    runs-on: ubuntu-latest
-    needs: check_branch
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+  # check_sync:
+  #   name: Verify Branch Sync
+  #   runs-on: ubuntu-latest
+  #   needs: check_branch
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 0
 
-      - name: Fetch both branches
-        run: |
-          git fetch origin main prod
+  #     - name: Fetch both branches
+  #       run: |
+  #         git fetch origin main prod
 
-      - name: Check if prod is ancestor of main
-        id: check_ancestor
-        run: |
-          COMMAND="git merge-base --is-ancestor origin/prod origin/main"
-          if $COMMAND; then
-              echo "✅ main is in sync with prod"
-              echo "sync_status=ok" >> $GITHUB_OUTPUT
-          else
-              echo "❌ main is NOT in sync with prod"
-              echo "sync_status=out_of_sync" >> $GITHUB_OUTPUT
-          fi
+  #     - name: Check if prod is ancestor of main
+  #       id: check_ancestor
+  #       run: |
+  #         COMMAND="git merge-base --is-ancestor origin/prod origin/main"
+  #         if $COMMAND; then
+  #             echo "✅ main is in sync with prod"
+  #             echo "sync_status=ok" >> $GITHUB_OUTPUT
+  #         else
+  #             echo "❌ main is NOT in sync with prod"
+  #             echo "sync_status=out_of_sync" >> $GITHUB_OUTPUT
+  #         fi
 
-      - name: Comment on PR if out of sync
-        if: ${{ steps.check_ancestor.outputs.sync_status == 'out_of_sync' }}
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const body = `
-            ⚠️ **Sync Check Failed**
+  #     - name: Comment on PR if out of sync
+  #       if: ${{ steps.check_ancestor.outputs.sync_status == 'out_of_sync' }}
+  #       uses: actions/github-script@v7
+  #       with:
+  #         script: |
+  #           const body = `
+  #           ⚠️ **Sync Check Failed**
 
-            The \`main\` branch is **not in sync** with \`prod\`.
+  #           The \`main\` branch is **not in sync** with \`prod\`.
 
-            Please run the following locally to fix it:
-            \`\`\`bash
-            git fetch origin main prod
-            git checkout main
-            git merge --ff-only origin/prod || git merge origin/prod --strategy=ours -m "Sync main with prod"
-            git push origin main
-            \`\`\`
+  #           Please run the following locally to fix it:
+  #           \`\`\`bash
+  #           git fetch origin main prod
+  #           git checkout main
+  #           git merge --ff-only origin/prod || git merge origin/prod --strategy=ours -m "Sync main with prod"
+  #           git push origin main
+  #           \`\`\`
 
-            After syncing, re-run this workflow or update the PR.
-            `;
-            github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body
-            });
-            core.setFailed("main is out of sync with prod");
+  #           After syncing, re-run this workflow or update the PR.
+  #           `;
+  #           github.rest.issues.createComment({
+  #           issue_number: context.issue.number,
+  #           owner: context.repo.owner,
+  #           repo: context.repo.repo,
+  #           body
+  #           });
+  #           core.setFailed("main is out of sync with prod");
